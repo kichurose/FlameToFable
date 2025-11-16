@@ -5,9 +5,92 @@
   box-sizing: border-box;
 }
 
-// html, body {
-//   margin: 0;
-//   padding: 0;
-//   width: 100%;
-//   height: 100%;
-// }
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Kalam', 'Comic Sans MS', cursive;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  background: #f0e6ff;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+/* Improve text readability */
+body, input, textarea, button {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Focus styles for accessibility */
+*:focus {
+  outline: 2px solid #000;
+  outline-offset: 2px;
+}
+
+/* Responsive images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Ensure buttons and links are touch-friendly */
+a, button {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Hide horizontal scrollbar */
+html {
+  overflow-x: hidden;
+}
+
+/* Improve touch interaction on mobile */
+@media (hover: none) and (pointer: coarse) {
+  .candle-card:hover,
+  .social-link:hover,
+  .price:hover,
+  .nav-link:hover {
+    transform: none !important;
+  }
+  
+  .candle-card:active,
+  .social-link:active,
+  .price:active {
+    transform: translate(-2px, -2px) !important;
+  }
+}
+
+/* Loading state for web views */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+/* Better print styles */
+@media print {
+  .main-nav,
+  .main-footer {
+    display: none;
+  }
+  
+  .home {
+    background: white !important;
+  }
+  
+  .candle-card,
+  .about-section,
+  .hero-section {
+    box-shadow: none !important;
+    border: 1px solid #000 !important;
+  }
+}

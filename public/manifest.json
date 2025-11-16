@@ -1,0 +1,20 @@
+{
+  "name": "Flame to Fable - Premium Handcrafted Candles",
+  "short_name": "Flame to Fable",
+  "description": "Premium handcrafted candles that transform any space into a sanctuary of warmth and tranquility.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f0e6ff",
+  "theme_color": "#f0e6ff",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "16x16 32x32",
+      "type": "image/x-icon"
+    }
+  ],
+  "categories": ["shopping", "lifestyle"],
+  "lang": "en",
+  "scope": "/"
+}
