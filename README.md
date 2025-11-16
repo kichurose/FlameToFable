@@ -1,8 +1,7 @@
 ng add angular-cli-ghpages
 
+Base Href should be left empty in case of using custom domain
 ng build --configuration production --output-path=dist/flametofable --base-href=/FlameToFable/
-npm i -g angular-cli-ghpages
-ng build --configuration production
-ng deploy --base-href=https://kichurose.github.io/FlameToFable/
 
 npx angular-cli-ghpages --dir=dist/flametofable/browser
+After the above command, re-add the custom domain to the project
