@@ -1,100 +1,150 @@
 <div class="catalogue">
   <div class="candles-grid">
 
-    <div class="candle-card">
+    <!-- Christmas Candle -->
+    <div class="candle-card" (click)="openModal('christmas-candle')">
       <div class="candle-image">🎄</div>
       <h3>Christmas Candle</h3>
-      <p>Festive blend of cinnamon, pine, and warm spices for holiday magic</p>
+      <p>Festive blend of cinnamon, pine, and warm spices to celebrate the season.</p>
+      <div class="social-icons">
+        <a href="https://www.youtube.com/@FlameToFable/shorts" target="_blank" class="social-icon youtube-icon" title="Watch on YouTube" (click)="$event.stopPropagation()">
+          <i class="fab fa-youtube"></i>
+        </a>
+        <a href="https://www.instagram.com/flametofable" target="_blank" class="social-icon instagram-icon" title="View on Instagram" (click)="$event.stopPropagation()">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
       <div class="price-container">
         <span class="original-price">449</span>
         <span class="price">199</span>
       </div>
     </div>
 
-    <div class="candle-card">
+    <!-- Berry Bliss Candle -->
+    <div class="candle-card" (click)="openModal('berry-bliss')">
       <div class="candle-image">🫐</div>
-      <h3>Berry Bliss Candle</h3>
-      <p>Sweet and fruity fragrance with notes of mixed berries and vanilla</p>
+      <h3>Berry Bliss</h3>
+      <p>Sweet berry medley with hints of vanilla and fresh florals.</p>
+      <div class="social-icons">
+        <a href="https://www.youtube.com/@FlameToFable/shorts" target="_blank" class="social-icon youtube-icon" title="Watch on YouTube" (click)="$event.stopPropagation()">
+          <i class="fab fa-youtube"></i>
+        </a>
+        <a href="https://www.instagram.com/flametofable" target="_blank" class="social-icon instagram-icon" title="View on Instagram" (click)="$event.stopPropagation()">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
       <div class="price-container">
-        <span class="original-price">499</span>
-        <span class="price">299</span>
+        <span class="original-price">329</span>
+        <span class="price">279</span>
       </div>
     </div>
-    
-    <div class="candle-card">
+
+    <div class="candle-card" (click)="openModal('latte-coffee')">
       <div class="candle-image">☕</div>
       <h3>Latte Coffee Candle</h3>
       <p>Rich coffee aroma with creamy milk and a hint of caramel sweetness</p>
+      <div class="social-icons">
+        <a href="https://www.youtube.com/@FlameToFable/shorts" target="_blank" class="social-icon youtube-icon" title="Watch on YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.instagram.com/flametofable" target="_blank" class="social-icon instagram-icon" title="View on Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
       <div class="price-container">
         <span class="original-price">499</span>
         <span class="price">299</span>
       </div>
     </div>
     
-    <div class="candle-card">
+    <div class="candle-card" (click)="openModal('watermelon')">
       <div class="candle-image">🍉</div>
       <h3>Watermelon Candle</h3>
       <p>Fresh and juicy summer fragrance with crisp watermelon notes (100ml)</p>
+      <div class="social-icons">
+        <a href="https://www.youtube.com/@FlameToFable/shorts" target="_blank" class="social-icon youtube-icon" title="Watch on YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.instagram.com/flametofable" target="_blank" class="social-icon instagram-icon" title="View on Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
       <div class="price-container">
         <span class="original-price">199</span>
         <span class="price">99</span>
       </div>
     </div>
     
-    <div class="candle-card">
+    <div class="candle-card" (click)="openModal('cloud')">
       <div class="candle-image">☁️</div>
       <h3>Cloud Candle</h3>
       <p>Light and airy scent with soft cotton and clean linen notes (100ml)</p>
+      <div class="social-icons">
+        <a href="https://www.youtube.com/@FlameToFable/shorts" target="_blank" class="social-icon youtube-icon" title="Watch on YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.instagram.com/flametofable" target="_blank" class="social-icon instagram-icon" title="View on Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
       <div class="price-container">
         <span class="original-price">199</span>
         <span class="price">99</span>
       </div>
     </div>
     
-    <div class="candle-card">
+    <div class="candle-card" (click)="openModal('sunflower')">
       <div class="candle-image">🌻</div>
       <h3>Sunflower Candle</h3>
       <p>Bright and cheerful fragrance with warm sunflower and honey tones</p>
+      <div class="social-icons">
+        <a href="https://www.youtube.com/@FlameToFable/shorts" target="_blank" class="social-icon youtube-icon" title="Watch on YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.instagram.com/flametofable" target="_blank" class="social-icon instagram-icon" title="View on Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
       <div class="price-container">
         <span class="original-price">50</span>
         <span class="price">25</span>
       </div>
     </div>
     
-    <div class="candle-card">
+    <div class="candle-card" (click)="openModal('peony-bloom')">
       <div class="candle-image">🌺</div>
       <h3>Peony Bloom</h3>
       <p>Elegant floral scent with soft peony petals and morning dew</p>
+      <div class="social-icons">
+        <a href="https://www.youtube.com/@FlameToFable/shorts" target="_blank" class="social-icon youtube-icon" title="Watch on YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.instagram.com/flametofable" target="_blank" class="social-icon instagram-icon" title="View on Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
       <div class="price-container">
         <span class="original-price">250</span>
         <span class="price">150</span>
       </div>
     </div>
     
-    <div class="candle-card">
+    <div class="candle-card" (click)="openModal('daisy-love')">
       <div class="candle-image">🌼</div>
       <h3>Daisy Love</h3>
       <p>Sweet and delicate fragrance with fresh daisy and green meadow notes</p>
+      <div class="social-icons">
+        <a href="https://www.youtube.com/@FlameToFable/shorts" target="_blank" class="social-icon youtube-icon" title="Watch on YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.instagram.com/flametofable" target="_blank" class="social-icon instagram-icon" title="View on Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
       <div class="price-container">
         <span class="original-price">50</span>
         <span class="price">25</span>
       </div>
     </div>
     
-    <div class="candle-card">
+    <div class="candle-card" (click)="openModal('vanilla-chocolate')">
       <div class="candle-image">🍫</div>
       <h3>Vanilla Chocolate Loaded Candle</h3>
       <p>Decadent blend of rich vanilla and creamy chocolate for ultimate indulgence</p>
+      <div class="social-icons">
+        <a href="https://www.youtube.com/@FlameToFable/shorts" target="_blank" class="social-icon youtube-icon" title="Watch on YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.instagram.com/flametofable" target="_blank" class="social-icon instagram-icon" title="View on Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
       <div class="price-container">
         <span class="original-price">499</span>
         <span class="price">299</span>
       </div>
     </div>
     
-    <div class="candle-card">
+    <div class="candle-card" (click)="openModal('raspberry-mocha')">
       <div class="candle-image">🍒</div>
       <h3>Raspberry Mocha Candle</h3>
       <p>Rich mocha coffee blend with sweet raspberry notes for a luxurious experience</p>
+      <div class="social-icons">
+        <a href="https://www.youtube.com/@FlameToFable/shorts" target="_blank" class="social-icon youtube-icon" title="Watch on YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.instagram.com/flametofable" target="_blank" class="social-icon instagram-icon" title="View on Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
       <div class="price-container">
         <span class="original-price">499</span>
         <span class="price">299</span>
@@ -103,10 +153,14 @@
     
    
     
-    <div class="candle-card">
+    <div class="candle-card" (click)="openModal('stack-hearts')">
       <div class="candle-image">💕</div>
       <h3>Stack of Hearts</h3>
       <p>Romantic fragrance with rose petals and sweet vanilla for special moments</p>
+      <div class="social-icons">
+        <a href="https://www.youtube.com/@FlameToFable/shorts" target="_blank" class="social-icon youtube-icon" title="Watch on YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.instagram.com/flametofable" target="_blank" class="social-icon instagram-icon" title="View on Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
       <div class="price-container">
         <span class="original-price">299</span>
         <span class="price">99</span>
@@ -114,3 +168,12 @@
     </div>
   </div>
 </div>
+
+<!-- Product Modal Component -->
+@if (selectedProduct) {
+  <app-product-modal 
+    [product]="selectedProduct" 
+    [isOpen]="isModalOpen" 
+    (close)="closeModal()">
+  </app-product-modal>
+}

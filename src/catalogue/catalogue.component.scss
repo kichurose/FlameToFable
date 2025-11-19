@@ -42,11 +42,43 @@
     flex-direction: column;
     justify-content: space-between;
     justify-self: center;
+    cursor: pointer;
     
     @media (min-width: 768px) {
       padding: 25px;
       box-shadow: 8px 8px 0px #000;
       min-height: 400px;
+    }
+    
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin: 15px 0;
+      
+      .social-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 28px;
+        height: 28px;
+        background: white;
+        text-decoration: none;
+        font-size: 10px;
+        transition: all 0.3s ease;
+        border-radius: 4px;
+        color: #000;
+        border: 2px solid #000;
+        
+        &:hover {
+          transform: translate(-1px, -1px);
+          box-shadow: 3px 3px 0px #000;
+        }
+        
+        i {
+          font-size: 14px;
+        }
+      }
     }
     
     &::before {
