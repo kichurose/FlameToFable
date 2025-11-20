@@ -4,7 +4,32 @@
       <button class="close-btn" (click)="closeModal()">×</button>
       
       <div class="modal-header">
-        <img [src]="product.image" [alt]="product.name" class="modal-image">
+        <div class="image-carousel">
+          <img [src]="currentImage" [alt]="product.name" class="modal-image">
+          
+          @if (hasMultipleImages) {
+            <!-- Previous Button -->
+            <button class="carousel-btn prev-btn" (click)="previousImage()" type="button">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            
+            <!-- Next Button -->
+            <button class="carousel-btn next-btn" (click)="nextImage()" type="button">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+            
+            <!-- Simple Three Dots Indicator -->
+            <div class="image-dots">
+              @for (image of currentImages; track $index) {
+                <span 
+                  class="dot" 
+                  [class.active]="currentImageIndex === $index"
+                  (click)="goToImage($index)">
+                </span>
+              }
+            </div>
+          }
+        </div>
         <div class="modal-title-section">
           <h2>{{ product.name }}</h2>
           <p class="modal-price">{{ product.price }}</p>

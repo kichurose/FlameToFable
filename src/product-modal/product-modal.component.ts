@@ -6,6 +6,7 @@ export interface ProductDetails {
   name: string;
   price: string;
   image: string;
+  images?: string[]; // Optional array for carousel
   description: string;
   specifications: {
     dimensions: string;
@@ -32,9 +33,46 @@ export class ProductModalComponent {
   @Input() product!: ProductDetails;
   @Input() isOpen: boolean = false;
   @Output() close = new EventEmitter<void>();
+  
+  currentImageIndex = 0;
+  
+  get currentImages(): string[] {
+    return this.product.images && this.product.images.length > 0 
+      ? this.product.images 
+      : [this.product.image];
+  }
+  
+  get currentImage(): string {
+    return this.currentImages[this.currentImageIndex];
+  }
+  
+  get hasMultipleImages(): boolean {
+    return this.currentImages.length > 1;
+  }
 
   closeModal() {
+    this.currentImageIndex = 0;
     this.close.emit();
+  }
+  
+  nextImage() {
+    if (this.hasMultipleImages) {
+      this.currentImageIndex = (this.currentImageIndex + 1) % this.currentImages.length;
+    }
+  }
+  
+  previousImage() {
+    if (this.hasMultipleImages) {
+      this.currentImageIndex = this.currentImageIndex === 0 
+        ? this.currentImages.length - 1 
+        : this.currentImageIndex - 1;
+    }
+  }
+  
+  goToImage(index: number) {
+    if (index >= 0 && index < this.currentImages.length) {
+      this.currentImageIndex = index;
+    }
   }
 
   enquireOnWhatsApp() {

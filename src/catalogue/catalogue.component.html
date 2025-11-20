@@ -3,7 +3,16 @@
 
     <!-- Christmas Candle -->
     <div class="candle-card" (click)="openModal('christmas-candle')">
-      <div class="candle-image">🎄</div>
+      <div class="candle-image-container">
+        <img [src]="products['christmas-candle'].image" alt="Christmas Candle" class="candle-image">
+        @if (products['christmas-candle'].images && products['christmas-candle'].images!.length > 1) {
+          <div class="image-indicator">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+        }
+      </div>
       <h3>Christmas Candle</h3>
       <p>Festive blend of cinnamon, pine, and warm spices to celebrate the season.</p>
       <div class="social-icons">
@@ -22,7 +31,9 @@
 
     <!-- Berry Bliss Candle -->
     <div class="candle-card" (click)="openModal('berry-bliss')">
-      <div class="candle-image">🫐</div>
+      <div class="candle-image-container">
+        <img [src]="products['berry-bliss'].image" alt="Berry Bliss" class="candle-image">
+      </div>
       <h3>Berry Bliss</h3>
       <p>Sweet berry medley with hints of vanilla and fresh florals.</p>
       <div class="social-icons">
@@ -40,7 +51,9 @@
     </div>
 
     <div class="candle-card" (click)="openModal('latte-coffee')">
-      <div class="candle-image">☕</div>
+      <div class="candle-image-container">
+        <img [src]="products['latte-coffee'].image" alt="Latte Coffee Candle" class="candle-image">
+      </div>
       <h3>Latte Coffee Candle</h3>
       <p>Rich coffee aroma with creamy milk and a hint of caramel sweetness</p>
       <div class="social-icons">
@@ -54,7 +67,9 @@
     </div>
     
     <div class="candle-card" (click)="openModal('watermelon')">
-      <div class="candle-image">🍉</div>
+      <div class="candle-image-container">
+        <img [src]="products['watermelon'].image" alt="Watermelon Candle" class="candle-image">
+      </div>
       <h3>Watermelon Candle</h3>
       <p>Fresh and juicy summer fragrance with crisp watermelon notes (100ml)</p>
       <div class="social-icons">
@@ -68,7 +83,9 @@
     </div>
     
     <div class="candle-card" (click)="openModal('cloud')">
-      <div class="candle-image">☁️</div>
+      <div class="candle-image-container">
+        <img [src]="products['cloud'].image" alt="Cloud Candle" class="candle-image">
+      </div>
       <h3>Cloud Candle</h3>
       <p>Light and airy scent with soft cotton and clean linen notes (100ml)</p>
       <div class="social-icons">
@@ -82,7 +99,9 @@
     </div>
     
     <div class="candle-card" (click)="openModal('sunflower')">
-      <div class="candle-image">🌻</div>
+      <div class="candle-image-container">
+        <img [src]="products['sunflower'].image" alt="Sunflower Candle" class="candle-image">
+      </div>
       <h3>Sunflower Candle</h3>
       <p>Bright and cheerful fragrance with warm sunflower and honey tones</p>
       <div class="social-icons">
@@ -96,7 +115,16 @@
     </div>
     
     <div class="candle-card" (click)="openModal('peony-bloom')">
-      <div class="candle-image">🌺</div>
+      <div class="candle-image-container">
+        <img [src]="products['peony-bloom'].image" alt="Peony Bloom" class="candle-image">
+        @if (products['peony-bloom'].images && products['peony-bloom'].images!.length > 1) {
+          <div class="image-indicator">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+        }
+      </div>
       <h3>Peony Bloom</h3>
       <p>Elegant floral scent with soft peony petals and morning dew</p>
       <div class="social-icons">
@@ -110,7 +138,16 @@
     </div>
     
     <div class="candle-card" (click)="openModal('daisy-love')">
-      <div class="candle-image">🌼</div>
+      <div class="candle-image-container">
+        <img [src]="products['daisy-love'].image" alt="Daisy Love" class="candle-image">
+        @if (products['daisy-love'].images && products['daisy-love'].images!.length > 1) {
+          <div class="image-indicator">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+        }
+      </div>
       <h3>Daisy Love</h3>
       <p>Sweet and delicate fragrance with fresh daisy and green meadow notes</p>
       <div class="social-icons">

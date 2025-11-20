@@ -19,7 +19,8 @@ export class CatalogueComponent {
       id: 'christmas-candle',
       name: 'Christmas Candle',
       price: '₹199',
-      image: './christmastree.jpg',
+      image: './christmas.jpg',
+      images: ['./christmas.jpg', './christmastree.jpg', './tree2.jpg'],
       description: 'Festive blend of cinnamon, pine, and warm spices to celebrate the season.',
       specifications: {
         dimensions: '3.5" × 4.2"',
@@ -38,7 +39,7 @@ export class CatalogueComponent {
       id: 'berry-bliss',
       name: 'Berry Bliss',
       price: '₹279',
-      image: 'https://images.unsplash.com/photo-1602874801006-2e2e473467d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80',
+      image: './raspberry.jpg',
       description: 'Sweet berry medley with hints of vanilla and fresh florals.',
       specifications: {
         dimensions: '3.2" × 4.0"',
@@ -76,7 +77,7 @@ export class CatalogueComponent {
       id: 'watermelon',
       name: 'Watermelon Candle',
       price: '₹99',
-      image: 'https://images.unsplash.com/photo-1587049352846-4a222e784d38?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+      image: './watermelon.jpg',
       description: 'Fresh and juicy summer fragrance with crisp watermelon notes (100ml)',
       specifications: {
         dimensions: '2.5" × 3.0"',
@@ -95,7 +96,7 @@ export class CatalogueComponent {
       id: 'cloud',
       name: 'Cloud Candle',
       price: '₹99',
-      image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+      image: './cloud.jpg',
       description: 'Light and airy scent with soft cotton and clean linen notes (100ml)',
       specifications: {
         dimensions: '2.5" × 3.0"',
@@ -114,7 +115,7 @@ export class CatalogueComponent {
       id: 'sunflower',
       name: 'Sunflower Candle',
       price: '₹25',
-      image: 'https://images.unsplash.com/photo-1597848212624-e6eb1ac8e7bb?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+      image: './IMG20251103093957.jpg',
       description: 'Bright and cheerful fragrance with warm sunflower and honey tones',
       specifications: {
         dimensions: '2.0" × 2.5"',
@@ -153,6 +154,7 @@ export class CatalogueComponent {
       name: 'Daisy Love',
       price: '₹25',
       image: './daisy.jpg',
+      images: ['./daisy.jpg', './daisy1.jpg'],
       description: 'Sweet and delicate fragrance with fresh daisy and green meadow notes',
       specifications: {
         dimensions: '2.0" × 2.5"',
@@ -171,7 +173,7 @@ export class CatalogueComponent {
       id: 'vanilla-chocolate',
       name: 'Vanilla Chocolate Loaded Candle',
       price: '₹299',
-      image: 'https://images.unsplash.com/photo-1571115764595-644a1f56a55c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+      image: './IMG20251115235516.jpg',
       description: 'Decadent blend of rich vanilla and creamy chocolate for ultimate indulgence',
       specifications: {
         dimensions: '3.8" × 4.5"',
@@ -190,7 +192,7 @@ export class CatalogueComponent {
       id: 'raspberry-mocha',
       name: 'Raspberry Mocha Candle',
       price: '₹299',
-      image: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+      image: './raspberry.jpg',
       description: 'Rich mocha coffee blend with sweet raspberry notes for a luxurious experience',
       specifications: {
         dimensions: '3.8" × 4.5"',
@@ -209,7 +211,8 @@ export class CatalogueComponent {
       id: 'stack-hearts',
       name: 'Stack of Hearts',
       price: '₹99',
-      image: './heart.jpg',
+      image: './stackheart.jpg',
+      images: ['./stackheart.jpg', './heart.jpg'],
       description: 'Romantic fragrance with rose petals and sweet vanilla for special moments',
       specifications: {
         dimensions: '2.8" × 3.2"',
