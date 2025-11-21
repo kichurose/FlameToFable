@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 export interface ProductDetails {
@@ -35,6 +35,13 @@ export class ProductModalComponent {
   @Output() close = new EventEmitter<void>();
   
   currentImageIndex = 0;
+  
+  @HostListener('document:keydown.escape', ['$event'])
+  onEscapeKey(event: Event) {
+    if (this.isOpen) {
+      this.closeModal();
+    }
+  }
   
   get currentImages(): string[] {
     return this.product.images && this.product.images.length > 0 

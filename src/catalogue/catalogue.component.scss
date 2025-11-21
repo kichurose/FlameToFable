@@ -26,6 +26,36 @@
     }
   }
   
+  .no-results {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #fff8f0 0%, #f0f8ff 100%);
+    border: 3px solid #000;
+    border-radius: 15px;
+    box-shadow: 4px 4px 0px #000;
+    
+    i {
+      font-size: 48px;
+      color: #666;
+      margin-bottom: 20px;
+    }
+    
+    h3 {
+      font-family: 'Kalam', 'Comic Sans MS', cursive;
+      color: #333;
+      margin-bottom: 10px;
+      font-size: 1.5rem;
+    }
+    
+    p {
+      color: #666;
+      font-family: 'Kalam', 'Comic Sans MS', cursive;
+      font-size: 1rem;
+      margin: 0;
+    }
+  }
+  
   .candle-card {
     background: linear-gradient(135deg, #f8e8f0 0%, #e8f8f0 100%);
     border: 3px solid #000;
@@ -43,6 +73,7 @@
     justify-content: space-between;
     justify-self: center;
     cursor: pointer;
+    overflow: hidden; // For ribbon positioning
     
     @media (min-width: 768px) {
       padding: 25px;
@@ -102,26 +133,50 @@
       }
     }
     
-    .candle-image {
-      font-size: clamp(2.5rem, 8vw, 4rem);
+
+    
+    .candle-image-container {
       margin-bottom: 15px;
-      filter: drop-shadow(2px 2px 0px #000);
-      position: relative;
+      position: relative !important;
+      display: block;
       
       @media (min-width: 768px) {
         margin-bottom: 20px;
       }
+    }
+    
+    .sale-item .candle-image-container .sale-icon {
+      position: absolute !important;
+      top: 5px !important;
+      right: 5px !important;
+      background: #ff0000 !important;
+      color: white !important;
+      padding: 8px 12px !important;
+      border-radius: 6px !important;
+      font-size: 14px !important;
+      font-weight: bold !important;
+      z-index: 1000 !important;
+      border: 3px solid white !important;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6) !important;
+      font-family: Arial, sans-serif !important;
+      text-transform: uppercase !important;
+      letter-spacing: 1px !important;
+      display: block !important;
+      min-width: 40px !important;
+      text-align: center !important;
+    }
+    
+    .candle-image {
+      width: 100%;
+      max-width: 200px;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 2px solid #000;
       
-      &::after {
-        content: '';
-        position: absolute;
-        bottom: -10px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 40px;
-        height: 3px;
-        background: #000;
-        border-radius: 2px;
+      @media (min-width: 768px) {
+        max-width: 250px;
+        height: 300px;
       }
     }
     
