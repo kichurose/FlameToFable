@@ -38,13 +38,13 @@
       margin-bottom: 20px;
       
       .hero-logo-img {
-        height: clamp(60px, 12vw, 100px);
+        height: clamp(100px, 18vw, 180px);
         width: auto;
-        max-width: 150px;
+        max-width: 250px;
         object-fit: contain;
         
         @media (min-width: 768px) {
-          max-width: 200px;
+          max-width: 350px;
         }
       }
     }
@@ -276,6 +276,126 @@
         height: 2px;
         background: #000;
         border-radius: 2px;
+      }
+    }
+  }
+
+  .contact-section {
+    background: linear-gradient(135deg, #f8f4ff 0%, #f0f8ff 100%);
+    border: 3px solid #000;
+    border-radius: 15px;
+    box-shadow: 6px 6px 0px #000;
+    max-width: 1200px;
+    margin: 30px 15px 20px 15px;
+    padding: 30px 20px;
+    text-align: center;
+    position: relative;
+
+    @media (min-width: 768px) {
+      margin: 40px auto 20px auto;
+      padding: 40px 30px;
+      box-shadow: 8px 8px 0px #000;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -3px;
+      left: -3px;
+      right: -3px;
+      bottom: -3px;
+      border: 2px dashed #666;
+      pointer-events: none;
+    }
+
+    h2 {
+      color: #000;
+      font-size: clamp(1.8rem, 5vw, 2.5rem);
+      margin-bottom: 15px;
+      font-family: 'Kalam', 'Comic Sans MS', cursive;
+      font-weight: bold;
+    }
+
+    .contact-description {
+      color: #333;
+      font-size: clamp(1rem, 3vw, 1.2rem);
+      margin-bottom: 30px;
+      font-family: 'Kalam', 'Comic Sans MS', cursive;
+    }
+
+    .contact-options {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      max-width: 600px;
+      margin: 0 auto;
+
+      @media (min-width: 600px) {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+      }
+    }
+
+    .contact-option {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 20px;
+      background: white;
+      border: 3px solid #000;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 4px 4px 0px #000;
+      min-height: 80px;
+
+      &:hover {
+        transform: translate(-2px, -2px);
+        box-shadow: 6px 6px 0px #000;
+      }
+
+      i {
+        font-size: 2rem;
+        min-width: 40px;
+      }
+
+      .contact-info {
+        text-align: left;
+        flex: 1;
+
+        h3 {
+          margin: 0 0 5px 0;
+          font-family: 'Kalam', 'Comic Sans MS', cursive;
+          font-size: 1.1rem;
+          font-weight: bold;
+        }
+
+        p {
+          margin: 0;
+          font-family: 'Kalam', 'Comic Sans MS', cursive;
+          font-size: 0.9rem;
+          color: #666;
+        }
+      }
+
+      &.email {
+        i {
+          color: #e74c3c;
+        }
+        
+        .contact-info h3 {
+          color: #e74c3c;
+        }
+      }
+
+      &.whatsapp {
+        i {
+          color: #25D366;
+        }
+        
+        .contact-info h3 {
+          color: #25D366;
+        }
       }
     }
   }
