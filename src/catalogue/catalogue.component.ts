@@ -217,9 +217,9 @@ export class CatalogueComponent {
      'watermelon': {
       id: 'watermelon',
       name: 'Watermelon Candle',
-      price: '₹99',
+      price: '₹150',
       image: './watermelon.jpg',
-      description: 'Fresh and juicy summer fragrance with crisp watermelon notes (100ml)',
+      description: 'Fresh and juicy summer fragrance with crisp watermelon notes (120ml)',
       specifications: {
         dimensions: '2.5" × 3.0"',
         weight: '6 oz',
@@ -236,9 +236,9 @@ export class CatalogueComponent {
     'cloud': {
       id: 'cloud',
       name: 'Cloud Candle',
-      price: '₹99',
+      price: '₹150',
       image: './cloud.jpg',
-      description: 'Light and airy scent with soft cotton and clean linen notes (100ml)',
+      description: 'Light and airy scent with soft cotton and clean linen notes (120ml)',
       specifications: {
         dimensions: '2.5" × 3.0"',
         weight: '6 oz',
