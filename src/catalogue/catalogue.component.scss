@@ -75,6 +75,15 @@
     cursor: pointer;
     overflow: hidden; // For ribbon positioning
     
+    // Remove mobile tap highlight
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    
     @media (min-width: 768px) {
       padding: 25px;
       box-shadow: 8px 8px 0px #000;
@@ -100,10 +109,22 @@
         border-radius: 4px;
         color: #000;
         border: 2px solid #000;
+        cursor: pointer;
         
         &:hover {
           transform: translate(-1px, -1px);
           box-shadow: 3px 3px 0px #000;
+        }
+        
+        &.whatsapp-icon {
+          background: #25D366;
+          color: white;
+          border-color: #25D366;
+          
+          &:hover {
+            background: #22c55e;
+            border-color: #22c55e;
+          }
         }
         
         i {

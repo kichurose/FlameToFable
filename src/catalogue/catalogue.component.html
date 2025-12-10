@@ -47,6 +47,9 @@
           <a [href]="product.socialLinks.instagram" target="_blank" class="social-icon instagram-icon" title="View on Instagram" (click)="$event.stopPropagation()">
             <i class="fab fa-instagram"></i>
           </a>
+          <button class="social-icon whatsapp-icon" title="Enquire on WhatsApp" (click)="enquireOnWhatsApp(product, $event)">
+            <i class="fab fa-whatsapp"></i>
+          </button>
         </div>
         
         <!-- Pricing -->
