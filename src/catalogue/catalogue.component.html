@@ -20,9 +20,8 @@
           <div class="sale-icon" style="position: absolute; top: 5px; right: 5px; background: red; color: white; padding: 6px 10px; border-radius: 4px; font-weight: bold; z-index: 999; font-size: 12px; border: 2px solid white;">SALE</div>
         }
         
-        <div class="candle-image-container" [style.position]="isChristmasCandle(product) ? 'relative' : 'initial'">
+        <div class="card-image">
           <!-- Product Image -->
-         
             <img [src]="product.image" [alt]="product.name" class="candle-image">
             
             <!-- Image Indicators for Multiple Images -->
@@ -33,43 +32,21 @@
                 }
               </div>
             }
+        </div>
+        
+        <div class="card-content">
+          <h3 class="product-name">{{ product.name }}</h3>
           
-        </div>
-        
-        <h3>{{ product.name }}</h3>
-        <p>{{ product.description }}</p>
-        
-        <!-- Social Icons -->
-        <div class="social-icons">
-          <a [href]="product.socialLinks.youtube" target="_blank" class="social-icon youtube-icon" title="Watch on YouTube" (click)="$event.stopPropagation()">
-            <i class="fab fa-youtube"></i>
-          </a>
-          <a [href]="product.socialLinks.instagram" target="_blank" class="social-icon instagram-icon" title="View on Instagram" (click)="$event.stopPropagation()">
-            <i class="fab fa-instagram"></i>
-          </a>
-          <button class="social-icon whatsapp-icon" title="Enquire on WhatsApp" (click)="enquireOnWhatsApp(product, $event)">
-            <i class="fab fa-whatsapp"></i>
-          </button>
-        </div>
-        
-        <!-- Pricing -->
-        <div class="price-container">
-          @if (hasDiscountPricing(product)) {
-            <span class="original-price">{{ getOriginalPrice(product) }}</span>
-            <span class="discount-badge" style="color: #28a745; font-size: 12px; font-weight: bold; margin: 0 5px;">{{ calculateDiscount(product) }}</span>
-          }
-          <span class="price">{{ product.price.replace('₹', '') }}</span>
+          <!-- Pricing -->
+          <div class="price-container">
+            @if (hasDiscountPricing(product)) {
+              <span class="original-price">{{ getOriginalPrice(product) }}</span>
+              <span class="discount-badge" style="color: #28a745; font-size: 12px; font-weight: bold; margin: 0 5px;">{{ calculateDiscount(product) }}</span>
+            }
+            <p class="product-price">{{ product.price }}</p>
+          </div>
         </div>
       </div>
     }
   </div>
 </div>
-
-<!-- Product Modal Component -->
-@if (selectedProduct) {
-  <app-product-modal 
-    [product]="selectedProduct" 
-    [isOpen]="isModalOpen" 
-    (close)="closeModal()">
-  </app-product-modal>
-}

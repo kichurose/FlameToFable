@@ -1,0 +1,51 @@
+<section class="best-sellers-section">
+  <div class="section-header">
+    <h2 class="section-title">
+      <span class="flame-icon">🔥</span>
+      Best Sellers
+      <span class="flame-icon">🔥</span>
+    </h2>
+  </div>
+
+    <div class="best-sellers-container">
+    <div class="best-sellers-scroll">
+      <div class="best-sellers-wrapper animate-scroll">
+        <!-- First set of products -->
+        <div *ngFor="let product of bestSellers" 
+             class="best-seller-card"
+             [class.selected]="selectedProduct?.id === product.id"
+             (click)="onCandleClick(product)">
+          <div class="card-image">
+            <img [src]="product.image" 
+                 [alt]="product.name" 
+                 loading="lazy"
+                 onerror="this.src='./placeholder-candle.jpg'">
+          </div>
+          
+          <div class="card-content">
+            <h3 class="product-name">{{ product.name }}</h3>
+            <p class="product-price">{{ product.price }}</p>
+          </div>
+        </div>
+        
+        <!-- Duplicate set for seamless loop -->
+        <div *ngFor="let product of bestSellers" 
+             class="best-seller-card"
+             [class.selected]="selectedProduct?.id === product.id"
+             (click)="onCandleClick(product)">
+          <div class="card-image">
+            <img [src]="product.image" 
+                 [alt]="product.name" 
+                 loading="lazy"
+                 onerror="this.src='./placeholder-candle.jpg'">
+          </div>
+          
+          <div class="card-content">
+            <h3 class="product-name">{{ product.name }}</h3>
+            <p class="product-price">{{ product.price }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

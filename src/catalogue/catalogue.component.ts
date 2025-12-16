@@ -1,372 +1,133 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ProductModalComponent, ProductDetails } from '../product-modal/product-modal.component';
+import { Router } from '@angular/router';
 import { SearchComponent } from '../search/search.component';
+
+interface CatalogueProduct {
+  id: string;
+  name: string;
+  price: string;
+  image: string;
+  images?: string[]; // For multiple images indicator
+}
 
 @Component({
   selector: 'app-catalogue',
   standalone: true,
-  imports: [CommonModule, ProductModalComponent, SearchComponent],
+  imports: [CommonModule, SearchComponent],
   templateUrl: './catalogue.component.html',
   styleUrls: ['./catalogue.component.scss']
 })
 export class CatalogueComponent {
-  isModalOpen = false;
-  selectedProduct: ProductDetails | null = null;
   searchTerm: string = '';
 
-  // Product data dictionary
-  products: { [key: string]: ProductDetails } = {
+  constructor(private router: Router) {}
+
+  products: { [key: string]: CatalogueProduct } = {
     'christmastree2': {
       id: 'christmastree2',
       name: 'Christmas Tree (Pack of 2)',
       price: '₹200',
-      image: './christmastree2.jpg',
-      description: 'Beautiful pack of 2 Christmas tree candles with festive fragrance and holiday warmth.',
-      specifications: {
-        dimensions: '3.5" × 4.5" each',
-        weight: '12 oz each (24 oz total)',
-        wickType: 'Cotton wick',
-        waxType: 'Premium soy wax',
-        fragrance: 'Pine & Holiday Spice'
-      },
-      careInstructions: 'Perfect Christmas decoration pack. Burn each candle for maximum 4 hours at a time. Keep away from other decorations.',
-      socialLinks: {
-        youtube: 'https://www.youtube.com/@FlameToFable/shorts',
-        instagram: 'https://www.instagram.com/flametofable'
-      }
+      image: './christmastree2.jpg'
     },
     'baby-jesus': {
       id: 'baby-jesus',
       name: 'Baby Jesus Candle',
       price: '₹200',
-      image: './Baby-Jesus.jpg',
-      description: 'Sacred and peaceful fragrance with frankincense and myrrh for Christmas worship',
-      specifications: {
-        dimensions: '3.5" × 4.0"',
-        weight: '10 oz',
-        wickType: 'Cotton wick',
-        waxType: 'Premium soy wax',
-        fragrance: 'Frankincense & Myrrh'
-      },
-      careInstructions: 'Perfect for prayer and meditation. Burn for maximum 3 hours. Handle with reverence.',
-      socialLinks: {
-        youtube: 'https://www.youtube.com/@FlameToFable/shorts',
-        instagram: 'https://www.instagram.com/flametofable'
-      }
+      image: './Baby-Jesus.jpg'
     },
     'christmas-candle': {
       id: 'christmas-candle',
       name: 'Christmas Candle',
-      price: '₹100',
+      price: '₹150',
       image: './christmas.jpg',
-      images: ['./christmas.jpg', './christmastree.jpg', './christmas1.1.jpg'],
-      description: 'Festive blend of cinnamon, pine, and warm spices to celebrate the season.',
-      specifications: {
-        dimensions: '3.5" × 4.2"',
-        weight: '12 oz',
-        wickType: 'Cotton wick',
-        waxType: 'Soy blend',
-        fragrance: 'Vanilla'
-      },
-      careInstructions: 'Trim wick to 1/4" before each use. Allow wax pool to reach edges on first burn for even melting. Burn for maximum 4 hours at a time. Keep away from drafts and flammable objects.',
-      socialLinks: {
-        youtube: 'https://youtube.com/shorts/ZzD0Fl2aZjQ?si=BYWF7-gmTQ3WPvBY',
-        instagram: 'https://www.instagram.com/flametofable/reel/DQrACsuD0Cq/'
-      }
+      images: ['./christmas.jpg', './christmastree.jpg', './christmas1.1.jpg']
     },
     'christmas-candle-2': {
       id: 'christmas-candle-2',
       name: 'Christmas Candle 2',
-      price: '₹100',
+      price: '₹150',
       image: './christmas2.jpg',
-      images: ['./christmas2.jpg', './christmas2.1.jpg'],
-      description: 'Festive holiday candle in a unique decorative shape with warm spices and pine.',
-      specifications: {
-        dimensions: '4.0" × 5.0"',
-        weight: '15 oz',
-        wickType: 'Cotton wick',
-        waxType: 'Premium soy blend',
-        fragrance: 'Pine & Warm Spices'
-      },
-      careInstructions: 'Trim wick to 1/4" before each use. Special shape requires careful burning. Maximum 4 hours at a time.',
-      socialLinks: {
-        youtube: 'https://youtube.com/shorts/ZzD0Fl2aZjQ?si=BYWF7-gmTQ3WPvBY',
-        instagram: 'https://www.instagram.com/flametofable'
-      }
+      images: ['./christmas2.jpg', './christmas2.1.jpg']
     },
     'christmas-collection': {
       id: 'christmas-collection',
       name: 'Christmas Collection Pack of 3',
-      price: '₹100',
-      image: './Christmas Collection (Pack of 3).jpg',
-      description: 'Special Christmas collection with 3 unique festive candles in one beautiful set',
-      specifications: {
-        dimensions: '3.5" × 4.0" each',
-        weight: '8 oz each (24 oz total)',
-        wickType: 'Cotton wick',
-        waxType: 'Premium soy wax',
-        fragrance: 'Variety Pack: Pine, Cinnamon, Vanilla'
-      },
-      careInstructions: 'Complete Christmas set. Perfect for gifting or home decoration. Burn each candle for maximum 3 hours.',
-      socialLinks: {
-        youtube: 'https://www.youtube.com/@FlameToFable/shorts',
-        instagram: 'https://www.instagram.com/flametofable'
-      }
+      price: '₹150',
+      image: './christmas-collection.jpg'
     },
     'reindeer': {
       id: 'reindeer',
       name: 'Reindeer Candle',
-      price: '₹40',
-      image: './Reindeer.jpg',
-      description: 'Festive Christmas scent with winter pine and cinnamon spice',
-      specifications: {
-        dimensions: '4.0" × 5.0"',
-        weight: '12 oz',
-        wickType: 'Cotton wick',
-        waxType: 'Premium soy wax',
-        fragrance: 'Winter Pine & Cinnamon'
-      },
-      careInstructions: 'Christmas decoration candle. Burn for maximum 4 hours. Keep away from decorations.',
-      socialLinks: {
-        youtube: 'https://www.youtube.com/@FlameToFable/shorts',
-        instagram: 'https://www.instagram.com/flametofable'
-      }
+      price: '₹50',
+      image: './reindeer.jpg'
     },
     'reindeer-pack': {
       id: 'reindeer-pack',
       name: 'Reindeer Pack of 2',
-      price: '₹80',
-      image: './Reindeer Pack of 2.jpg',
-      description: 'Delightful pack of 2 reindeer candles with festive Christmas fragrances',
-      specifications: {
-        dimensions: '3.5" × 4.5" each',
-        weight: '10 oz each (20 oz total)',
-        wickType: 'Cotton wick',
-        waxType: 'Premium soy wax',
-        fragrance: 'Winter Pine & Holiday Spice'
-      },
-      careInstructions: 'Pack of 2 candles. Perfect for gifting. Burn each for maximum 4 hours.',
-      socialLinks: {
-        youtube: 'https://www.youtube.com/@FlameToFable/shorts',
-        instagram: 'https://www.instagram.com/flametofable'
-      }
+      price: '₹100',
+      image: './reindeer-pack.jpg'
+    },
+    'stack-hearts': {
+      id: 'stack-hearts',
+      name: 'Stack Hearts Candle',
+      price: '₹100',
+      image: './stack-hearts.jpg'
     },
     'car-candle': {
       id: 'car-candle',
       name: 'Car Candle',
       price: '₹50',
-      image: './Car.jpg',
-      description: 'Fun and unique car-shaped candle with fresh citrus and leather scent',
-      specifications: {
-        dimensions: '3.0" × 2.0"',
-        weight: '5 oz',
-        wickType: 'Cotton wick',
-        waxType: 'Soy blend',
-        fragrance: 'Citrus & Leather'
-      },
-      careInstructions: 'Novelty candle perfect for car enthusiasts. Burn for maximum 2 hours. Keep on stable surface.',
-      socialLinks: {
-        youtube: 'https://www.youtube.com/@FlameToFable/shorts',
-        instagram: 'https://www.instagram.com/flametofable'
-      }
+      image: './Car.jpg'
+    },
+    'peony-bloom': {
+      id: 'peony-bloom',
+      name: 'Peony Bloom Candle',
+      price: '₹199',
+      image: './peony.jpg'
+    },
+    'daisy-love': {
+      id: 'daisy-love',
+      name: 'Daisy Love Candle',
+      price: '₹50',
+      image: './daisy.jpg'
+    },
+    'sunflower': {
+      id: 'sunflower',
+      name: 'Sunflower Candle',
+      price: '₹50',
+      image: './daisy1.jpg'
     },
     'berry-bliss': {
       id: 'berry-bliss',
-      name: 'Berry Bliss',
-      price: '₹300',
-      image: './raspberry.jpg',
-      description: 'Sweet berry medley with hints of vanilla and fresh florals.',
-      specifications: {
-        dimensions: '3.2" × 4.0"',
-        weight: '10 oz',
-        wickType: 'Cotton wick',
-        waxType: 'Natural soy',
-        fragrance: 'Mixed Berries & Vanilla'
-      },
-      careInstructions: 'Trim wick to 1/4" before lighting. Allow wax pool to reach edges on first burn. Never leave unattended.',
-      socialLinks: {
-        youtube: 'https://www.youtube.com/shorts/kFKx4aVFvyY',
-        instagram: 'https://www.instagram.com/flametofable'
-      }
+      name: 'Berry Bliss Candle',
+      price: '₹350',
+      image: './berry-bliss.jpg'
     },
     'latte-coffee': {
       id: 'latte-coffee',
       name: 'Latte Coffee Candle',
-      price: '₹300',
-      image: './coffee.jpg',
-      description: 'Rich coffee aroma with creamy milk and a hint of caramel sweetness',
-      specifications: {
-        dimensions: '3.8" × 4.5"',
-        weight: '14 oz',
-        wickType: 'Cotton wick',
-        waxType: 'Premium soy wax',
-        fragrance: 'Coffee & Caramel'
-      },
-      careInstructions: 'Trim wick to 1/4" before each use. Burn for maximum 4 hours at a time. Keep away from children and pets.',
-      socialLinks: {
-        youtube: 'https://www.youtube.com/shorts/3Rdw5xenhyY',
-        instagram: 'https://www.instagram.com/flametofable'
-      }
-    },
-     'raspberry-mocha': {
-      id: 'raspberry-mocha',
-      name: 'Raspberry Mocha Candle',
-      price: '₹300',
-      image: './raspberry2.jpg',
-      description: 'Rich mocha coffee blend with sweet raspberry notes for a luxurious experience',
-      specifications: {
-        dimensions: '3.8" × 4.5"',
-        weight: '14 oz',
-        wickType: 'Cotton wick',
-        waxType: 'Premium soy wax',
-        fragrance: 'Raspberry & Mocha Coffee'
-      },
-      careInstructions: 'Luxurious scent ideal for cozy evenings. Burn for maximum 4 hours. Allow full wax pool on first burn.',
-      socialLinks: {
-        youtube: 'https://www.youtube.com/shorts/kFKx4aVFvyY',
-        instagram: 'https://www.instagram.com/flametofable'
-      }
-    },
-   
-    'sunflower': {
-      id: 'sunflower',
-      name: 'Sunflower Candle',
-      price: '₹25',
-      image: './IMG20251103093957.jpg',
-      description: 'Bright and cheerful fragrance with warm sunflower and honey tones',
-      specifications: {
-        dimensions: '2.0" × 2.5"',
-        weight: '3 oz',
-        wickType: 'Cotton wick',
-        waxType: 'Soy blend',
-        fragrance: 'Sunflower & Honey'
-      },
-      careInstructions: 'Perfect for tea light use. Burn for maximum 1-2 hours. Never leave unattended.',
-      socialLinks: {
-        youtube: 'https://www.youtube.com/@FlameToFable/shorts',
-        instagram: 'https://www.instagram.com/flametofable'
-      }
-    },
-    'peony-bloom': {
-      id: 'peony-bloom',
-      name: 'Peony Bloom',
-      price: '₹150',
-      image: './peony.jpg',
-      description: 'Elegant floral scent with soft peony petals and morning dew',
-      specifications: {
-        dimensions: '3.0" × 3.5"',
-        weight: '8 oz',
-        wickType: 'Cotton wick',
-        waxType: 'Premium soy wax',
-        fragrance: 'Peony & Morning Dew'
-      },
-      careInstructions: 'Perfect for living room or office. Trim wick regularly. Burn for maximum 3 hours.',
-      socialLinks: {
-        youtube: 'https://www.youtube.com/shorts/JxkEyzbNAME',
-        instagram: 'https://www.instagram.com/flametofable'
-      }
-    },
-    'daisy-love': {
-      id: 'daisy-love',
-      name: 'Daisy Love',
-      price: '₹25',
-      image: './daisy.jpg',
-      images: ['./daisy.jpg', './daisy1.jpg'],
-      description: 'Sweet and delicate fragrance with fresh daisy and green meadow notes',
-      specifications: {
-        dimensions: '2.0" × 2.5"',
-        weight: '3 oz',
-        wickType: 'Cotton wick',
-        waxType: 'Soy blend',
-        fragrance: 'Fresh Daisy & Green Meadow'
-      },
-      careInstructions: 'Great for small spaces. Burn for maximum 1-2 hours. Keep wick trimmed to 1/4".',
-      socialLinks: {
-        youtube: 'https://www.youtube.com/shorts/Fb-h9MMKOGQ',
-        instagram: 'https://www.instagram.com/flametofable'
-      }
+      price: '₹350',
+      image: './coffee.jpg'
     },
     'vanilla-chocolate': {
       id: 'vanilla-chocolate',
-      name: 'Vanilla Chocolate Loaded Candle',
-      price: '₹300',
-      image: './vanilla.jpg',
-      images: ['./vanilla.jpg'],
-      description: 'Decadent blend of rich vanilla and creamy chocolate for ultimate indulgence',
-      specifications: {
-        dimensions: '3.8" × 4.5"',
-        weight: '14 oz',
-        wickType: 'Cotton wick',
-        waxType: 'Premium soy wax',
-        fragrance: 'Vanilla & Dark Chocolate'
-      },
-      careInstructions: 'Rich fragrance perfect for evening relaxation. Burn for maximum 4 hours. Keep away from heat sources.',
-      socialLinks: {
-        youtube: 'https://www.youtube.com/shorts/HyNhNQuhblo',
-        instagram: 'https://www.instagram.com/flametofable'
-      }
+      name: 'Vanilla Chocolate Candle',
+      price: '₹350',
+      image: './vanilla.jpg'
     },
-   
-    'stack-hearts': {
-      id: 'stack-hearts',
-      name: 'Stack of Hearts',
-      price: '₹100',
-      image: './stackheart.jpg',
-      images: ['./stackheart.jpg', './heart.jpg'],
-      description: 'Romantic fragrance with rose petals and sweet vanilla for special moments',
-      specifications: {
-        dimensions: '2.8" × 3.2"',
-        weight: '7 oz',
-        wickType: 'Cotton wick',
-        waxType: 'Natural soy',
-        fragrance: 'Rose Petals & Vanilla'
-      },
-      careInstructions: 'Perfect for romantic occasions. Burn for maximum 3 hours. Keep away from drafts.',
-      socialLinks: {
-        youtube: 'https://www.youtube.com/shorts/nFS8N-cmjcM',
-        instagram: 'https://www.instagram.com/flametofable'
-      }
-    },
-     'watermelon': {
+    'watermelon': {
       id: 'watermelon',
       name: 'Watermelon Candle',
       price: '₹200',
-      image: './watermelon.jpg',
-      description: 'Fresh and juicy summer fragrance with crisp watermelon notes (120ml)',
-      specifications: {
-        dimensions: '2.5" × 3.0"',
-        weight: '6 oz',
-        wickType: 'Cotton wick',
-        waxType: 'Natural soy',
-        fragrance: 'Fresh Watermelon'
-      },
-      careInstructions: 'Perfect for small spaces. Burn for maximum 2-3 hours at a time. Ensure wick is centered.',
-      socialLinks: {
-        youtube: 'https://www.youtube.com/shorts/kdJb4vdchkM',
-        instagram: 'https://www.instagram.com/flametofable'
-      }
+      image: './watermelon.jpg'
     },
     'cloud': {
       id: 'cloud',
       name: 'Cloud Candle',
       price: '₹200',
-      image: './cloud.jpg',
-      description: 'Light and airy scent with soft cotton and clean linen notes (120ml)',
-      specifications: {
-        dimensions: '2.5" × 3.0"',
-        weight: '6 oz',
-        wickType: 'Cotton wick',
-        waxType: 'Natural soy',
-        fragrance: 'Cotton & Clean Linen'
-      },
-      careInstructions: 'Ideal for bedroom or bathroom. Burn for maximum 2-3 hours. Store in cool, dry place.',
-      socialLinks: {
-        youtube: 'https://www.youtube.com/shorts/-X35yDQKrT4',
-        instagram: 'https://www.instagram.com/flametofable'
-      }
-    },
-    
+      image: './cloud.jpg'
+    }
   };
 
   // Single source of truth for original prices
@@ -387,12 +148,12 @@ export class CatalogueComponent {
     'baby-jesus': 250,
     'reindeer': 50,
     'reindeer-pack': 100,
-    'car-candle': 180,
+    'car-candle': 50,
     'christmas-collection': 150,
   };
 
   // Helper methods for generic template
-  getProductsArray(): ProductDetails[] {
+  getProductsArray(): CatalogueProduct[] {
     const allProducts = Object.values(this.products);
     
     if (!this.searchTerm.trim()) {
@@ -408,35 +169,33 @@ export class CatalogueComponent {
     this.searchTerm = searchTerm;
   }
 
-  isSaleItem(product: ProductDetails): boolean {
+  isSaleItem(product: CatalogueProduct): boolean {
     const priceStr = product.price.replace('₹', '');
     const currentPrice = parseInt(priceStr);
     const originalPrice = this.originalPrices[product.id] || currentPrice;
     return originalPrice > currentPrice;
   }
 
-  hasDiscountPricing(product: ProductDetails): boolean {
+  hasDiscountPricing(product: CatalogueProduct): boolean {
     const priceStr = product.price.replace('₹', '');
     const currentPrice = parseInt(priceStr);
     const originalPrice = this.originalPrices[product.id] || currentPrice;
     return originalPrice > currentPrice;
   }
 
-  isChristmasCandle(product: ProductDetails): boolean {
-    return product.id === 'christmastree2' || 
-           product.id === 'christmas-candle' || 
-           product.id === 'christmas-candle-2' || 
-           product.id === 'baby-jesus' || 
-           product.id === 'reindeer' || 
-           product.id === 'reindeer-pack' || 
-           product.id === 'christmas-collection';
+  isChristmasCandle(product: CatalogueProduct): boolean {
+    const christmasKeywords = ['christmas', 'tree', 'holiday', 'festive', 'jesus', 'reindeer'];
+    return christmasKeywords.some(keyword => 
+      product.name.toLowerCase().includes(keyword) || 
+      product.id.toLowerCase().includes(keyword)
+    );
   }
 
-  hasMultipleImages(product: ProductDetails): boolean {
-    return !!(product.images && product.images.length > 1);
+  hasMultipleImages(product: CatalogueProduct): boolean {
+    return product.images ? product.images.length > 1 : false;
   }
 
-  calculateDiscount(product: ProductDetails): string {
+  calculateDiscount(product: CatalogueProduct): string {
     const priceStr = product.price.replace('₹', '');
     const currentPrice = parseInt(priceStr);
     const originalPrice = this.originalPrices[product.id] || currentPrice;
@@ -444,25 +203,18 @@ export class CatalogueComponent {
     return `${discountPercent}% OFF`;
   }
 
-  getOriginalPrice(product: ProductDetails): string {
-    const priceStr = product.price.replace('₹', '');
-    const currentPrice = parseInt(priceStr);
-    const originalPrice = this.originalPrices[product.id] || currentPrice;
-    return originalPrice.toString();
+  getOriginalPrice(product: CatalogueProduct): string {
+    const originalPrice = this.originalPrices[product.id];
+    return originalPrice ? `₹${originalPrice}` : product.price;
   }
 
   openModal(productId: string) {
-    this.selectedProduct = this.products[productId];
-    this.isModalOpen = true;
+    this.router.navigate(['/product', productId]);
   }
 
-  closeModal() {
-    this.isModalOpen = false;
-    this.selectedProduct = null;
-  }
-
-  enquireOnWhatsApp(product: ProductDetails, event: Event) {
-    event.stopPropagation();
+  enquireOnWhatsApp(product: CatalogueProduct, event: Event) {
+    event.stopPropagation(); // Prevent card click
+    
     const phoneNumber = '7994209092';
     const message = `Hi! I'm interested in the ${product.name} (${product.price}). Can you provide more details about availability and delivery?`;
     const encodedMessage = encodeURIComponent(message);

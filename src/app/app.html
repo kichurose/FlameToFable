@@ -1,7 +1,7 @@
 <div class="app-container">
   <nav class="main-nav">
     <div class="nav-content">
-      <div class="brand">
+      <div class="brand" (click)="navigateHome()">
         <img src="/logo.png" alt="Flame to Fable Logo" class="logo">
         <h1>Flame to Fable</h1>
       </div>
@@ -15,15 +15,14 @@
   </nav>
   
   <main>
-    <app-home></app-home>
+    <router-outlet></router-outlet>
   </main>
   
   <footer class="main-footer">
-    <div class="footer-content">
-      <p>&copy; 2025 Flame to Fable. All rights reserved.</p>
-      <div class="footer-links">
-        <a href="https://www.youtube.com/@FlameToFable/shorts" target="_blank">YouTube</a>
-        <a href="https://www.instagram.com/flametofable" target="_blank">Instagram</a>
+    <div class="footer-bottom">
+      <div class="footer-bottom-content">
+        <p>&copy; 2025 Flame to Fable. All rights reserved.</p>
+        <p class="made-with-love">Made with <i class="fas fa-heart"></i> for candle lovers</p>
       </div>
     </div>
   </footer>

@@ -1,0 +1,104 @@
+<div class="product-detail-container" *ngIf="product">
+  <!-- Main product content -->
+  <div class="product-detail">
+    <!-- Product Image Section -->
+    <div class="product-image-section">
+      <div class="main-image-container">
+        <img [src]="getCurrentImage()" [alt]="product.name" class="main-image">
+        
+        <!-- Navigation arrows for multiple images -->
+        <div class="image-navigation" *ngIf="hasMultipleImages()">
+          <button class="nav-btn prev" (click)="previousImage()" [disabled]="currentImageIndex === 0">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="nav-btn next" (click)="nextImage()" [disabled]="currentImageIndex === (product.images?.length || 1) - 1">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+      
+      <!-- Thumbnail images -->
+      <div class="thumbnail-container" *ngIf="hasMultipleImages()">
+        <img 
+          *ngFor="let image of product.images; let i = index" 
+          [src]="image" 
+          [alt]="product.name + ' view ' + (i + 1)"
+          class="thumbnail"
+          [class.active]="i === currentImageIndex"
+          (click)="changeImage(i)"
+        >
+      </div>
+    </div>
+
+    <!-- Product Information Section -->
+    <div class="product-info-section">
+      <div class="product-header">
+        <h1 class="product-title">{{ product.name }}</h1>
+        <p class="product-price">{{ product.price }}</p>
+      </div>
+
+      <div class="product-description">
+        <h3>Description</h3>
+        <p>{{ product.description }}</p>
+      </div>
+
+      <!-- Specifications -->
+      <div class="product-specs" *ngIf="product.specifications">
+        <div class="specs-header" (click)="toggleSpecifications()">
+          <h3>Specifications</h3>
+          <button class="expand-btn" [class.expanded]="isSpecsExpanded">
+            <i class="fas fa-chevron-down"></i>
+          </button>
+        </div>
+        <div class="specs-grid" [class.collapsed]="!isSpecsExpanded">
+          <div class="spec-item" *ngIf="product.specifications.dimensions">
+            <span class="spec-label">Dimensions:</span>
+            <span class="spec-value">{{ product.specifications.dimensions }}</span>
+          </div>
+          <div class="spec-item" *ngIf="product.specifications.weight">
+            <span class="spec-label">Weight:</span>
+            <span class="spec-value">{{ product.specifications.weight }}</span>
+          </div>
+          <div class="spec-item" *ngIf="product.specifications.wickType">
+            <span class="spec-label">Wick Type:</span>
+            <span class="spec-value">{{ product.specifications.wickType }}</span>
+          </div>
+          <div class="spec-item" *ngIf="product.specifications.waxType">
+            <span class="spec-label">Wax Type:</span>
+            <span class="spec-value">{{ product.specifications.waxType }}</span>
+          </div>
+          <div class="spec-item" *ngIf="product.specifications.fragrance">
+            <span class="spec-label">Fragrance:</span>
+            <span class="spec-value">{{ product.specifications.fragrance }}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Care Instructions -->
+      <div class="care-instructions" *ngIf="product.careInstructions">
+        <h3>Care Instructions</h3>
+        <p>{{ product.careInstructions }}</p>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="action-buttons">
+        <button class="whatsapp-btn" (click)="enquireOnWhatsApp()">
+          <i class="fab fa-whatsapp"></i>
+          <span>Enquire on WhatsApp</span>
+        </button>
+        
+        <!-- Social Links -->
+        <div class="social-links" *ngIf="product.socialLinks">
+          <a *ngIf="product.socialLinks.youtube" [href]="product.socialLinks.youtube" target="_blank" class="social-link youtube">
+            <i class="fab fa-youtube"></i>
+            <span>Watch Video</span>
+          </a>
+          <a *ngIf="product.socialLinks.instagram" [href]="product.socialLinks.instagram" target="_blank" class="social-link instagram">
+            <i class="fab fa-instagram"></i>
+            <span>View on Instagram</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

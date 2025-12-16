@@ -1,0 +1,17 @@
+// CSS Animation for auto-scrolling
+.animate-scroll {
+  animation: scroll-horizontal 15s linear infinite;
+
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes scroll-horizontal {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
