@@ -29,7 +29,6 @@
   &.show {
     transform: translateY(0);
     opacity: 1;
-    animation: slideDown 0.4s ease-out;
   }
   
   .nav-content {
@@ -390,11 +389,3 @@ main {
   }
 }
 
-@keyframes heartbeat {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
-}
