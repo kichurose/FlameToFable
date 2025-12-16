@@ -19,14 +19,15 @@
       
       <!-- Thumbnail images -->
       <div class="thumbnail-container" *ngIf="hasMultipleImages()">
-        <img 
-          *ngFor="let image of product.images; let i = index" 
-          [src]="image" 
-          [alt]="product.name + ' view ' + (i + 1)"
-          class="thumbnail"
-          [class.active]="i === currentImageIndex"
-          (click)="changeImage(i)"
-        >
+        @for (image of product.images; track image; let i = $index) { 
+          <img 
+            [src]="image" 
+            [alt]="product.name + ' view ' + (i + 1)"
+            class="thumbnail"
+            [class.active]="i === currentImageIndex"
+            (click)="changeImage(i)"
+          >
+        }
       </div>
     </div>
 

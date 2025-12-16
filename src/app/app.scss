@@ -61,6 +61,7 @@
         background: linear-gradient(135deg, #7c3aed, #ec4899, #f59e0b);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+        background-clip: text;
       }
       
       .logo {
@@ -120,7 +121,10 @@
         text-decoration: none;
         background: rgba(255, 255, 255, 0.8);
         backdrop-filter: blur(10px);
-        color: #374151;
+        background: linear-gradient(135deg, #E91E63, #9C27B0);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
         font-family: 'Kalam', 'Comic Sans MS', cursive;
         font-weight: 600;
         font-size: clamp(0.95rem, 2.5vw, 1.05rem);
@@ -154,7 +158,9 @@
           background: linear-gradient(135deg, rgba(124, 58, 237, 0.05), rgba(255, 255, 255, 0.95));
           border-color: rgba(124, 58, 237, 0.3);
           box-shadow: 0 8px 24px rgba(124, 58, 237, 0.15), 0 4px 12px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.3) inset;
-          color: #4c1d95;
+          background-clip: initial;
+          -webkit-background-clip: initial;
+          -webkit-text-fill-color: #9C27B0;
           
           &::before {
             left: 100%;
@@ -175,7 +181,7 @@ main {
 }
 
 .main-footer {
-  background: linear-gradient(135deg, #1e293b 0%, #4c1d95 50%, #7c3aed 100%);
+  background: linear-gradient(135deg, #FFB6C1 0%, #DDA0DD 100%);
   backdrop-filter: blur(20px);
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   color: white;

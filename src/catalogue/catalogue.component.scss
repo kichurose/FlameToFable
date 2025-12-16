@@ -151,7 +151,10 @@
         .product-price {
           font-size: 1.3rem;
           font-weight: 700;
-          color: #27ae60;
+          background: linear-gradient(135deg, #E91E63, #9C27B0);
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
           margin: 0;
         }
       }

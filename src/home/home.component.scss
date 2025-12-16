@@ -1,9 +1,6 @@
 .home {
   min-height: 100vh;
   background: #f0e6ff;
-  background-image: 
-    radial-gradient(circle at 1px 1px, rgba(138, 107, 184, 0.15) 1px, transparent 0);
-  background-size: 20px 20px;
   width: 100%;
   
   .hero-section {
@@ -62,11 +59,11 @@
       margin: 0 0 32px 0;
       animation: typewriter 2s steps(25) 0.5s forwards;
       opacity: 0;
-      background: linear-gradient(135deg, #1e293b, #4c1d95, #7c3aed);
+      background: linear-gradient(135deg, #E91E63, #9C27B0);
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      text-shadow: 0 4px 16px rgba(30, 41, 59, 0.3);
+      text-shadow: 0 4px 16px rgba(156, 39, 176, 0.4);
       white-space: nowrap;
       overflow: hidden;
       width: 0;
@@ -96,18 +93,15 @@
       animation: fadeInUp 1.5s ease-out 1s forwards;
       opacity: 0;
       transform: translateY(30px);
-      background: linear-gradient(135deg, #4c1d95, #7c3aed, #a855f7);
+      background: linear-gradient(135deg, #E91E63, #9C27B0);
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      text-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+      text-shadow: 0 4px 12px rgba(156, 39, 176, 0.4);
     }
   }
   
-  @keyframes shimmer {
-    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-    100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
-  }
+
   
   @keyframes float {
     0%, 100% { transform: translateY(0px); }
@@ -329,18 +323,6 @@
     overflow: hidden;
     animation: slideInUp 0.8s ease-out 1.2s both;
     
-    &::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      right: -50%;
-      width: 200%;
-      height: 200%;
-      background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
-      animation: shimmer 4s infinite 3s;
-      pointer-events: none;
-    }
-    
     @media (max-width: 768px) {
       margin: 40px 20px;
       padding: 40px 24px;
@@ -398,23 +380,6 @@
     @media (min-width: 768px) {
       margin: 80px auto 60px auto;
       padding: 60px 50px;
-    }
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      right: -50%;
-      width: 200%;
-      height: 200%;
-      background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
-      animation: shimmer 4s infinite 2s;
-      pointer-events: none;
-    }
-
-    > * {
-      position: relative;
-      z-index: 1;
     }
 
     h2 {
