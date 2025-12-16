@@ -139,6 +139,13 @@
         overflow: hidden;
         box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(255, 255, 255, 0.2) inset;
         
+        @media (max-width: 768px) {
+          font-size: 0.8rem;
+          padding: 10px 14px;
+          min-height: 44px;
+          border-radius: 12px;
+        }
+        
         &::before {
           content: '';
           position: absolute;

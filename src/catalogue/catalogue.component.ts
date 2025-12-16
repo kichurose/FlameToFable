@@ -41,14 +41,14 @@ export class CatalogueComponent {
       name: 'Christmas Candle',
       price: '₹150',
       image: './christmas.jpg',
-      images: ['./christmas.jpg', './christmastree.jpg', './christmas1.1.jpg']
+      
     },
     'christmas-candle-2': {
       id: 'christmas-candle-2',
       name: 'Christmas Candle 2',
       price: '₹150',
       image: './christmas2.jpg',
-      images: ['./christmas2.jpg', './christmas2.1.jpg']
+      
     },
     'christmas-collection': {
       id: 'christmas-collection',

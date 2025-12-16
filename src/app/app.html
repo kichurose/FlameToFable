@@ -6,10 +6,10 @@
         <h1>Flame to Fable</h1>
       </div>
       <div class="nav-links">
-        <a href="#home" class="nav-link">Home</a>
-        <a href="#about" class="nav-link">About</a>
-        <a href="#catalogue" class="nav-link">Catalogue</a>
-        <a href="#contact" class="nav-link">Contact</a>
+        <a href="#home" class="nav-link" (click)="navigateToSection('home', $event)">Home</a>
+        <a href="#about" class="nav-link" (click)="navigateToSection('about', $event)">About</a>
+        <a href="#catalogue" class="nav-link" (click)="navigateToSection('catalogue', $event)">Catalogue</a>
+        <a href="#contact" class="nav-link" (click)="navigateToSection('contact', $event)">Contact</a>
       </div>
     </div>
   </nav>

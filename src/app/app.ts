@@ -26,6 +26,23 @@ export class App implements OnInit, OnDestroy {
     this.router.navigate(['/']);
   }
 
+  navigateToSection(sectionId: string, event: Event) {
+    event.preventDefault();
+    
+    // Always navigate to home first, then scroll to section
+    this.router.navigate(['/']).then(() => {
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'start' 
+          });
+        }
+      }, 100); // Small delay to ensure page is loaded
+    });
+  }
+
   @HostListener('window:scroll')
   onScroll() {
     if (!this.navbarElement) return;

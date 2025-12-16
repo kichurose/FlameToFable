@@ -27,7 +27,6 @@
     
     .hero-logo {
       text-align: center;
-     
       animation: bounceIn 1.2s ease-out;
       
       .hero-logo-img {
@@ -72,6 +71,11 @@
       @media (max-width: 768px) {
         font-size: clamp(2rem, 5vw, 3rem);
         margin: 0 auto 24px;
+        white-space: normal;
+        width: auto;
+        overflow: visible;
+        animation: fadeInUp 1.5s ease-out 0.5s forwards;
+        text-align: center;
       }
     }
     
