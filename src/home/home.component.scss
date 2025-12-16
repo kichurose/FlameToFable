@@ -22,18 +22,6 @@
     overflow: hidden;
     animation: slideInDown 0.8s ease-out;
     
-    &::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
-      animation: shimmer 3s infinite;
-      pointer-events: none;
-    }
-    
     @media (max-width: 768px) {
       padding: 60px 20px;
       margin: 20px;
@@ -159,6 +147,13 @@
     }
   }
   
+  @keyframes fadeInScale {
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
   .about-section {
     max-width: 900px;
     margin: 60px auto;
@@ -174,18 +169,6 @@
     position: relative;
     overflow: hidden;
     animation: slideInUp 0.8s ease-out 0.3s both;
-    
-    &::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      right: -50%;
-      width: 200%;
-      height: 200%;
-      background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
-      animation: shimmer 4s infinite 2s;
-      pointer-events: none;
-    }
     
     @media (max-width: 768px) {
       margin: 40px 20px;

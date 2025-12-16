@@ -1,6 +1,6 @@
 .best-sellers-section {
   padding: 6rem 0;
-  background: linear-gradient(135deg, #FFB6C1 0%, #E6E6FA 25%, #98E4E1 50%, #DDA0DD 75%, #F0E68C 100%);
+  background: linear-gradient(135deg, #FFB6C1 0%, #DDA0DD 100%);
   position: relative;
   overflow: visible;
 
@@ -39,15 +39,8 @@
 
   .flame-icon {
     font-size: 2rem;
-    animation: flicker 2s ease-in-out infinite alternate;
   }
 }
-
-@keyframes flicker {
-  0%, 50% { 
-    transform: scale(1) rotate(-2deg);
-    filter: brightness(1);
-  }
   100% { 
     transform: scale(1.1) rotate(2deg);
     filter: brightness(1.2);
