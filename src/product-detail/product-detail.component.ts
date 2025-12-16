@@ -25,7 +25,7 @@ export class ProductDetailComponent implements OnInit {
       description: 'Beautiful pack of 2 Christmas tree candles with festive fragrance and holiday warmth.',
       specifications: {
         dimensions: '3.5" × 4.5" each',
-        weight: '12 oz each (24 oz total)',
+        weight: '100g each (200g total)',
         wickType: 'Cotton wick',
         waxType: 'Premium soy wax',
         fragrance: 'Pine & Holiday Spice'
@@ -44,7 +44,7 @@ export class ProductDetailComponent implements OnInit {
       description: 'Sacred and peaceful fragrance with frankincense and myrrh for Christmas worship',
       specifications: {
         dimensions: '3.5" × 4.0"',
-        weight: '10 oz',
+        weight: '150g',
         wickType: 'Cotton wick',
         waxType: 'Premium soy wax',
         fragrance: 'Frankincense & Myrrh'
@@ -64,7 +64,7 @@ export class ProductDetailComponent implements OnInit {
       description: 'Festive blend of cinnamon, pine, and warm spices to celebrate the season.',
       specifications: {
         dimensions: '3.5" × 4.2"',
-        weight: '12 oz',
+        weight: '100g',
         wickType: 'Cotton wick',
         waxType: 'Soy blend',
         fragrance: 'Vanilla'
@@ -84,7 +84,7 @@ export class ProductDetailComponent implements OnInit {
       description: 'Festive holiday candle in a unique decorative shape with warm spices and pine.',
       specifications: {
         dimensions: '4.0" × 5.0"',
-        weight: '15 oz',
+        weight: '80g',
         wickType: 'Cotton wick',
         waxType: 'Premium soy blend',
         fragrance: 'Pine & Warm Spices'
@@ -103,7 +103,7 @@ export class ProductDetailComponent implements OnInit {
       description: 'Complete Christmas candle collection with three festive fragrances.',
       specifications: {
         dimensions: '3.5" × 4.0" each',
-        weight: '30 oz total',
+        weight: '150g total',
         wickType: 'Cotton wick',
         waxType: 'Premium soy wax',
         fragrance: 'Pine, Cinnamon & Vanilla'
@@ -122,7 +122,7 @@ export class ProductDetailComponent implements OnInit {
       description: 'Rich and indulgent blend of vanilla and chocolate for cozy evenings.',
       specifications: {
         dimensions: '4.0" × 5.0"',
-        weight: '16 oz',
+        weight: '200ml',
         wickType: 'Cotton wick',
         waxType: 'Premium soy wax',
         fragrance: 'Vanilla & Dark Chocolate'
@@ -141,7 +141,7 @@ export class ProductDetailComponent implements OnInit {
       description: 'Fresh berry fragrance that energizes and refreshes any space.',
       specifications: {
         dimensions: '3.5" × 4.5"',
-        weight: '14 oz',
+        weight: '200ml',
         wickType: 'Cotton wick',
         waxType: 'Soy wax blend',
         fragrance: 'Mixed Berry'
@@ -160,7 +160,7 @@ export class ProductDetailComponent implements OnInit {
       description: 'Compact car-shaped candle perfect for automotive enthusiasts.',
       specifications: {
         dimensions: '5.0" × 2.5"',
-        weight: '8 oz',
+        weight: '60g',
         wickType: 'Cotton wick',
         waxType: 'Soy wax',
         fragrance: 'Fresh Linen'
@@ -179,7 +179,7 @@ export class ProductDetailComponent implements OnInit {
       description: 'Adorable reindeer-shaped candle perfect for Christmas decorations.',
       specifications: {
         dimensions: '4.0" × 3.5"',
-        weight: '8 oz',
+        weight: '60g',
         wickType: 'Cotton wick',
         waxType: 'Soy wax',
         fragrance: 'Pine & Berries'
@@ -198,7 +198,7 @@ export class ProductDetailComponent implements OnInit {
       description: 'Charming pack of 2 reindeer candles for festive home decor.',
       specifications: {
         dimensions: '4.0" × 3.5" each',
-        weight: '16 oz total',
+        weight: '120g total',
         wickType: 'Cotton wick',
         waxType: 'Premium soy wax',
         fragrance: 'Pine & Holiday Spice'
@@ -217,7 +217,7 @@ export class ProductDetailComponent implements OnInit {
       description: 'Romantic stacked hearts candle perfect for special occasions.',
       specifications: {
         dimensions: '3.5" × 5.0"',
-        weight: '12 oz',
+        weight: '100g',
         wickType: 'Cotton wick',
         waxType: 'Premium soy wax',
         fragrance: 'Rose & Vanilla'
@@ -236,7 +236,7 @@ export class ProductDetailComponent implements OnInit {
       description: 'Beautiful peony-shaped candle with delicate floral fragrance.',
       specifications: {
         dimensions: '4.5" × 4.0"',
-        weight: '14 oz',
+        weight: '110g',
         wickType: 'Cotton wick',
         waxType: 'Premium soy wax',
         fragrance: 'Peony & Jasmine'
@@ -255,7 +255,7 @@ export class ProductDetailComponent implements OnInit {
       description: 'Sweet daisy-inspired candle with fresh spring fragrance.',
       specifications: {
         dimensions: '3.0" × 3.5"',
-        weight: '8 oz',
+        weight: '60g',
         wickType: 'Cotton wick',
         waxType: 'Soy wax',
         fragrance: 'Fresh Daisy'
@@ -274,7 +274,7 @@ export class ProductDetailComponent implements OnInit {
       description: 'Bright sunflower candle that brings summer sunshine indoors.',
       specifications: {
         dimensions: '4.0" × 3.0"',
-        weight: '8 oz',
+        weight: '60g',
         wickType: 'Cotton wick',
         waxType: 'Soy wax',
         fragrance: 'Sunflower & Citrus'
@@ -293,7 +293,7 @@ export class ProductDetailComponent implements OnInit {
       description: 'Luxurious berry blend candle with rich fruity fragrance.',
       specifications: {
         dimensions: '4.0" × 4.5"',
-        weight: '15 oz',
+        weight: '200ml',
         wickType: 'Cotton wick',
         waxType: 'Premium soy wax',
         fragrance: 'Mixed Berry Bliss'
@@ -312,7 +312,7 @@ export class ProductDetailComponent implements OnInit {
       description: 'Rich latte coffee candle with creamy vanilla notes.',
       specifications: {
         dimensions: '4.0" × 4.5"',
-        weight: '15 oz',
+        weight: '200ml',
         wickType: 'Cotton wick',
         waxType: 'Premium soy wax',
         fragrance: 'Latte & Vanilla'
@@ -331,7 +331,7 @@ export class ProductDetailComponent implements OnInit {
       description: 'Refreshing watermelon-shaped candle with sweet summer fragrance.',
       specifications: {
         dimensions: '4.5" × 3.5"',
-        weight: '12 oz',
+        weight: '100ml',
         wickType: 'Cotton wick',
         waxType: 'Soy wax blend',
         fragrance: 'Fresh Watermelon'
@@ -350,7 +350,7 @@ export class ProductDetailComponent implements OnInit {
       description: 'Dreamy cloud-shaped candle with soft, airy fragrance.',
       specifications: {
         dimensions: '5.0" × 3.0"',
-        weight: '10 oz',
+        weight: '100ml',
         wickType: 'Cotton wick',
         waxType: 'Premium soy wax',
         fragrance: 'Fresh Linen & Clouds'
