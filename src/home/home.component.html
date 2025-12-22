@@ -9,8 +9,8 @@
 
   <section class="about-section" id="about">
     <h2>About Our Candle Business</h2>
-    <p>At Flame to Fable, we create premium handcrafted candles that transform any space into a sanctuary of warmth and peace. Each candle is carefully crafted with love, using the finest ingredients to bring you moments of peace and inspiration.</p>
-    
+    <p>Welcome to Flame to Fable, a handcrafted candle brand based in Kerala. We create premium handcrafted candles that transform any space into a sanctuary of warmth and peace. Each candle is thoughtfully handcrafted using quality wax, soothing fragrances, and refined aesthetic details - perfect for homes, gifting, and special occasions.</p>
+    <p>Our collection features eco-friendly soy candles, gel candles, scented candles, and festival-special designs - all crafted with care in Kerala. Whether you want perfect gifts or beautiful décor pieces, our candles are designed to make every moment memorable.</p>
     <div class="social-links">
       <h3>Follow Our Journey</h3>
       <div class="links-container">
@@ -26,11 +26,75 @@
     </div>
   </section>
 
+  <section class="collection-section" id="collection">
+    <h2>What We Offer</h2>
+    <p>We offer a growing range of handmade candles in Kerala, including:</p>
+    
+    <div class="collection-grid">
+      <div class="collection-item">
+        <h3>Soy Wax Candles</h3>
+        <p>Clean burn, subtle fragrance</p>
+      </div>
+      
+      <div class="collection-item">
+        <h3>Gel Wax Candles</h3>
+        <p>Crystal clear, artistic designs</p>
+      </div>
+      
+      <div class="collection-item">
+        <h3>Scented Candles</h3>
+        <p>Calming, floral & festive notes</p>
+      </div>
+      
+      <div class="collection-item">
+        <h3>Decorative Candles</h3>
+        <p>Roses, hearts & festive shapes</p>
+      </div>
+      
+      <div class="collection-item">
+        <h3>Custom Candles</h3>
+        <p>Personalised for gifts & events</p>
+      </div>
+    </div>
+    
+    <p class="collection-footer">Each piece is crafted to elevate your space while keeping sustainability in mind.</p>
+  </section>
+
+  <section class="service-section" id="service">
+    <h2>Serving Customers Across Kerala & India</h2>
+    <p>Flame to Fable proudly serves customers across Kerala and ships pan-India. Whether you're shopping for yourself or sending a gift, we ensure quality, safety, and aesthetic packaging in every order.</p>
+  </section>
+
   <app-best-sellers></app-best-sellers>
 
   <section class="catalogue-section" id="catalogue">
     <h2>Our Collection</h2>
     <app-catalogue></app-catalogue>
+  </section>
+
+  <section class="blog-section" id="blog">
+    <h2>From Our Blog</h2>
+    <p class="blog-description">Discover candle care tips, decorating ideas, and stories behind our handcrafted creations</p>
+    
+    <div class="blog-posts">
+      <div class="blog-post" (click)="navigateToBlog('/blog/art-of-candle-care')">
+        <h3>The Art of Candle Care</h3>
+        <p>Learn how to make your handcrafted candles last longer and burn cleaner with our expert tips.</p>
+        <span class="read-more">Read More →</span>
+      </div>
+      
+      <div class="blog-post" (click)="navigateToBlog('/blog/creating-perfect-ambiance')">
+        <h3>Creating the Perfect Ambiance</h3>
+        <p>Discover how to use candles to transform your space and create the ideal atmosphere for any occasion.</p>
+        <span class="read-more">Read More →</span>
+      </div>
+      
+      <div class="blog-post" (click)="navigateToBlog('/blog/our-journey')">
+        <h3>The Story Behind Flame to Fable</h3>
+        <p>Discover the personal journey that started with a watermelon candle and grew into a Kerala-based candle business.</p>
+        <span class="read-more">Read More →</span>
+      </div>
+    </div>
   </section>
 
   <section class="contact-section" id="contact">

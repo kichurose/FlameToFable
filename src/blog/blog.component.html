@@ -1,0 +1,38 @@
+@if (currentPost) {
+<div class="blog-container">
+  <div class="blog-header">
+    <h1>{{ currentPost.title }}</h1>
+    <div class="blog-meta">
+      <span class="date">{{ currentPost.date }}</span>
+      <span class="author">By {{ currentPost.author }}</span>
+    </div>
+  </div>
+  
+  <div class="blog-content" [innerHTML]="currentPost.content"></div>
+  
+  <div class="blog-footer">
+    <a href="/" class="back-home">← Back to Home</a>
+    <div class="social-share">
+      <h4>Share this post:</h4>
+      <div class="share-buttons">
+        <a href="https://wa.me/?text=Check out this article from Flame to Fable: {{ currentPost.title }}" target="_blank" class="share-btn whatsapp">
+          <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+        <a href="https://www.instagram.com/flametofable" target="_blank" class="share-btn instagram">
+          <i class="fab fa-instagram"></i> Follow Us
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+}
+
+@if (!currentPost) {
+<div class="blog-container">
+  <div class="blog-not-found">
+    <h1>Blog Post Not Found</h1>
+    <p>Sorry, we couldn't find the blog post you're looking for.</p>
+    <a href="/" class="back-home">← Back to Home</a>
+  </div>
+</div>
+}

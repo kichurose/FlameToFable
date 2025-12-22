@@ -27,7 +27,7 @@ export class CatalogueComponent {
     'christmastree2': {
       id: 'christmastree2',
       name: 'Christmas Tree (Pack of 2)',
-      price: '₹200',
+      price: '₹250',
       image: './christmastree2.jpg'
     },
     'baby-jesus': {

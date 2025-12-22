@@ -20,7 +20,7 @@ export class ProductDetailComponent implements OnInit {
     'christmastree2': {
       id: 'christmastree2',
       name: 'Christmas Tree (Pack of 2)',
-      price: '₹200',
+      price: '₹250',
       image: './christmastree2.jpg',
       description: 'Beautiful pack of 2 Christmas tree candles with festive fragrance and holiday warmth.',
       specifications: {

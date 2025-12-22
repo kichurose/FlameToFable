@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 import { CatalogueComponent } from '../catalogue/catalogue.component';
 import { BestSellersComponent } from '../best-sellers/best-sellers.component';
 
@@ -11,5 +12,9 @@ import { BestSellersComponent } from '../best-sellers/best-sellers.component';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-  constructor() { }
+  constructor(private router: Router) { }
+  
+  navigateToBlog(route: string) {
+    this.router.navigate([route]);
+  }
 }
