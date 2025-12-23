@@ -71,7 +71,7 @@ export class BlogComponent implements OnInit {
         </blockquote>
         
        <br/>
-        <p>Without overthinking it, I chose to take a leap of faith and brought <b>Flame to Fable</b> to life—launching a YouTube channel, an Instagram page.</p>
+        <p>Without overthinking it, I chose to take a leap of faith and brought <b>Flame to Fable</b> to life - launching a YouTube channel, an Instagram page.</p>
         
         
         
