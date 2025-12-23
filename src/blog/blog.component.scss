@@ -119,6 +119,25 @@
   li {
     margin-bottom: 8px;
   }
+  
+  strong, b {
+    text-align: center;
+    display: block;
+    margin: 16px 0;
+    font-weight: 600;
+    color: #374151;
+  }
+  
+  blockquote {
+    text-align: center;
+    margin: 24px 0;
+    padding: 20px;
+    border-left: 4px solid #7c3aed;
+    background: rgba(124, 58, 237, 0.05);
+    border-radius: 8px;
+    font-style: italic;
+    color: #4c1d95;
+  }
 }
 
 .blog-footer {

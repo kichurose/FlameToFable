@@ -46,38 +46,11 @@ export class BlogComponent implements OnInit {
       date: 'December 20, 2025',
       author: 'Flame to Fable Team'
     },
-    'creating-perfect-ambiance': {
-      id: 'creating-perfect-ambiance',
-      title: 'Creating the Perfect Ambiance',
-      content: `
-        <h2>Transform Your Space with Candles</h2>
-        <p>Candles have the magical ability to transform any space instantly. Our handcrafted candles from Kerala are designed to help you create the perfect atmosphere for every occasion.</p>
-        
-        <h3>Living Room Elegance</h3>
-        <p>Place larger pillar candles on coffee tables and mantels. Use multiple candles of varying heights to create visual interest.</p>
-        
-        <h3>Bedroom Serenity</h3>
-        <p>Opt for calming scents like lavender or vanilla. Place candles on bedside tables for a romantic, peaceful atmosphere.</p>
-        
-        <h3>Dining Room Drama</h3>
-        <p>Use unscented candles during meals to avoid competing with food aromas. Taper candles in elegant holders create sophisticated dining experiences.</p>
-        
-        <h3>Bathroom Spa Experience</h3>
-        <p>Create a spa-like retreat with eucalyptus or mint-scented candles. Always ensure proper ventilation and safe placement.</p>
-        
-        <h3>Special Occasions</h3>
-        <p>Our custom Kerala candles can be designed for birthdays, weddings, and festivals. Each candle tells a story of celebration.</p>
-        
-        <p>Let Flame to Fable help you create memories with the perfect ambiance for every moment.</p>
-      `,
-      date: 'December 18, 2025',
-      author: 'Flame to Fable Team'
-    },
     'our-journey': {
       id: 'our-journey',
       title: 'The Story Behind Flame to Fable',
       content: `
-        <h2>A Journey That Started with a Simple Watermelon Candle</h2>
+        <h2>A Journey That Started with a Simple Inspiration</h2>
         <br/>
         <p>One quiet morning, while scrolling through my phone, something instantly caught my attention - a girl making a watermelon-shaped candle. It was vibrant, playful, and incredibly cute. That moment sparked a thought: Why not give this a try myself?</p>
          <br/>
@@ -98,9 +71,9 @@ export class BlogComponent implements OnInit {
         </blockquote>
         
        <br/>
-        <p>And just like that, without overthinking, I decided to take a leap of faith.</p>
+        <p>Without overthinking it, I chose to take a leap of faith and brought <b>Flame to Fable</b> to life—launching a YouTube channel, an Instagram page.</p>
         
-        <p>I created a YouTube channel, an Instagram page, and even a Gmail account, all under one name - <strong>Flame to Fable</strong>.</p>
+        
         
          <br/>
         <p>A space where every candle tells a story.<br>
@@ -109,7 +82,7 @@ export class BlogComponent implements OnInit {
         
         <br/>
        
-        <p>Today, from our workshop in Kerala, we create handmade candles that bring joy, warmth, and beauty to homes across India. Each candle carries the same passion and wonder that started with that first watermelon candle.</p>
+        <p>Today, from our workshop in Kerala, we create handmade candles that bring joy, warmth, and beauty to homes across India. Each candle carries the same passion and wonder that started this journey.</p>
          <br/>
         <p>Every gel wax candle reminds me of that childhood fascination. Every custom design reflects our commitment to making beautiful, affordable candles without compromising on quality.</p>
         
