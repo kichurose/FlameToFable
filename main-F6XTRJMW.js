@@ -40,7 +40,7 @@ ${n.map((r,o)=>`${o+1}) ${r.toString()}`).join(`
         </blockquote>
         
        <br/>
-        <p>Without overthinking it, I chose to take a leap of faith and brought <b>Flame to Fable</b> to life\u2014launching a YouTube channel, an Instagram page.</p>
+        <p>Without overthinking it, I chose to take a leap of faith and brought <b>Flame to Fable</b> to life - launching a YouTube channel, an Instagram page.</p>
         
         
         
