@@ -24,6 +24,36 @@ export class CatalogueComponent {
   constructor(private router: Router) {}
 
   products: { [key: string]: CatalogueProduct } = {
+    'watermelon': {
+      id: 'watermelon',
+      name: 'Watermelon Candle',
+      price: '₹200',
+      image: './watermelon.jpg'
+    },
+    'cloud': {
+      id: 'cloud',
+      name: 'Cloud Candle',
+      price: '₹200',
+      image: './cloud.jpg'
+    },
+    'berry-bliss': {
+      id: 'berry-bliss',
+      name: 'Berry Bliss Candle',
+      price: '₹350',
+      image: './berry-bliss.jpg'
+    },
+    'latte-coffee': {
+      id: 'latte-coffee',
+      name: 'Latte Coffee Candle',
+      price: '₹350',
+      image: './coffee.jpg'
+    },
+    'vanilla-chocolate': {
+      id: 'vanilla-chocolate',
+      name: 'Vanilla Chocolate Candle',
+      price: '₹350',
+      image: './vanilla.jpg'
+    },
     'christmastree2': {
       id: 'christmastree2',
       name: 'Christmas Tree (Pack of 2)',
@@ -98,35 +128,29 @@ export class CatalogueComponent {
       price: '₹50',
       image: './daisy1.jpg'
     },
-    'berry-bliss': {
-      id: 'berry-bliss',
-      name: 'Berry Bliss Candle',
+    'rose-candle': {
+      id: 'rose-candle',
+      name: 'Rose Candle',
       price: '₹350',
-      image: './berry-bliss.jpg'
+      image: './rose.jpg'
     },
-    'latte-coffee': {
-      id: 'latte-coffee',
-      name: 'Latte Coffee Candle',
-      price: '₹350',
-      image: './coffee.jpg'
-    },
-    'vanilla-chocolate': {
-      id: 'vanilla-chocolate',
-      name: 'Vanilla Chocolate Candle',
-      price: '₹350',
-      image: './vanilla.jpg'
-    },
-    'watermelon': {
-      id: 'watermelon',
-      name: 'Watermelon Candle',
+    'rose-design-2': {
+      id: 'rose-design-2',
+      name: 'Rose Design 2',
       price: '₹200',
-      image: './watermelon.jpg'
+      image: './rosedesign2.jpg'
     },
-    'cloud': {
-      id: 'cloud',
-      name: 'Cloud Candle',
+    'heart-candle': {
+      id: 'heart-candle',
+      name: 'Heart Candle',
       price: '₹200',
-      image: './cloud.jpg'
+      image: './heart.jpg'
+    },
+    'angel-wings': {
+      id: 'angel-wings',
+      name: 'Angel Wings Candle',
+      price: '₹150',
+      image: './angelwings.jpg'
     }
   };
 
@@ -150,6 +174,10 @@ export class CatalogueComponent {
     'reindeer-pack': 100,
     'car-candle': 50,
     'christmas-collection': 150,
+    'rose-candle': 150,
+    'rose-design-2': 180,
+    'heart-candle': 120,
+    'angel-wings': 250,
   };
 
   // Helper methods for generic template

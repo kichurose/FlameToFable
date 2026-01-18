@@ -13,19 +13,7 @@ export class BestSellersComponent {
   selectedProduct: ProductDetails | null = null;
 
   // Best selling products data
-  bestSellers: ProductDetails[] = [
-    {
-      id: 'christmas-candle',
-      name: 'Christmas Candle',
-      price: '₹150',
-      image: './christmas.jpg'
-    },
-    {
-      id: 'baby-jesus',
-      name: 'Baby Jesus Candle',
-      price: '₹200',
-      image: './Baby-Jesus.jpg'
-    },
+  bestSellers: ProductDetails[] = [  
     {
       id: 'latte-coffee',
       name: 'Latte Coffee Candle',
@@ -43,6 +31,30 @@ export class BestSellersComponent {
       name: 'Vanilla Chocolate Candle',
       price: '₹350',
       image: './vanilla.jpg'
+    },
+    {
+      id: 'rose-candle',
+      name: 'Rose Candle',
+      price: '₹350',
+      image: './rose.jpg'
+    },
+    {
+      id: 'rose-design-2',
+      name: 'Rose Design 2',
+      price: '₹200',
+      image: './rosedesign2.jpg'
+    },
+    {
+      id: 'heart-candle',
+      name: 'Heart Candle',
+      price: '₹200',
+      image: './heart.jpg'
+    },
+    {
+      id: 'angel-wings',
+      name: 'Angel Wings Candle',
+      price: '₹150',
+      image: './angelwings.jpg'
     }
   ];
 
