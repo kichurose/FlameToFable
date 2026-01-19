@@ -12,9 +12,23 @@ import { BestSellersComponent } from '../best-sellers/best-sellers.component';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
+    isMenuOpen = false;
+  
   constructor(private router: Router) { }
   
   navigateToBlog(route: string) {
     this.router.navigate([route]);
+  }
+  
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+  
+  scrollToSection(sectionId: string) {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    this.isMenuOpen = false; // Close menu after navigation
   }
 }

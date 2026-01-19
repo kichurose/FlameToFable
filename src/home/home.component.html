@@ -1,4 +1,23 @@
 <div class="home">
+  <!-- Mobile Navigation -->
+  <nav class="mobile-nav">
+    <div class="nav-header">
+      <button class="hamburger-btn" (click)="toggleMenu()" [class.active]="isMenuOpen">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <img src="/favicon.png" alt="Flame to Fable Logo" class="nav-logo">
+    </div>
+    
+    <div class="nav-menu" [class.active]="isMenuOpen">
+      <a href="#" (click)="scrollToSection('home')" class="nav-link">Home</a>
+      <a href="#" (click)="scrollToSection('about')" class="nav-link">About</a>
+      <a href="#" (click)="scrollToSection('catalogue')" class="nav-link">Catalogue</a>
+      <a href="#" (click)="scrollToSection('contact')" class="nav-link">Contact</a>
+    </div>
+  </nav>
+
   <header class="hero-section" id="home">
     <div class="hero-logo">
       <img src="/favicon.png" alt="Flame to Fable Logo" class="hero-logo-img">
@@ -25,6 +44,8 @@
       </div>
     </div>
   </section>
+
+   <app-best-sellers></app-best-sellers>
 
   <section class="collection-section" id="collection">
     <h2>Best Budget-Friendly Candle Collection in Kerala</h2>
@@ -64,8 +85,6 @@
     <h2>Kerala's Top Candle Makers - Serving Across India</h2>
     <p>Flame to Fable proudly serves customers across Kerala and ships pan-India. As one of the best budget-friendly candle makers in Kerala, we ensure quality, safety, and aesthetic packaging in every order. Experience the finest handmade candles from God's own country.</p>
   </section>
-
-  <app-best-sellers></app-best-sellers>
 
   <section class="catalogue-section" id="catalogue">
     <h2>Our Collection</h2>

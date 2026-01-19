@@ -360,6 +360,82 @@ export class ProductDetailComponent implements OnInit {
         youtube: 'https://www.youtube.com/@FlameToFable/shorts',
         instagram: 'https://www.instagram.com/flametofable'
       }
+    },
+    'rose-candle': {
+      id: 'rose-candle',
+      name: 'Rose Candle',
+      price: '₹350',
+      image: './rose.jpg',
+      description: 'Elegant rose-shaped candle with romantic fragrance for special occasions.',
+      specifications: {
+        dimensions: '4.0" × 4.0"',
+        weight: '200ml',
+        wickType: 'Cotton wick',
+        waxType: 'Premium soy wax',
+        fragrance: 'Rose'
+      },
+      careInstructions: 'Perfect for romantic evenings and special occasions. Burn for maximum 4 hours.',
+      socialLinks: {
+        youtube: 'https://www.youtube.com/@FlameToFable/shorts',
+        instagram: 'https://www.instagram.com/flametofable'
+      }
+    },
+    'rose-design-2': {
+      id: 'rose-design-2',
+      name: 'Rose Design 2',
+      price: '₹200',
+      image: './rosedesign2.jpg',
+      description: 'Beautiful rose design candle with delicate petals and sweet fragrance.',
+      specifications: {
+        dimensions: '3.5" × 4.0"',
+        weight: '100ml',
+        wickType: 'Cotton wick',
+        waxType: 'Premium soy wax',
+        fragrance: 'Sweet Rose'
+      },
+      careInstructions: 'Decorative rose candle. Handle with care. Burn for maximum 4 hours.',
+      socialLinks: {
+        youtube: 'https://www.youtube.com/@FlameToFable/shorts',
+        instagram: 'https://www.instagram.com/flametofable'
+      }
+    },
+    'heart-candle': {
+      id: 'heart-candle',
+      name: 'Heart Candle',
+      price: '₹200',
+      image: './heart.jpg',
+      description: 'Romantic heart-shaped candle perfect for expressing love and affection.',
+      specifications: {
+        dimensions: '4.0" × 3.5"',
+        weight: '100ml',
+        wickType: 'Cotton wick',
+        waxType: 'Premium soy wax',
+        fragrance: 'Rose & Jasmine'
+      },
+      careInstructions: 'Perfect for Valentine\'s Day and romantic occasions. Burn for maximum 4 hours.',
+      socialLinks: {
+        youtube: 'https://www.youtube.com/@FlameToFable/shorts',
+        instagram: 'https://www.instagram.com/flametofable'
+      }
+    },
+    'angel-wings': {
+      id: 'angel-wings',
+      name: 'Angel Wings Candle',
+      price: '₹150',
+      image: './angelwings.jpg',
+      description: 'Heavenly angel wings candle with peaceful fragrance for serenity and calm.',
+      specifications: {
+        dimensions: '4.5" × 3.0"',
+        weight: '90g',
+        wickType: 'Cotton wick',
+        waxType: 'Premium soy wax',
+        fragrance: 'Lavender & Vanilla'
+      },
+      careInstructions: 'Perfect for meditation and peaceful moments. Burn for maximum 4 hours.',
+      socialLinks: {
+        youtube: 'https://www.youtube.com/@FlameToFable/shorts',
+        instagram: 'https://www.instagram.com/flametofable'
+      }
     }
   };
 
