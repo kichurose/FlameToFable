@@ -24,6 +24,30 @@ export class CatalogueComponent {
   constructor(private router: Router) {}
 
   products: { [key: string]: CatalogueProduct } = {
+    'rose-candle': {
+      id: 'rose-candle',
+      name: 'Rose Candle',
+      price: '₹350',
+      image: './rose.jpg'
+    },
+    'rose-design-2': {
+      id: 'rose-design-2',
+      name: 'Rose Design 2',
+      price: '₹200',
+      image: './rosedesign2.jpg'
+    },
+    'heart-candle': {
+      id: 'heart-candle',
+      name: 'Heart Candle',
+      price: '₹200',
+      image: './heart.jpg'
+    },
+    'angel-wings': {
+      id: 'angel-wings',
+      name: 'Angel Wings Candle',
+      price: '₹150',
+      image: './angelwings.jpg'
+    },
     'watermelon': {
       id: 'watermelon',
       name: 'Watermelon Candle',
@@ -127,30 +151,6 @@ export class CatalogueComponent {
       name: 'Sunflower Candle',
       price: '₹50',
       image: './daisy1.jpg'
-    },
-    'rose-candle': {
-      id: 'rose-candle',
-      name: 'Rose Candle',
-      price: '₹350',
-      image: './rose.jpg'
-    },
-    'rose-design-2': {
-      id: 'rose-design-2',
-      name: 'Rose Design 2',
-      price: '₹200',
-      image: './rosedesign2.jpg'
-    },
-    'heart-candle': {
-      id: 'heart-candle',
-      name: 'Heart Candle',
-      price: '₹200',
-      image: './heart.jpg'
-    },
-    'angel-wings': {
-      id: 'angel-wings',
-      name: 'Angel Wings Candle',
-      price: '₹150',
-      image: './angelwings.jpg'
     }
   };
 
