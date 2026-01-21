@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://flametofable.ariyo.in/</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://flametofable.ariyo.in/favicon.png</image:loc>
+      <image:title>Flame to Fable - Premium Handmade Candles</image:title>
+      <image:caption>Best handmade candles in Kerala</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Product Detail Pages -->
+  <url>
+    <loc>https://flametofable.ariyo.in/product/christmastree2</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://flametofable.ariyo.in/christmastree2.jpg</image:loc>
+      <image:title>Christmas Tree Candles Pack of 2</image:title>
+      <image:caption>Beautiful pack of 2 Christmas tree candles with festive fragrance</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://flametofable.ariyo.in/product/baby-jesus</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://flametofable.ariyo.in/Baby-Jesus.jpg</image:loc>
+      <image:title>Baby Jesus Candle</image:title>
+      <image:caption>Sacred and peaceful fragrance with frankincense and myrrh</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://flametofable.ariyo.in/product/christmas-spice</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://flametofable.ariyo.in/christmas-spice.jpg</image:loc>
+      <image:title>Christmas Spice Candle</image:title>
+      <image:caption>Festive blend of cinnamon, pine, and warm spices</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://flametofable.ariyo.in/product/christmas-tree-shaped</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://flametofable.ariyo.in/christmas-tree-shaped.jpg</image:loc>
+      <image:title>Christmas Tree Shaped Candle</image:title>
+      <image:caption>Festive holiday candle in decorative Christmas tree shape</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://flametofable.ariyo.in/product/christmas-collection</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://flametofable.ariyo.in/christmas-collection.jpg</image:loc>
+      <image:title>Christmas Collection Candles</image:title>
+      <image:caption>Complete Christmas candle collection with three festive fragrances</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://flametofable.ariyo.in/product/vanilla-chocolate</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://flametofable.ariyo.in/vanilla-chocolate.jpg</image:loc>
+      <image:title>Vanilla Chocolate Candle</image:title>
+      <image:caption>Rich blend of vanilla and chocolate for cozy evenings</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://flametofable.ariyo.in/product/berry</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://flametofable.ariyo.in/berry.jpg</image:loc>
+      <image:title>Berry Scented Candle</image:title>
+      <image:caption>Fresh berry fragrance that energizes and refreshes any space</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://flametofable.ariyo.in/product/car</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://flametofable.ariyo.in/car.jpg</image:loc>
+      <image:title>Car Shaped Candle</image:title>
+      <image:caption>Compact car-shaped candle perfect for automotive enthusiasts</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://flametofable.ariyo.in/product/reindeer</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://flametofable.ariyo.in/reindeer.jpg</image:loc>
+      <image:title>Reindeer Shaped Candle</image:title>
+      <image:caption>Adorable reindeer-shaped candle perfect for Christmas decorations</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://flametofable.ariyo.in/product/reindeer2</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://flametofable.ariyo.in/reindeer2.jpg</image:loc>
+      <image:title>Reindeer Pack of 2</image:title>
+      <image:caption>Charming pack of 2 reindeer candles for festive home decor</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://flametofable.ariyo.in/product/hearts</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://flametofable.ariyo.in/hearts.jpg</image:loc>
+      <image:title>Stacked Hearts Candle</image:title>
+      <image:caption>Romantic stacked hearts candle perfect for special occasions</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://flametofable.ariyo.in/product/peony</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://flametofable.ariyo.in/peony.jpg</image:loc>
+      <image:title>Peony Shaped Candle</image:title>
+      <image:caption>Beautiful peony-shaped candle with delicate floral fragrance</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://flametofable.ariyo.in/product/daisy</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://flametofable.ariyo.in/daisy.jpg</image:loc>
+      <image:title>Daisy Inspired Candle</image:title>
+      <image:caption>Sweet daisy-inspired candle with fresh spring fragrance</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://flametofable.ariyo.in/product/sunflower</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://flametofable.ariyo.in/sunflower.jpg</image:loc>
+      <image:title>Sunflower Candle</image:title>
+      <image:caption>Bright sunflower candle that brings summer sunshine indoors</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://flametofable.ariyo.in/product/berry-blend</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://flametofable.ariyo.in/berry-blend.jpg</image:loc>
+      <image:title>Berry Blend Candle</image:title>
+      <image:caption>Luxurious berry blend candle with rich fruity fragrance</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://flametofable.ariyo.in/product/latte</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://flametofable.ariyo.in/latte.jpg</image:loc>
+      <image:title>Latte Coffee Candle</image:title>
+      <image:caption>Rich latte coffee candle with creamy vanilla notes</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://flametofable.ariyo.in/product/watermelon</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://flametofable.ariyo.in/watermelon.jpg</image:loc>
+      <image:title>Watermelon Shaped Candle</image:title>
+      <image:caption>Refreshing watermelon-shaped candle with sweet summer fragrance</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://flametofable.ariyo.in/product/cloud</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://flametofable.ariyo.in/cloud.jpg</image:loc>
+      <image:title>Cloud Shaped Candle</image:title>
+      <image:caption>Dreamy cloud-shaped candle with soft, airy fragrance</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://flametofable.ariyo.in/product/rose</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://flametofable.ariyo.in/rose.jpg</image:loc>
+      <image:title>Rose Shaped Candle</image:title>
+      <image:caption>Elegant rose-shaped candle with romantic fragrance for special occasions</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://flametofable.ariyo.in/product/rose-design</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://flametofable.ariyo.in/rose-design.jpg</image:loc>
+      <image:title>Rose Design Candle</image:title>
+      <image:caption>Beautiful rose design candle with delicate petals and sweet fragrance</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Blog Pages -->
+  <url>
+    <loc>https://flametofable.ariyo.in/blog/candle-care</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://flametofable.ariyo.in/blog/our-story</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>
