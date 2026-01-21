@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { CatalogueComponent } from '../catalogue/catalogue.component';
 import { BestSellersComponent } from '../best-sellers/best-sellers.component';
+import { SeoService } from '../shared/seo.service';
 
 @Component({
   selector: 'app-home',
@@ -14,7 +15,11 @@ import { BestSellersComponent } from '../best-sellers/best-sellers.component';
 export class HomeComponent {
     isMenuOpen = false;
   
-  constructor(private router: Router) { }
+  constructor(private router: Router, private seoService: SeoService) { 
+    // Reset SEO to default homepage settings and add Google Business integration
+    this.seoService.resetToDefault();
+    this.seoService.updateLocalBusinessSEO();
+  }
   
   navigateToBlog(route: string) {
     this.router.navigate([route]);

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
+import { SeoService } from '../shared/seo.service';
 
 interface BlogPost {
   id: string;
@@ -96,12 +97,17 @@ export class BlogComponent implements OnInit {
     }
   };
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private seoService: SeoService) {}
 
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.postId = params['id'];
       this.currentPost = this.blogPosts[this.postId] || null;
+      
+      if (this.currentPost) {
+        // Update SEO for this specific blog post
+        this.seoService.updateBlogSEO(this.currentPost);
+      }
     });
   }
 }

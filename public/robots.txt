@@ -1,0 +1,24 @@
+User-agent: *
+Allow: /
+
+# Allow all web crawlers to access all content
+# Specific directives for search engine bots
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Block access to admin areas and temporary files (if any)
+Disallow: /admin/
+Disallow: /*.tmp
+Disallow: /temp/
+Disallow: /*?debug=*
+
+# Sitemap location
+Sitemap: https://flametofable.ariyo.in/sitemap.xml
+
+# Host directive (recommended for clarity)
+Host: https://flametofable.ariyo.in

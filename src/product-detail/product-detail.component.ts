@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductDetails } from '../shared/interfaces';
+import { SeoService } from '../shared/seo.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -439,12 +440,18 @@ export class ProductDetailComponent implements OnInit {
     }
   };
 
-  constructor(private route: ActivatedRoute, private router: Router) {}
+  constructor(
+    private route: ActivatedRoute, 
+    private router: Router,
+    private seoService: SeoService
+  ) {}
 
   ngOnInit() {
     const productId = this.route.snapshot.paramMap.get('id');
     if (productId && this.products[productId]) {
       this.product = this.products[productId];
+      // Update SEO for this specific product
+      this.seoService.updateProductSEO(this.product);
     } else {
       this.router.navigate(['/']);
     }
