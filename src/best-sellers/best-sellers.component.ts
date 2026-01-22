@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 import { ProductDetails } from '../shared/interfaces';
 
 @Component({
@@ -11,6 +12,8 @@ import { ProductDetails } from '../shared/interfaces';
 })
 export class BestSellersComponent {
   selectedProduct: ProductDetails | null = null;
+
+  constructor(private router: Router) {}
 
   // Best selling products data
   bestSellers: ProductDetails[] = [  
@@ -59,6 +62,12 @@ export class BestSellersComponent {
   ];
 
   onCandleClick(product: ProductDetails) {
+    // Navigate to product detail page
+    this.router.navigate(['/product', product.id]);
+  }
+
+  // Keep for any future use
+  onCandleHover(product: ProductDetails) {
     this.selectedProduct = this.selectedProduct?.id === product.id ? null : product;
   }
 

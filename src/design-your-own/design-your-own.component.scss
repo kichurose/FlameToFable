@@ -1,0 +1,269 @@
+// Design Your Own Candles Section Styles
+.custom-design-section {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #f8f3ff 0%, #fff 100%);
+  border-top: 2px solid rgba(240, 230, 255, 0.8);
+  
+  .custom-design-header {
+    text-align: center;
+    margin-bottom: 60px;
+    
+    h2 {
+      font-size: 2.5rem;
+      color: #6a4c93;
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+    
+    .section-subtitle {
+      font-size: 1.2rem;
+      color: #8a6bb8;
+      font-weight: 500;
+    }
+  }
+  
+  .custom-features {
+    margin-bottom: 80px;
+    
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+      
+      .feature-item {
+        background: white;
+        padding: 40px 30px;
+        border-radius: 20px;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(106, 76, 147, 0.1);
+        transition: all 0.3s ease;
+        border: 2px solid rgba(240, 230, 255, 0.5);
+        
+        &:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 20px 40px rgba(106, 76, 147, 0.15);
+          border-color: rgba(106, 76, 147, 0.3);
+        }
+        
+        .feature-icon {
+          font-size: 3rem;
+          margin-bottom: 20px;
+          display: block;
+        }
+        
+        h3 {
+          color: #6a4c93;
+          font-size: 1.3rem;
+          margin-bottom: 15px;
+          font-weight: 600;
+        }
+        
+        p {
+          color: #666;
+          line-height: 1.6;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+  
+  .custom-process {
+    margin-bottom: 80px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    
+    h3 {
+      text-align: center;
+      font-size: 2rem;
+      color: #6a4c93;
+      margin-bottom: 50px;
+      font-weight: 600;
+    }
+    
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      
+      .step {
+        text-align: center;
+        padding: 30px 20px;
+        
+        .step-number {
+          width: 60px;
+          height: 60px;
+          background: linear-gradient(135deg, #6a4c93, #8a6bb8);
+          color: white;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.5rem;
+          font-weight: bold;
+          margin: 0 auto 20px;
+          box-shadow: 0 5px 15px rgba(106, 76, 147, 0.3);
+        }
+        
+        h4 {
+          color: #6a4c93;
+          font-size: 1.2rem;
+          margin-bottom: 15px;
+          font-weight: 600;
+        }
+        
+        p {
+          color: #666;
+          line-height: 1.6;
+        }
+      }
+    }
+  }
+  
+  .custom-occasions {
+    margin-bottom: 60px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    
+    h3 {
+      text-align: center;
+      font-size: 2rem;
+      color: #6a4c93;
+      margin-bottom: 40px;
+      font-weight: 600;
+    }
+    
+    .occasions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      
+      .occasion-item {
+        background: linear-gradient(135deg, rgba(106, 76, 147, 0.1), rgba(255, 255, 255, 0.9));
+        padding: 20px;
+        border-radius: 15px;
+        text-align: center;
+        font-weight: 500;
+        color: #6a4c93;
+        border: 2px solid rgba(240, 230, 255, 0.8);
+        transition: all 0.3s ease;
+        
+        &:hover {
+          background: linear-gradient(135deg, rgba(106, 76, 147, 0.15), rgba(255, 255, 255, 1));
+          transform: translateY(-5px);
+          box-shadow: 0 10px 25px rgba(106, 76, 147, 0.1);
+        }
+      }
+    }
+  }
+  
+  .custom-cta {
+    text-align: center;
+    background: linear-gradient(135deg, rgba(240, 230, 255, 0.5), rgba(255, 255, 255, 0.9));
+    padding: 50px 40px;
+    border-radius: 25px;
+    border: 2px solid rgba(240, 230, 255, 0.8);
+    max-width: 800px;
+    margin: 0 auto;
+    
+    h3 {
+      font-size: 2rem;
+      color: #6a4c93;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+    
+    .cta-description {
+      font-size: 1.1rem;
+      color: #8a6bb8;
+      margin-bottom: 40px;
+      font-weight: 500;
+    }
+    
+    .cta-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      
+      .custom-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        padding: 15px 30px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+        font-size: 1rem;
+        
+        i {
+          font-size: 1.2rem;
+        }
+        
+        &.btn-primary {
+          background: linear-gradient(135deg, #25d366, #128c7e);
+          color: white;
+          
+          &:hover {
+            background: linear-gradient(135deg, #128c7e, #25d366);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+          }
+        }
+        
+        &.btn-secondary {
+          background: linear-gradient(135deg, #6a4c93, #8a6bb8);
+          color: white;
+          
+          &:hover {
+            background: linear-gradient(135deg, #8a6bb8, #6a4c93);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(106, 76, 147, 0.3);
+          }
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 768px) {
+    padding: 60px 15px;
+    
+    .custom-design-header h2 {
+      font-size: 2rem;
+    }
+    
+    .feature-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    
+    .process-steps {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+    
+    .occasions-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .cta-buttons {
+      flex-direction: column;
+      align-items: center;
+      
+      .custom-btn {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+      }
+    }
+    
+    .custom-cta {
+      padding: 30px 20px;
+    }
+  }
+}

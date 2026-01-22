@@ -13,6 +13,7 @@
     <div class="nav-menu" [class.active]="isMenuOpen">
       <a href="#" (click)="scrollToSection('home')" class="nav-link">Home</a>
       <a href="#" (click)="scrollToSection('about')" class="nav-link">About</a>
+      <a href="#" (click)="scrollToSection('custom-design')" class="nav-link">Design Your Own</a>
       <a href="#" (click)="scrollToSection('catalogue')" class="nav-link">Catalogue</a>
       <a href="#" (click)="scrollToSection('contact')" class="nav-link">Contact</a>
     </div>
@@ -29,7 +30,8 @@
   <section class="about-section" id="about">
     <h2>About Our Candle Business</h2>
     <p>Welcome to Flame to Fable, a handcrafted candle brand based in Kerala crafted by Christina Roseline. We create the best budget-friendly premium handmade candles in Kerala that transform any space into a sanctuary of warmth and peace. Each candle is thoughtfully handcrafted using quality wax, soothing fragrances, and refined aesthetic details - perfect for homes, gifting, and special occasions.</p>
-    <p>Our collection features eco-friendly soy candles, gel candles, scented candles, and festival-special designs - all crafted with care in God's own country, Kerala. Whether you want perfect gifts or beautiful décor pieces, our candles are designed to make every moment memorable.</p>
+    <p>🎨 <strong>NEW!</strong> Now offering <strong>Design Your Own Candles</strong> service - Create personalized candles with your choice of colors, fragrances, shapes, and designs. Perfect for special events, corporate gifts, or expressing your unique style!</p>
+    <p>Our collection features eco-friendly soy candles, gel candles, scented candles, festival-special designs, and custom-designed candles - all crafted with care in God's own country, Kerala. Whether you want perfect gifts or beautiful décor pieces, our candles are designed to make every moment memorable.</p>
     <div class="social-links">
       <h3>Follow Our Journey</h3>
       <div class="links-container">
@@ -46,6 +48,46 @@
   </section>
 
    <app-best-sellers></app-best-sellers>
+
+  <!-- Design Your Own Candles Call-to-Action Section -->
+  <section class="design-cta-section" id="custom-design">
+    <div class="design-cta-container">
+      <div class="design-cta-content">
+        <div class="design-icon">🎨</div>
+        <h2>Create Your Perfect Candle</h2>
+        <p class="design-description">
+          Design personalized candles with your choice of colors, fragrances, shapes, and special details. 
+          Perfect for weddings, birthdays, corporate gifts, or expressing your unique style!
+        </p>
+        <div class="design-features-preview">
+          <span class="feature-tag">🌈 Custom Colors</span>
+          <span class="feature-tag">🌸 Signature Scents</span>
+          <span class="feature-tag">🎭 Custom Shapes</span>
+          <span class="feature-tag">✨ Special Details</span>
+        </div>
+        <button class="design-btn" (click)="openDesignModal()">
+          <i class="fas fa-palette"></i>
+          Design Your Candle Now
+        </button>
+        <p class="design-pricing">Starting from ₹299 | Free consultation</p>
+      </div>
+      <div class="design-preview-images">
+        <div class="preview-candle candle-1">🕯️</div>
+        <div class="preview-candle candle-2">🌹</div>
+        <div class="preview-candle candle-3">❤️</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Design Modal Overlay -->
+  <div class="design-modal-overlay" [class.active]="isDesignModalOpen" (click)="closeDesignModal()">
+    <div class="design-modal-content" (click)="$event.stopPropagation()">
+      <button class="modal-close-btn" (click)="closeDesignModal()">
+        <i class="fas fa-times"></i>
+      </button>
+      <app-design-your-own></app-design-your-own>
+    </div>
+  </div>
 
   <section class="collection-section" id="collection">
     <h2>Best Budget-Friendly Candle Collection in Kerala</h2>
