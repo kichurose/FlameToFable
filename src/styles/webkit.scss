@@ -1,0 +1,44 @@
+// WebKit-specific styles and browser prefixes
+
+// Mixin for gradient text effect with webkit prefixes
+@mixin webkit-gradient-text($gradient) {
+  background: $gradient;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+// WebKit scrollbar styles
+@mixin webkit-scrollbar($width: 8px, $track-color: rgba(0, 0, 0, 0.1), $thumb-color: rgba(124, 58, 237, 0.3)) {
+  &::-webkit-scrollbar {
+    width: $width;
+    height: $width;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $track-color;
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $thumb-color;
+    border-radius: 4px;
+    
+    &:hover {
+      background: rgba(124, 58, 237, 0.5);
+    }
+  }
+}
+
+// Common gradient text combinations used in the app
+@mixin primary-gradient-text {
+  @include webkit-gradient-text(linear-gradient(135deg, #E91E63, #9C27B0));
+}
+
+@mixin secondary-gradient-text {
+  @include webkit-gradient-text(linear-gradient(135deg, #1e293b, #4c1d95, #7c3aed));
+}
+
+@mixin service-gradient-text {
+  @include webkit-gradient-text(linear-gradient(135deg, #1e293b, #7c3aed, #ec4899));
+}

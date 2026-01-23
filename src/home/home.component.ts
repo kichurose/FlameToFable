@@ -4,12 +4,13 @@ import { Router } from '@angular/router';
 import { CatalogueComponent } from '../catalogue/catalogue.component';
 import { BestSellersComponent } from '../best-sellers/best-sellers.component';
 import { DesignYourOwnComponent } from '../design-your-own/design-your-own.component';
+import { ContactComponent } from '../app/contact/contact';
 import { SeoService } from '../shared/seo.service';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, CatalogueComponent, BestSellersComponent, DesignYourOwnComponent],
+  imports: [CommonModule, CatalogueComponent, BestSellersComponent, DesignYourOwnComponent, ContactComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })

@@ -1,0 +1,194 @@
+// Section-specific styles for about, service, and contact sections
+@import 'shared';
+@import 'webkit';
+
+.about-section {
+  @include content-container();
+  animation: slideInUp 0.8s ease-out 0.3s both;
+  
+  @include mobile-only {
+    border-radius: 24px;
+  }
+  
+  h2 {
+    @include section-title;
+    @include secondary-gradient-text;
+    animation: fadeInScale 0.8s ease-out 0.6s both;
+  }
+  
+  p {
+    @include section-text;
+    margin-bottom: 40px;
+    animation: fadeInUp 0.8s ease-out 0.9s both;
+  }
+  
+  .social-links {
+    text-align: center;
+    background: linear-gradient(135deg, rgba(248, 250, 252, 0.8), rgba(241, 245, 249, 0.6));
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px 30px;
+    margin: 40px 0;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    animation: fadeInUp 0.8s ease-out 1.2s both;
+    
+    h3 {
+      @include webkit-gradient-text(linear-gradient(135deg, #374151, #6366f1));
+      font-size: clamp(1.4rem, 3.5vw, 1.8rem);
+      font-weight: 600;
+      margin-bottom: 32px;
+    }
+    
+    .links-container {
+      @include flex-center;
+      gap: 24px;
+      flex-wrap: wrap;
+      
+      @include mobile-only {
+        gap: 16px;
+      }
+    }
+    
+    .social-link {
+      @include icon-circle();
+      @include hover-lift(1.1, -4px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      
+      &.youtube { background: linear-gradient(135deg, #ff0000, #cc0000); }
+      &.facebook { background: linear-gradient(135deg, #1877f2, #0c5aa6); }
+      &.instagram { background: linear-gradient(135deg, #e4405f, #833ab4, #fcb045); }
+      &.twitter { background: linear-gradient(135deg, #1da1f2, #0d8bd9); }
+      &.tiktok { background: linear-gradient(135deg, #000000, #333333); }
+      &.whatsapp { background: linear-gradient(135deg, #25d366, #1da851); }
+      
+      &:hover {
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+      }
+    }
+  }
+}
+
+.service-section {
+  @include content-container();
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.08), rgba(255, 255, 255, 0.95));
+  border-color: rgba(124, 58, 237, 0.2);
+  text-align: center;
+  
+  @include mobile-only {
+    border-radius: 24px;
+  }
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #7c3aed, #ec4899, #7c3aed);
+  }
+  
+  h2 {
+    @include section-title;
+    @include service-gradient-text;
+    font-size: clamp(1.8rem, 4.5vw, 2.5rem);
+    margin-bottom: 24px;
+  }
+  
+  p {
+    @include section-text;
+    margin: 0 auto;
+  }
+}
+
+.contact-section {
+  @include glass-card();
+  @include responsive-padding(50px 30px, 40px 24px);
+  max-width: 1200px;
+  @include section-spacing(80px auto 60px auto, 40px 20px);
+  text-align: center;
+  animation: fadeInUp 0.8s ease-out 1.5s both;
+
+  h2 {
+    @include section-title;
+    @include secondary-gradient-text;
+    animation: slideInUp 0.6s ease-out 1.8s both;
+    text-shadow: 0 2px 10px rgba(124, 58, 237, 0.3);
+  }
+
+  .contact-description {
+    @include section-text;
+    margin-bottom: 40px;
+    animation: slideInUp 0.6s ease-out 2.1s both;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+
+  .contact-options {
+    @include contact-grid;
+  }
+
+  .contact-option {
+    @include hover-lift();
+    @include flex-center;
+    gap: 20px;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    text-decoration: none;
+    min-height: 100px;
+    position: relative;
+    overflow: hidden;
+    animation: slideInUp 0.6s ease-out calc(2.4s + var(--delay, 0s)) both;
+
+    &:first-child { --delay: 0s; }
+    &:last-child { --delay: 0.2s; }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+      transition: left 0.5s ease;
+    }
+
+    &:hover {
+      border-color: rgba(124, 58, 237, 0.3);
+      color: #7c3aed;
+      
+      &::before { left: 100%; }
+      .contact-icon { transform: scale(1.1); }
+    }
+
+    .contact-icon {
+      @include icon-circle(50px);
+      flex-shrink: 0;
+      
+      &.phone-icon { background: linear-gradient(135deg, #10b981, #059669); }
+      &.whatsapp-icon { background: linear-gradient(135deg, #25d366, #1da851); }
+    }
+
+    .contact-info {
+      flex-grow: 1;
+      text-align: left;
+
+      .contact-label {
+        font-weight: 600;
+        color: #1e293b;
+        font-size: 1.1rem;
+        margin-bottom: 5px;
+        transition: color 0.3s ease;
+      }
+
+      .contact-value {
+        color: #64748b;
+        font-size: 1rem;
+        transition: color 0.3s ease;
+      }
+    }
+  }
+}

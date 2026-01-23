@@ -1,0 +1,86 @@
+// Navigation-specific styles
+@import 'shared';
+
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  @include nav-backdrop;
+  
+  @include desktop-only {
+    display: none;
+  }
+  
+  .nav-header {
+    @include flex-between;
+    padding: 15px 20px;
+    
+    .nav-logo {
+      height: 40px;
+      width: auto;
+    }
+    
+    .hamburger-btn {
+      @include btn-base;
+      background: none;
+      padding: 5px;
+      @include flex-center;
+      flex-direction: column;
+      gap: 4px;
+      z-index: 1001;
+      
+      span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background: #8a6bb8;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+      }
+      
+      &.active span {
+        &:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
+        &:nth-child(2) { opacity: 0; }
+        &:nth-child(3) { transform: rotate(-45deg) translate(6px, -6px); }
+      }
+    }
+  }
+  
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    @include nav-backdrop;
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    padding: 20px 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    
+    &.active {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .nav-link {
+      @include nav-link-style;
+      display: block;
+      padding: 15px 30px;
+      font-size: 18px;
+      border-bottom: 1px solid rgba(138, 107, 184, 0.1);
+      
+      &:hover {
+        padding-left: 40px;
+      }
+      
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+}
