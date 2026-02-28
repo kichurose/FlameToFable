@@ -24,6 +24,24 @@ export class CatalogueComponent {
   constructor(private router: Router) {}
 
   products: { [key: string]: CatalogueProduct } = {
+    'ocean': {
+      id: 'ocean',
+      name: 'Ocean Candle',
+      price: '₹350',
+      image: './ocean.jpg'
+    },
+    'heartofroses': {
+      id: 'heartofroses',
+      name: 'Heart of Roses Candle',
+      price: '₹70',
+      image: './heartofroses.jpg'
+    },
+    'magic': {
+      id: 'magic',
+      name: 'Magic Candle',
+      price: '₹130',
+      image: './magic.jpg'
+    },
     'rose-candle': {
       id: 'rose-candle',
       name: 'Rose Candle',
@@ -33,7 +51,7 @@ export class CatalogueComponent {
     'rose-design-2': {
       id: 'rose-design-2',
       name: 'Rose Design 2',
-      price: '₹200',
+      price: '₹170',
       image: './rosedesign2.jpg'
     },
     'heart-candle': {
@@ -51,7 +69,7 @@ export class CatalogueComponent {
     'watermelon': {
       id: 'watermelon',
       name: 'Watermelon Candle',
-      price: '₹200',
+      price: '₹170',
       image: './watermelon.jpg'
     },
     'cloud': {
@@ -151,6 +169,12 @@ export class CatalogueComponent {
       name: 'Sunflower Candle',
       price: '₹50',
       image: './daisy1.jpg'
+    },
+    'icedmacha': {
+      id: 'icedmacha',
+      name: 'Iced Matcha Candle',
+      price: '₹150',
+      image: './icedmacha.jpg'
     }
   };
 
@@ -167,7 +191,7 @@ export class CatalogueComponent {
     'latte-coffee': 500,
     'vanilla-chocolate': 500,
     'raspberry-mocha': 500,
-    'watermelon': 200,
+    'watermelon': 170,
     'cloud': 200,
     'baby-jesus': 250,
     'reindeer': 50,
@@ -178,6 +202,10 @@ export class CatalogueComponent {
     'rose-design-2': 180,
     'heart-candle': 120,
     'angel-wings': 250,
+    'ocean': 350,
+    'heartofroses': 70,
+    'icedmacha': 150,
+    'magic': 130,
   };
 
   // Helper methods for generic template
@@ -243,7 +271,7 @@ export class CatalogueComponent {
   enquireOnWhatsApp(product: CatalogueProduct, event: Event) {
     event.stopPropagation(); // Prevent card click
     
-    const phoneNumber = '7994209092';
+    const phoneNumber = '917994209092';
     const message = `Hi! I'm interested in the ${product.name} (${product.price}). Can you provide more details about availability and delivery?`;
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;

@@ -44,7 +44,7 @@ export class BestSellersComponent {
     {
       id: 'rose-design-2',
       name: 'Rose Design 2',
-      price: '₹200',
+      price: '₹170',
       image: './rosedesign2.jpg'
     },
     {

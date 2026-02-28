@@ -327,7 +327,7 @@ export class ProductDetailComponent implements OnInit {
     'watermelon': {
       id: 'watermelon',
       name: 'Watermelon Candle',
-      price: '₹200',
+      price: '₹170',
       image: './watermelon.jpg',
       description: 'Refreshing watermelon-shaped candle with sweet summer fragrance.',
       specifications: {
@@ -384,7 +384,7 @@ export class ProductDetailComponent implements OnInit {
     'rose-design-2': {
       id: 'rose-design-2',
       name: 'Rose Design 2',
-      price: '₹200',
+      price: '₹170',
       image: './rosedesign2.jpg',
       description: 'Beautiful rose design candle with delicate petals and sweet fragrance.',
       specifications: {
@@ -437,6 +437,82 @@ export class ProductDetailComponent implements OnInit {
         youtube: 'https://www.youtube.com/@FlameToFable/shorts',
         instagram: 'https://www.instagram.com/flametofable'
       }
+    },
+    'ocean': {
+      id: 'ocean',
+      name: 'Ocean Candle',
+      price: '₹350',
+      image: './ocean.jpg',
+      description: 'Fresh ocean breeze fragrance that brings the calming essence of the sea into your space.',
+      specifications: {
+        dimensions: '4.0" × 5.0"',
+        weight: '200ml',
+        wickType: 'Cotton wick',
+        waxType: 'Premium soy wax',
+        fragrance: 'Ocean Breeze & Sea Salt'
+      },
+      careInstructions: 'Perfect for relaxation and meditation. Burn for maximum 4 hours at a time.',
+      socialLinks: {
+        youtube: 'https://www.youtube.com/@FlameToFable/shorts',
+        instagram: 'https://www.instagram.com/flametofable'
+      }
+    },
+    'heartofroses': {
+      id: 'heartofroses',
+      name: 'Heart of Roses Candle',
+      price: '₹70',
+      image: './heartofroses.jpg',
+      description: 'Romantic rose-scented candle crafted in a beautiful heart shape, perfect for special occasions.',
+      specifications: {
+        dimensions: '3.5" × 3.0"',
+        weight: '80g',
+        wickType: 'Cotton wick',
+        waxType: 'Premium soy wax',
+        fragrance: 'Fresh Rose Petals'
+      },
+      careInstructions: 'Perfect for romantic dinners and Valentine\'s Day. Burn for maximum 3 hours.',
+      socialLinks: {
+        youtube: 'https://www.youtube.com/@FlameToFable/shorts',
+        instagram: 'https://www.instagram.com/flametofable'
+      }
+    },
+    'magic': {
+      id: 'magic',
+      name: 'Magic Candle',
+      price: '₹130',
+      image: './magic.jpg',
+      description: 'Enchanting candle with mystical fragrance that creates a magical ambiance in any room.',
+      specifications: {
+        dimensions: '4.0" × 4.5"',
+        weight: '120g',
+        wickType: 'Cotton wick',
+        waxType: 'Premium soy wax',
+        fragrance: 'Mystic Spice & Vanilla'
+      },
+      careInstructions: 'Creates magical ambiance for special moments. Burn for maximum 4 hours.',
+      socialLinks: {
+        youtube: 'https://www.youtube.com/@FlameToFable/shorts',
+        instagram: 'https://www.instagram.com/flametofable'
+      }
+    },
+    'icedmacha': {
+      id: 'icedmacha',
+      name: 'Iced Matcha Candle',
+      price: '₹150',
+      image: './icedmacha.jpg',
+      description: 'Refreshing iced matcha scent that brings the energizing aroma of Japanese tea ceremony.',
+      specifications: {
+        dimensions: '3.5" × 4.0"',
+        weight: '110g',
+        wickType: 'Cotton wick',
+        waxType: 'Premium soy wax',
+        fragrance: 'Iced Matcha & Green Tea'
+      },
+      careInstructions: 'Perfect for morning meditation and focus. Burn for maximum 4 hours.',
+      socialLinks: {
+        youtube: 'https://www.youtube.com/@FlameToFable/shorts',
+        instagram: 'https://www.instagram.com/flametofable'
+      }
     }
   };
 
@@ -464,7 +540,7 @@ export class ProductDetailComponent implements OnInit {
   enquireOnWhatsApp() {
     if (!this.product) return;
     
-    const phoneNumber = '7994209092';
+    const phoneNumber = '917994209092';
     const message = `Hi! I'm interested in the ${this.product.name} (${this.product.price}). Can you provide more details about availability and delivery?`;
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
