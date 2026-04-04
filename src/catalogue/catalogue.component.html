@@ -32,15 +32,6 @@
         
         <div class="card-content">
           <h3 class="product-name">{{ product.name }}</h3>
-          
-          <!-- Pricing -->
-          <div class="price-container">
-            @if (hasDiscountPricing(product)) {
-              <span class="original-price">{{ getOriginalPrice(product) }}</span>
-              <span class="discount-badge" style="color: #28a745; font-size: 12px; font-weight: bold; margin: 0 5px;">{{ calculateDiscount(product) }}</span>
-            }
-            <p class="product-price">{{ product.price }}</p>
-          </div>
         </div>
       </div>
     }

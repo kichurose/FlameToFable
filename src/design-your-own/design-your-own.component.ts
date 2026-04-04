@@ -84,7 +84,7 @@ import { CommonModule } from '@angular/common';
       
       <div class="custom-cta">
         <h3>Ready to Create Something Special?</h3>
-        <p class="cta-description">Starting from ₹299 for custom designs | Bulk orders available</p>
+        <p class="cta-description">Starting from ₹299 for custom designs | Bulk orders available | Perfect for return gifts</p>
         <div class="cta-buttons">
           <a href="https://wa.me/917994209092?text=Hi%20Flame%20to%20Fable!%20I'm%20interested%20in%20designing%20my%20own%20custom%20candles.%20Can%20you%20help%20me%20create%20something%20special?" 
              target="_blank" class="btn btn-primary custom-btn">

@@ -20,43 +20,36 @@ export class BestSellersComponent {
     {
       id: 'latte-coffee',
       name: 'Latte Coffee Candle',
-      price: '₹350',
       image: './coffee.jpg'
     },
     {
       id: 'berry-bliss',
       name: 'Berry Bliss Candle',
-      price: '₹350',
       image: './berry-bliss.jpg'
     },
     {
       id: 'vanilla-chocolate',
       name: 'Vanilla Chocolate Candle',
-      price: '₹350',
       image: './vanilla.jpg'
     },
     {
       id: 'rose-candle',
       name: 'Rose Candle',
-      price: '₹350',
       image: './rose.jpg'
     },
     {
       id: 'rose-design-2',
       name: 'Rose Design 2',
-      price: '₹170',
       image: './rosedesign2.jpg'
     },
     {
       id: 'heart-candle',
       name: 'Heart Candle',
-      price: '₹200',
       image: './heart.jpg'
     },
     {
       id: 'angel-wings',
       name: 'Angel Wings Candle',
-      price: '₹150',
       image: './angelwings.jpg'
     }
   ];

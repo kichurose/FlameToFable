@@ -59,8 +59,8 @@ export class SeoService {
     
     this.updateMetaTags({
       title: `${product.name} - Premium Handmade Candles | Flame to Fable`,
-      description: product.description || `${product.name} - ${product.price}. Premium handmade candle by Flame to Fable. Best candles in Kerala for home decor and gifting.`,
-      keywords: `${product.name}, handmade candles Kerala, ${product.specifications?.fragrance || 'scented candles'}, premium candles, candle gifts Kerala`,
+      description: product.description || `${product.name}. Premium handmade candle by Flame to Fable. Best candles in Kerala for home decor, gifting, and return gifts.`,
+      keywords: `${product.name}, handmade candles Kerala, ${product.specifications?.fragrance || 'scented candles'}, premium candles, candle gifts Kerala, return gift candles, function return gifts`,
       image: `${baseUrl}/${product.image}`,
       url: `${baseUrl}/product/${product.id}`,
       type: 'product'
@@ -96,19 +96,6 @@ export class SeoService {
         "@type": "Brand",
         "name": "Flame to Fable"
       },
-      "offers": {
-        "@type": "Offer",
-        "url": `https://flametofable.ariyo.in/product/${product.id}`,
-        "priceCurrency": "INR",
-        "price": product.price.replace('₹', ''),
-        "priceValidUntil": "2026-12-31",
-        "itemCondition": "https://schema.org/NewCondition",
-        "availability": "https://schema.org/InStock",
-        "seller": {
-          "@type": "Organization",
-          "name": "Flame to Fable"
-        }
-      },
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "4.8",
@@ -132,7 +119,7 @@ export class SeoService {
     this.updateMetaTags({
       title: 'Premium Handmade Candles | Best Candles for Home, Decorations, Gift - Flame to Fable',
       description: 'Best handmade candles in Kerala. Premium scented, eco-friendly & custom designs by Flame to Fable. Top-rated candle maker in God\'s own country. Order online!',
-      keywords: 'best candles in Kerala, budget-friendly candles in Kerala, premium candles Kerala, handmade candles Kerala, scented candles Kerala, top candle makers Kerala, custom candles Kerala, home decor Kerala, aromatherapy candles, make your own candle, eco-friendly candles, gift candles Kerala',
+      keywords: 'best candles in Kerala, budget-friendly candles in Kerala, return gift candles Kerala, premium candles Kerala, handmade candles Kerala, scented candles Kerala, top candle makers Kerala, custom candles Kerala, home decor Kerala, aromatherapy candles, make your own candle, eco-friendly candles, gift candles Kerala, return gifts Kerala, function return gifts',
       image: 'https://flametofable.ariyo.in/favicon.png',
       url: 'https://flametofable.ariyo.in/',
       type: 'website'

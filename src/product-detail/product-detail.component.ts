@@ -21,7 +21,6 @@ export class ProductDetailComponent implements OnInit {
     'christmastree2': {
       id: 'christmastree2',
       name: 'Christmas Tree (Pack of 2)',
-      price: '₹250',
       image: './christmastree2.jpg',
       description: 'Beautiful pack of 2 Christmas tree candles with festive fragrance and holiday warmth.',
       specifications: {
@@ -40,7 +39,6 @@ export class ProductDetailComponent implements OnInit {
     'baby-jesus': {
       id: 'baby-jesus',
       name: 'Baby Jesus Candle',
-      price: '₹200',
       image: './Baby-Jesus.jpg',
       description: 'Sacred and peaceful fragrance with frankincense and myrrh for Christmas worship',
       specifications: {
@@ -59,7 +57,6 @@ export class ProductDetailComponent implements OnInit {
     'christmas-candle': {
       id: 'christmas-candle',
       name: 'Christmas Candle',
-      price: '₹150',
       image: './christmas.jpg',
       images: ['./christmas.jpg', './christmastree.jpg', './christmas1.1.jpg'],
       description: 'Festive blend of cinnamon, pine, and warm spices to celebrate the season.',
@@ -79,7 +76,6 @@ export class ProductDetailComponent implements OnInit {
     'christmas-candle-2': {
       id: 'christmas-candle-2',
       name: 'Christmas Candle 2',
-      price: '₹150',
       image: './christmas2.jpg',
       images: ['./christmas2.jpg', './christmas2.1.jpg'],
       description: 'Festive holiday candle in a unique decorative shape with warm spices and pine.',
@@ -99,7 +95,6 @@ export class ProductDetailComponent implements OnInit {
     'christmas-collection': {
       id: 'christmas-collection',
       name: 'Christmas Collection Pack of 3',
-      price: '₹150',
       image: './christmas-collection.jpg',
       description: 'Complete Christmas candle collection with three festive fragrances.',
       specifications: {
@@ -118,7 +113,6 @@ export class ProductDetailComponent implements OnInit {
     'vanilla-chocolate': {
       id: 'vanilla-chocolate',
       name: 'Vanilla Chocolate Candle',
-      price: '₹350',
       image: './vanilla.jpg',
       description: 'Rich and indulgent blend of vanilla and chocolate for cozy evenings.',
       specifications: {
@@ -137,7 +131,6 @@ export class ProductDetailComponent implements OnInit {
     'berry-candle': {
       id: 'berry-candle',
       name: 'Berry Candle',
-      price: '₹350',
       image: './berry-bliss.jpg',
       description: 'Fresh berry fragrance that energizes and refreshes any space.',
       specifications: {
@@ -156,7 +149,6 @@ export class ProductDetailComponent implements OnInit {
     'car-candle': {
       id: 'car-candle',
       name: 'Car Candle',
-      price: '₹50',
       image: './Car.jpg',
       description: 'Compact car-shaped candle perfect for automotive enthusiasts.',
       specifications: {
@@ -175,7 +167,6 @@ export class ProductDetailComponent implements OnInit {
     'reindeer': {
       id: 'reindeer',
       name: 'Reindeer Candle',
-      price: '₹50',
       image: './reindeer.jpg',
       description: 'Adorable reindeer-shaped candle perfect for Christmas decorations.',
       specifications: {
@@ -194,7 +185,6 @@ export class ProductDetailComponent implements OnInit {
     'reindeer-pack': {
       id: 'reindeer-pack',
       name: 'Reindeer Pack of 2',
-      price: '₹100',
       image: './reindeer-pack.jpg',
       description: 'Charming pack of 2 reindeer candles for festive home decor.',
       specifications: {
@@ -213,7 +203,6 @@ export class ProductDetailComponent implements OnInit {
     'stack-hearts': {
       id: 'stack-hearts',
       name: 'Stack Hearts Candle',
-      price: '₹100',
       image: './stack-hearts.jpg',
       description: 'Romantic stacked hearts candle perfect for special occasions.',
       specifications: {
@@ -232,7 +221,6 @@ export class ProductDetailComponent implements OnInit {
     'peony-bloom': {
       id: 'peony-bloom',
       name: 'Peony Bloom Candle',
-      price: '₹199',
       image: './peony.jpg',
       description: 'Beautiful peony-shaped candle with delicate floral fragrance.',
       specifications: {
@@ -251,7 +239,6 @@ export class ProductDetailComponent implements OnInit {
     'daisy-love': {
       id: 'daisy-love',
       name: 'Daisy Love Candle',
-      price: '₹50',
       image: './daisy.jpg',
       description: 'Sweet daisy-inspired candle with fresh spring fragrance.',
       specifications: {
@@ -270,7 +257,6 @@ export class ProductDetailComponent implements OnInit {
     'sunflower': {
       id: 'sunflower',
       name: 'Sunflower Candle',
-      price: '₹50',
       image: './daisy1.jpg',
       description: 'Bright sunflower candle that brings summer sunshine indoors.',
       specifications: {
@@ -289,7 +275,6 @@ export class ProductDetailComponent implements OnInit {
     'berry-bliss': {
       id: 'berry-bliss',
       name: 'Berry Bliss Candle',
-      price: '₹350',
       image: './berry-bliss.jpg',
       description: 'Luxurious berry blend candle with rich fruity fragrance.',
       specifications: {
@@ -308,7 +293,6 @@ export class ProductDetailComponent implements OnInit {
     'latte-coffee': {
       id: 'latte-coffee',
       name: 'Latte Coffee Candle',
-      price: '₹350',
       image: './coffee.jpg',
       description: 'Rich latte coffee candle with creamy vanilla notes.',
       specifications: {
@@ -327,7 +311,6 @@ export class ProductDetailComponent implements OnInit {
     'watermelon': {
       id: 'watermelon',
       name: 'Watermelon Candle',
-      price: '₹170',
       image: './watermelon.jpg',
       description: 'Refreshing watermelon-shaped candle with sweet summer fragrance.',
       specifications: {
@@ -346,7 +329,6 @@ export class ProductDetailComponent implements OnInit {
     'cloud': {
       id: 'cloud',
       name: 'Cloud Candle',
-      price: '₹200',
       image: './cloud.jpg',
       description: 'Dreamy cloud-shaped candle with soft, airy fragrance.',
       specifications: {
@@ -365,7 +347,6 @@ export class ProductDetailComponent implements OnInit {
     'rose-candle': {
       id: 'rose-candle',
       name: 'Rose Candle',
-      price: '₹350',
       image: './rose.jpg',
       description: 'Elegant rose-shaped candle with romantic fragrance for special occasions.',
       specifications: {
@@ -384,7 +365,6 @@ export class ProductDetailComponent implements OnInit {
     'rose-design-2': {
       id: 'rose-design-2',
       name: 'Rose Design 2',
-      price: '₹170',
       image: './rosedesign2.jpg',
       description: 'Beautiful rose design candle with delicate petals and sweet fragrance.',
       specifications: {
@@ -403,7 +383,6 @@ export class ProductDetailComponent implements OnInit {
     'heart-candle': {
       id: 'heart-candle',
       name: 'Heart Candle',
-      price: '₹200',
       image: './heart.jpg',
       description: 'Romantic heart-shaped candle perfect for expressing love and affection.',
       specifications: {
@@ -422,7 +401,6 @@ export class ProductDetailComponent implements OnInit {
     'angel-wings': {
       id: 'angel-wings',
       name: 'Angel Wings Candle',
-      price: '₹150',
       image: './angelwings.jpg',
       description: 'Heavenly angel wings candle with peaceful fragrance for serenity and calm.',
       specifications: {
@@ -441,7 +419,6 @@ export class ProductDetailComponent implements OnInit {
     'ocean': {
       id: 'ocean',
       name: 'Ocean Candle',
-      price: '₹350',
       image: './ocean.jpg',
       description: 'Fresh ocean breeze fragrance that brings the calming essence of the sea into your space.',
       specifications: {
@@ -460,7 +437,6 @@ export class ProductDetailComponent implements OnInit {
     'heartofroses': {
       id: 'heartofroses',
       name: 'Heart of Roses Candle',
-      price: '₹70',
       image: './heartofroses.jpg',
       description: 'Romantic rose-scented candle crafted in a beautiful heart shape, perfect for special occasions.',
       specifications: {
@@ -479,7 +455,6 @@ export class ProductDetailComponent implements OnInit {
     'magic': {
       id: 'magic',
       name: 'Magic Candle',
-      price: '₹130',
       image: './magic.jpg',
       description: 'Enchanting candle with mystical fragrance that creates a magical ambiance in any room.',
       specifications: {
@@ -498,7 +473,6 @@ export class ProductDetailComponent implements OnInit {
     'icedmacha': {
       id: 'icedmacha',
       name: 'Iced Matcha Candle',
-      price: '₹150',
       image: './icedmacha.jpg',
       description: 'Refreshing iced matcha scent that brings the energizing aroma of Japanese tea ceremony.',
       specifications: {
@@ -541,7 +515,7 @@ export class ProductDetailComponent implements OnInit {
     if (!this.product) return;
     
     const phoneNumber = '917994209092';
-    const message = `Hi! I'm interested in the ${this.product.name} (${this.product.price}). Can you provide more details about availability and delivery?`;
+    const message = `Hi! I'm interested in the ${this.product.name}. Can you provide more details about availability and delivery?`;
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
     

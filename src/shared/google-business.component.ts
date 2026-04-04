@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import { GoogleReviewsService, GoogleReview } from './google-reviews.service';
 
 @Component({
   selector: 'app-google-business',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, HttpClientModule],
   template: `
     <div class="google-business-integration">
       <!-- Google My Business Widget -->
@@ -26,7 +28,7 @@ import { CommonModule } from '@angular/common';
             </div>
             <div class="detail-item">
               <i class="fas fa-star"></i>
-              <span>4.8/5 ⭐ (127 reviews)</span>
+              <span>{{ businessRating }}/5 ⭐ ({{ totalReviews }} reviews)</span>
             </div>
           </div>
           
@@ -55,7 +57,8 @@ import { CommonModule } from '@angular/common';
             <a href="https://maps.app.goo.gl/rk5Mpm4zY6G1cxB97" 
                target="_blank" 
                class="btn btn-secondary"
-               rel="noopener noreferrer">
+               rel="noopener noreferrer"
+               (click)="openReviewPage()">
               <i class="fas fa-star"></i>
               Write Review
             </a>
@@ -69,12 +72,28 @@ import { CommonModule } from '@angular/common';
       
       <!-- Customer Reviews Preview -->
       <div class="reviews-preview" *ngIf="showReviews">
-        <h4>What Our Customers Say</h4>
+        <div class="reviews-header">
+          <h4>What Our Customers Say</h4>
+          <div class="review-status">
+            <span *ngIf="isLoadingReviews" class="loading">Loading reviews...</span>
+            <span *ngIf="isUsingLiveReviews" class="live-indicator">● Live from Google</span>
+            <button *ngIf="!isLoadingReviews" (click)="refreshReviews()" class="refresh-btn">
+              <i class="fas fa-sync-alt"></i> Refresh
+            </button>
+          </div>
+        </div>
         <div class="reviews-grid">
           <div class="review-item" *ngFor="let review of reviews">
             <div class="review-header">
               <div class="reviewer-info">
-                <strong>{{ review.author }}</strong>
+                <div class="reviewer-details">
+                  <img *ngIf="review.profilePhoto" 
+                       [src]="review.profilePhoto" 
+                       [alt]="review.author" 
+                       class="reviewer-photo"
+                       onerror="this.style.display='none'">
+                  <strong>{{ review.author }}</strong>
+                </div>
                 <div class="stars">
                   <span *ngFor="let star of getStarArray(review.rating)">⭐</span>
                 </div>
@@ -84,7 +103,7 @@ import { CommonModule } from '@angular/common';
             <p class="review-text">{{ review.text }}</p>
           </div>
         </div>
-        <a href="https://maps.app.goo.gl/rk5Mpm4zY6G1cxB97" 
+        <a [href]="getReviewLink()" 
            target="_blank" 
            class="view-all-reviews"
            rel="noopener noreferrer">
@@ -210,6 +229,64 @@ import { CommonModule } from '@angular/common';
       color: #333;
     }
 
+    .reviews-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .review-status {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .loading {
+      color: #6c757d;
+      font-style: italic;
+    }
+
+    .live-indicator {
+      color: #28a745;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .refresh-btn {
+      background: #f0e6ff;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .refresh-btn:hover {
+      background: #e0d6ef;
+      transform: translateY(-1px);
+    }
+
+    .reviewer-details {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .reviewer-photo {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
     .reviews-grid {
       display: grid;
       gap: 1.5rem;
@@ -283,36 +360,97 @@ import { CommonModule } from '@angular/common';
 })
 export class GoogleBusinessComponent implements OnInit {
   showReviews = true;
+  isLoadingReviews = false;
+  isUsingLiveReviews = false;
+  businessRating = 4.8;
+  totalReviews = 127;
   
-  reviews = [
-    {
-      author: 'Priya Nair',
-      rating: 5,
-      text: 'Amazing quality handmade candles! Perfect for home decor and gifting. Best candle store in Kerala!',
-      date: '2 weeks ago'
-    },
-    {
-      author: 'Rajesh Kumar',
-      rating: 5,
-      text: 'Beautiful candles with long-lasting fragrance. Excellent customer service and fast delivery!',
-      date: '1 month ago'
-    },
-    {
-      author: 'Anjali Menon',
-      rating: 5,
-      text: 'Love the variety and quality. The watermelon candle is my favorite! Highly recommended.',
-      date: '3 weeks ago'
-    }
-  ];
+  reviews: any[] = [];
 
-  constructor() { }
+  constructor(private googleReviewsService: GoogleReviewsService) { }
 
   ngOnInit(): void {
     this.loadGoogleMapsAPI();
+    this.loadReviews();
+    this.loadBusinessRating();
+  }
+
+  private loadReviews(): void {
+    this.isLoadingReviews = true;
+    
+    this.googleReviewsService.getReviews().subscribe({
+      next: (googleReviews) => {
+        this.reviews = googleReviews.map(review => 
+          this.googleReviewsService.formatReviewForDisplay(review)
+        );
+        this.isUsingLiveReviews = this.googleReviewsService.isApiConfigured();
+        this.isLoadingReviews = false;
+      },
+      error: (error) => {
+        console.error('Failed to load reviews:', error);
+        this.loadFallbackReviews();
+        this.isLoadingReviews = false;
+      }
+    });
+  }
+
+  private loadBusinessRating(): void {
+    this.googleReviewsService.getBusinessRating().subscribe({
+      next: (rating) => {
+        this.businessRating = rating.rating;
+        this.totalReviews = rating.total;
+      },
+      error: (error) => {
+        console.error('Failed to load business rating:', error);
+        // Keep default values
+      }
+    });
+  }
+
+  refreshReviews(): void {
+    this.loadReviews();
+    this.loadBusinessRating();
+  }
+
+  private loadFallbackReviews(): void {
+    this.reviews = [
+      {
+        author: 'Priya Nair',
+        rating: 5,
+        text: 'Amazing quality handmade candles! Perfect for home decor and gifting. Best candle store in Kerala!',
+        date: '2 weeks ago'
+      },
+      {
+        author: 'Rajesh Kumar',
+        rating: 5,
+        text: 'Beautiful candles with long-lasting fragrance. Excellent customer service and fast delivery!',
+        date: '1 month ago'
+      },
+      {
+        author: 'Anjali Menon',
+        rating: 5,
+        text: 'Love the variety and quality. The watermelon candle is my favorite! Perfect for return gifts.',
+        date: '3 weeks ago'
+      },
+      {
+        author: 'Suresh Pillai',
+        rating: 5,
+        text: 'Perfect for bulk orders and corporate gifts. Christina provides excellent customer service!',
+        date: '1 week ago'
+      }
+    ];
   }
 
   getStarArray(rating: number): number[] {
     return Array(rating).fill(0);
+  }
+
+  getReviewLink(): string {
+    return this.googleReviewsService.getReviewLink();
+  }
+
+  openReviewPage(): void {
+    window.open(this.getReviewLink(), '_blank', 'noopener,noreferrer');
   }
 
   private loadGoogleMapsAPI(): void {
