@@ -2,7 +2,8 @@
   padding: 6rem 0;
   background: linear-gradient(135deg, #FFB6C1 0%, #DDA0DD 100%);
   position: relative;
-  overflow: visible;
+  overflow: hidden;
+  width: 100%;
 
   &::before {
     content: '';
@@ -51,8 +52,9 @@
 
 .best-sellers-container {
   position: relative;
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: 100%;
+  margin: 0;
+  overflow: hidden;
 }
 
 .scroll-btn {
@@ -93,13 +95,14 @@
 }
 
 .best-sellers-scroll {
-  overflow: visible;
+  overflow-x: auto;
+  overflow-y: hidden;
   scroll-behavior: smooth;
   scrollbar-width: none;
   -ms-overflow-style: none;
   padding: 0;
-  width: 120vw;
-  margin-left: -10vw;
+  width: 100%;
+  margin-left: 0;
   position: relative;
 
   &::-webkit-scrollbar {

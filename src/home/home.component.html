@@ -15,6 +15,7 @@
       <a href="#" (click)="scrollToSection('about')" class="nav-link">About</a>
       <a href="#" (click)="scrollToSection('custom-design')" class="nav-link">Design Your Own</a>
       <a href="#" (click)="scrollToSection('catalogue')" class="nav-link">Catalogue</a>
+      <a href="#" (click)="scrollToSection('bulk-orders')" class="nav-link">Bulk Orders</a>
       <a href="#" (click)="scrollToSection('contact')" class="nav-link">Contact</a>
     </div>
   </nav>
@@ -27,27 +28,44 @@
     <p class="tagline">Where every flame whispers a fable of warmth and light</p>
   </header>
 
-  <section class="about-section" id="about">
-    <h2>About Our Candle Business</h2>
-    <p>Welcome to Flame to Fable, a handcrafted candle brand based in Kerala crafted by Christina Roseline. We create the best budget-friendly premium handmade candles in Kerala that transform any space into a sanctuary of warmth and peace. Each candle is thoughtfully handcrafted using quality wax, soothing fragrances, and refined aesthetic details - perfect for homes, gifting, return gifts, and special occasions.</p>
-    <p>🎨 <strong>NEW!</strong> Now offering <strong>Design Your Own Candles</strong> service - Create personalized candles with your choice of colors, fragrances, shapes, and designs. Perfect for special events, corporate gifts, return gifts, or expressing your unique style!</p>
-    <p>Our collection features eco-friendly soy candles, gel candles, scented candles, festival-special designs, and custom-designed candles - all crafted with care in God's own country, Kerala. Whether you want perfect gifts, return gifts for functions, or beautiful décor pieces, our candles are designed to make every moment memorable.</p>
-    <div class="social-links">
-      <h3>Follow Our Journey</h3>
-      <div class="links-container">
-        <a href="https://www.youtube.com/@FlameToFable/shorts" target="_blank" class="social-link youtube">
-          <span class="icon">📺</span>
-          <span>Watch our YouTube Channel</span>
-        </a>
-        <a href="https://www.instagram.com/flametofable" target="_blank" class="social-link instagram">
-          <span class="icon">📷</span>
-          <span>Follow us on Instagram</span>
-        </a>
+   <app-best-sellers></app-best-sellers>
+
+  <!-- Bulk Orders Section -->
+  <section class="bulk-orders-section" id="bulk-orders">
+    <div class="bulk-orders-header">
+      <div class="bulk-icon">📦</div>
+      <h2>Bulk & Corporate Orders</h2>
+      <p class="bulk-subtitle">Planning a wedding, function, or corporate event? We've got you covered with custom bulk candle orders crafted to match your theme and budget.</p>
+    </div>
+
+    <div class="bulk-slider-wrapper" #bulkSlider>
+      <div class="bulk-slider-track">
+        <img *ngFor="let img of bulkImages" [src]="img" alt="Bulk candle order" class="bulk-slide-img" loading="lazy" (click)="openBulkZoom(img)">
       </div>
     </div>
-  </section>
 
-   <app-best-sellers></app-best-sellers>
+  <!-- Bulk Image Lightbox -->
+  <div class="bulk-lightbox" *ngIf="zoomedBulkImage" (click)="closeBulkZoom()">
+    <button class="bulk-lightbox-close" (click)="closeBulkZoom()">&#x2715;</button>
+    <img [src]="zoomedBulkImage" alt="Zoomed bulk candle" class="bulk-lightbox-img" (click)="$event.stopPropagation()">
+  </div>
+
+    <div class="bulk-use-cases">
+      <span class="use-case-tag">💍 Weddings</span>
+      <span class="use-case-tag">🎉 Return Gifts</span>
+      <span class="use-case-tag">🏢 Corporate Gifting</span>
+      <span class="use-case-tag">🪔 Festivals</span>
+      <span class="use-case-tag">🎂 Birthdays</span>
+      <span class="use-case-tag">🙏 Pooja Events</span>
+    </div>
+
+    <div class="bulk-cta">
+      <p class="bulk-min-order">Minimum order: 20 candles | Starting from ₹50 per candle</p>
+      <a href="https://wa.me/917994209092?text=Hi%2C%20I%27m%20interested%20in%20a%20bulk%20order%20from%20Flame%20to%20Fable" target="_blank" class="bulk-enquiry-btn">
+        <span>📩</span> Enquire on WhatsApp
+      </a>
+    </div>
+  </section>
 
   <!-- Design Your Own Candles Call-to-Action Section -->
   <section class="design-cta-section" id="custom-design">
@@ -97,6 +115,26 @@
   <section class="catalogue-section" id="catalogue">
     <h2>Our Collection</h2>
     <app-catalogue></app-catalogue>
+  </section>
+
+  <section class="about-section" id="about">
+    <h2>About Our Candle Business</h2>
+    <p>Welcome to Flame to Fable, a handcrafted candle brand based in Kerala crafted by Christina Roseline. We create the best budget-friendly premium handmade candles in Kerala that transform any space into a sanctuary of warmth and peace. Each candle is thoughtfully handcrafted using quality wax, soothing fragrances, and refined aesthetic details - perfect for homes, gifting, return gifts, and special occasions.</p>
+    <p>🎨 <strong>NEW!</strong> Now offering <strong>Design Your Own Candles</strong> service - Create personalized candles with your choice of colors, fragrances, shapes, and designs. Perfect for special events, corporate gifts, return gifts, or expressing your unique style!</p>
+    <p>Our collection features eco-friendly soy candles, gel candles, scented candles, festival-special designs, and custom-designed candles - all crafted with care in God's own country, Kerala. Whether you want perfect gifts, return gifts for functions, or beautiful décor pieces, our candles are designed to make every moment memorable.</p>
+    <div class="social-links">
+      <h3>Follow Our Journey</h3>
+      <div class="links-container">
+        <a href="https://www.youtube.com/@FlameToFable/shorts" target="_blank" class="social-link youtube">
+          <span class="icon">📺</span>
+          <span>Watch our YouTube Channel</span>
+        </a>
+        <a href="https://www.instagram.com/flametofable" target="_blank" class="social-link instagram">
+          <span class="icon">📷</span>
+          <span>Follow us on Instagram</span>
+        </a>
+      </div>
+    </div>
   </section>
 
   <section class="collection-section" id="collection">
