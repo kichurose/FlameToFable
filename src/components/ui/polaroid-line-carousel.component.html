@@ -1,0 +1,31 @@
+<section class="polaroid" aria-label="The candle collection">
+  <div class="intro">
+    <span class="eyebrow">HAND POURED IN KERALA · MADE WITH LOVE</span>
+    <h1>A little flame.<br>A lovely <em>fable.</em></h1>
+    <p>For slow days, thoughtful gifts, and all the little moments in between.</p>
+    <a href="#catalogue" class="shop-link">Find your favourite <span aria-hidden="true">↗</span></a>
+  </div>
+  <div #stage class="stage" [class.dragging]="dragging" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Handcrafted candle photographs. Use left and right arrow keys to browse."
+    (keydown)="key($event)" (pointerdown)="down($event)" (pointermove)="move($event)" (pointerup)="up($event)" (pointercancel)="cancel($event)">
+    <svg class="string" aria-hidden="true"><path #line fill="none" stroke="#9c8a75" stroke-width="1.5" /></svg>
+    @for (slide of slides; track $index; let i = $index) {
+      <div #card class="card" [class.selected]="active() === i" [attr.data-index]="i" [attr.aria-hidden]="active() !== i">
+        <div class="print"><div class="shot"><img [src]="slide.image" [alt]="slide.alt" draggable="false" /></div><div class="note">{{ slide.title }}</div></div>
+        <span class="peg" aria-hidden="true"></span>
+      </div>
+    }
+    <span class="sr-only" aria-live="polite" aria-atomic="true">Print {{ active() + 1 }} of {{ slides.length }}: {{ slides[active()].title }}</span>
+  </div>
+    <div class="controls">
+      <div class="caption"><span class="collection-label">{{ slides[active()].corporate ? 'BULK & CORPORATE ORDERS' : slides[active()].productId ? 'OUR BEST SELLERS' : 'THE LITTLE JOYS COLLECTION' }}</span><h2>{{ slides[active()].title }}</h2><p>{{ slides[active()].caption }}</p>
+        @if (slides[active()].productId) { <a class="product-link" [routerLink]="['/product', slides[active()].productId]">View candle ↗</a> }
+        @if (slides[active()].corporate) { <a class="product-link" href="#bulk-orders">Explore bulk orders ↗</a> }
+      </div>
+      <div class="navigation"><span class="count"><b>{{ (active() + 1).toString().padStart(2, '0') }}</b> / {{ slides.length.toString().padStart(2, '0') }}</span>
+        <button type="button" (click)="paused.set(!paused())" [attr.aria-label]="paused() ? 'Play slideshow' : 'Pause slideshow'" [attr.aria-pressed]="paused()">{{ paused() ? '▷' : 'Ⅱ' }}</button>
+        <button type="button" (click)="step(-1)" [disabled]="active() === 0" aria-label="Previous candle">←</button>
+        <button type="button" (click)="step(1)" [disabled]="active() === slides.length - 1" aria-label="Next candle">→</button>
+      </div>
+    </div>
+  <div class="endnote"><span>Small batches. Beautiful details. Yours to keep.</span><span>DRAG THE PHOTOS TO EXPLORE <span aria-hidden="true">↔</span></span></div>
+</section>

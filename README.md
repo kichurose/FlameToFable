@@ -1,11 +1,31 @@
-ng add angular-cli-ghpages
+# Flame to Fable
 
-Base Href should be left empty in case of using custom domain
-ng build --configuration production --output-path=dist/flametofable --base-href=/FlameToFable/
+## Run locally
 
-ng build --configuration production --output-path=dist/flametofable
+Use Node.js 20.19+ or 22.12+.
 
-npx angular-cli-ghpages --dir=dist/flametofable/browser
-After the above command, re-add the custom domain to the project
+```powershell
+npm ci
+npm start
+```
 
- ng build --configuration production --output-path=dist/flametofable                                           
+## GitHub Pages (custom domain)
+
+The site is hosted at https://flametofable.ariyo.in/ from the `gh-pages` branch.
+Keep the base href as `/` for this custom domain. Do not add `/FlameToFable/`.
+
+```powershell
+npm run build:pages
+npx angular-cli-ghpages --dir=dist/flametofable/browser --cname=flametofable.ariyo.in
+```
+
+Or build and publish in one step:
+
+```powershell
+npm run deploy:pages
+```
+
+`public/CNAME` preserves the custom domain in every build. The publishing tool
+also creates `404.html` for Angular routes and `.nojekyll` for GitHub Pages.
+The build output in `dist/` is ignored on `master`; the publishing tool pushes
+the compiled site to `gh-pages`. Commit and push source changes to `master` separately.

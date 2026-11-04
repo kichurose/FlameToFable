@@ -29,11 +29,6 @@ export class CatalogueComponent {
       name: 'Ocean Candle',
       image: './ocean.jpg'
     },
-    'heartofroses': {
-      id: 'heartofroses',
-      name: 'Heart of Roses Candle',
-      image: './heartofroses.jpg'
-    },
     'magic': {
       id: 'magic',
       name: 'Magic Candle',
@@ -48,6 +43,16 @@ export class CatalogueComponent {
       id: 'rose-design-2',
       name: 'Rose Design 2',
       image: './rosedesign2.jpg'
+    },
+    'trio-jar': {
+      id: 'trio-jar',
+      name: 'Trio Jar Candle',
+      image: './TrioJar.jpg'
+    },
+    'tulip-candle': {
+      id: 'tulip-candle',
+      name: 'Tulip Candle',
+      image: './TulipCandle.jpg'
     },
     'heart-candle': {
       id: 'heart-candle',
@@ -114,7 +119,7 @@ export class CatalogueComponent {
     'reindeer': {
       id: 'reindeer',
       name: 'Reindeer Candle',
-      image: './reindeer.jpg'
+      image: './Reindeer.jpg'
     },
     'reindeer-pack': {
       id: 'reindeer-pack',
@@ -150,6 +155,11 @@ export class CatalogueComponent {
       id: 'icedmacha',
       name: 'Iced Matcha Candle',
       image: './icedmacha.jpg'
+    },
+    'heartofroses': {
+      id: 'heartofroses',
+      name: 'Heart of Roses Candle',
+      image: './heartofroses.jpg'
     }
   };
 

@@ -18,6 +18,26 @@ export class ProductDetailComponent implements OnInit {
 
   // Product data dictionary (shared from catalogue)
   products: { [key: string]: ProductDetails } = {
+    'tulip-candle': {
+      id: 'tulip-candle',
+      name: 'Tulip Candle',
+      image: './TulipCandle.jpg',
+      description: 'A tulip-inspired decorative candle for your home or a thoughtful gift.',
+      socialLinks: {
+        youtube: 'https://www.youtube.com/@FlameToFable/shorts',
+        instagram: 'https://www.instagram.com/flametofable'
+      }
+    },
+    'trio-jar': {
+      id: 'trio-jar',
+      name: 'Trio Jar Candle',
+      image: './TrioJar.jpg',
+      description: 'A decorative jar candle with three contrasting layers, made for gifting or adding a warm touch to your space.',
+      socialLinks: {
+        youtube: 'https://www.youtube.com/@FlameToFable/shorts',
+        instagram: 'https://www.instagram.com/flametofable'
+      }
+    },
     'christmastree2': {
       id: 'christmastree2',
       name: 'Christmas Tree (Pack of 2)',
@@ -167,7 +187,7 @@ export class ProductDetailComponent implements OnInit {
     'reindeer': {
       id: 'reindeer',
       name: 'Reindeer Candle',
-      image: './reindeer.jpg',
+      image: './Reindeer.jpg',
       description: 'Adorable reindeer-shaped candle perfect for Christmas decorations.',
       specifications: {
         dimensions: '4.0" × 3.5"',

@@ -20,35 +20,61 @@
     </div>
   </nav>
 
-  <header class="hero-section" id="home">
-    <div class="hero-logo">
-      <img src="/favicon.png" alt="Flame to Fable Logo" class="hero-logo-img">
-    </div>
-    <h1>Welcome to Flame to Fable</h1>
-    <p class="tagline">Where every flame whispers a fable of warmth and light</p>
-  </header>
+  <div class="polaroid-home" id="home">
+    <app-polaroid-line-carousel></app-polaroid-line-carousel>
+  </div>
 
-   <app-best-sellers></app-best-sellers>
 
   <!-- Bulk Orders Section -->
   <section class="bulk-orders-section" id="bulk-orders">
     <div class="bulk-orders-header">
-      <div class="bulk-icon">📦</div>
+      <span class="bulk-eyebrow">THOUGHTFUL GIFTS, BEAUTIFULLY MADE</span>
       <h2>Bulk & Corporate Orders</h2>
       <p class="bulk-subtitle">Planning a wedding, function, or corporate event? We've got you covered with custom bulk candle orders crafted to match your theme and budget.</p>
     </div>
 
-    <div class="bulk-slider-wrapper" #bulkSlider>
-      <div class="bulk-slider-track">
-        <img *ngFor="let img of bulkImages" [src]="img" alt="Bulk candle order" class="bulk-slide-img" loading="lazy" (click)="openBulkZoom(img)">
-      </div>
+    <div class="bulk-filters" role="group" aria-label="Filter bulk candle designs">
+      @for (category of bulkCategories; track category) {
+        <button type="button" [class.active]="bulkCategory === category" [attr.aria-pressed]="bulkCategory === category" (click)="filterBulk(category)">{{ category }}</button>
+      }
     </div>
+    <p class="bulk-results" aria-live="polite">{{ filteredBulkDesigns.length }} designs · Colours and packaging can be personalised</p>
+    <div class="bulk-catalogue-grid">
+      @for (design of filteredBulkDesigns.slice(0, bulkVisibleCount); track design.image) {
+        <article class="bulk-catalogue-card">
+          <button type="button" class="bulk-photo-button" (click)="openBulkZoom(design)" [attr.aria-label]="'Preview ' + design.name">
+            <img [src]="design.image" [alt]="design.name + ' — custom candle order'" loading="lazy">
+            <span class="bulk-preview-label">{{ design.images.length > 1 ? 'View ' + design.images.length + ' photos ↗' : 'View photo ↗' }}</span>
+          </button>
+          <div class="bulk-card-content">
+            <span class="bulk-card-category">{{ design.category }}</span>
+            <h3>{{ design.name }}</h3>
+            <p>Custom colours & gift packaging</p>
+            <a [href]="bulkEnquiryUrl(design.name)" target="_blank" rel="noopener noreferrer">Enquire about this design <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+      }
+    </div>
+    @if (bulkVisibleCount < filteredBulkDesigns.length) {
+      <button type="button" class="bulk-show-more" (click)="bulkVisibleCount = bulkVisibleCount + 6">Show more designs <span aria-hidden="true">↓</span></button>
+    }
 
   <!-- Bulk Image Lightbox -->
-  <div class="bulk-lightbox" *ngIf="zoomedBulkImage" (click)="closeBulkZoom()">
-    <button class="bulk-lightbox-close" (click)="closeBulkZoom()">&#x2715;</button>
-    <img [src]="zoomedBulkImage" alt="Zoomed bulk candle" class="bulk-lightbox-img" (click)="$event.stopPropagation()">
-  </div>
+  <dialog #bulkDialog class="bulk-lightbox" aria-label="Candle design preview" (click)="closeBulkZoom()" (cancel)="closeBulkZoom()" (keydown)="onBulkGalleryKey($event)">
+    <button type="button" class="bulk-lightbox-close" aria-label="Close candle preview" (click)="$event.stopPropagation(); closeBulkZoom()">&#x2715;</button>
+    @if (zoomedBulkImage && selectedBulkDesign) {
+      <div class="bulk-gallery" (click)="$event.stopPropagation()">
+        <img [src]="zoomedBulkImage" [alt]="selectedBulkDesign.name + ' — photo ' + (bulkGalleryIndex + 1)" class="bulk-lightbox-img">
+        <div class="bulk-gallery-bar">
+          <div><h3>{{ selectedBulkDesign.name }}</h3><p aria-live="polite" aria-atomic="true">Photo {{ bulkGalleryIndex + 1 }} of {{ selectedBulkDesign.images.length }}</p></div>
+          @if (selectedBulkDesign.images.length > 1) {
+            <button type="button" (click)="stepBulkGallery(-1)" [disabled]="bulkGalleryIndex === 0" aria-label="Previous candle photo">←</button>
+            <button type="button" (click)="stepBulkGallery(1)" [disabled]="bulkGalleryIndex === selectedBulkDesign.images.length - 1" aria-label="Next candle photo">→</button>
+          }
+        </div>
+      </div>
+    }
+  </dialog>
 
     <div class="bulk-use-cases">
       <span class="use-case-tag">💍 Weddings</span>
@@ -60,8 +86,8 @@
     </div>
 
     <div class="bulk-cta">
-      <p class="bulk-min-order">Minimum order: 20 candles | Starting from ₹50 per candle</p>
-      <a href="https://wa.me/917994209092?text=Hi%2C%20I%27m%20interested%20in%20a%20bulk%20order%20from%20Flame%20to%20Fable" target="_blank" class="bulk-enquiry-btn">
+      <p class="bulk-min-order">No minimum order | Starting from ₹25 per candle</p>
+      <a href="https://wa.me/917994209092?text=Hi%2C%20I%27m%20interested%20in%20a%20bulk%20order%20from%20Flame%20to%20Fable" target="_blank" rel="noopener noreferrer" class="bulk-enquiry-btn">
         <span>📩</span> Enquire on WhatsApp
       </a>
     </div>

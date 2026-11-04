@@ -406,3 +406,18 @@ main {
   }
 }
 
+
+/* Quiet, paper-toned navigation for the Polaroid collection. */
+.main-nav {
+  background: #f2eee5;
+  border-bottom: 1px solid #ddd7c9;
+  box-shadow: none;
+  backdrop-filter: none;
+  .nav-content { padding: 12px 30px; }
+  .nav-content .brand {
+    .logo { height: 52px; filter: none; }
+    h1 { font: 400 25px Georgia, serif; background: none; -webkit-text-fill-color: #393c30; color: #393c30; }
+  }
+  .nav-links .nav-link { color: #555747; background: transparent; box-shadow: none; border: none; font-size: 13px; }
+  .nav-links .nav-link:hover { background: #e7e1d5; color: #393c30; }
+}
