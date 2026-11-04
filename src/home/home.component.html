@@ -1,16 +1,17 @@
 <div class="home">
   <!-- Mobile Navigation -->
-  <nav class="mobile-nav">
+  <nav class="mobile-nav" aria-label="Mobile navigation">
     <div class="nav-header">
-      <button class="hamburger-btn" (click)="toggleMenu()" [class.active]="isMenuOpen">
+      <button type="button" class="hamburger-btn" (click)="toggleMenu()" [class.active]="isMenuOpen" [attr.aria-expanded]="isMenuOpen" aria-controls="mobile-navigation-links" [attr.aria-label]="isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'">
         <span></span>
         <span></span>
         <span></span>
       </button>
-      <img src="/favicon.png" alt="Flame to Fable Logo" class="nav-logo">
+      <a class="mobile-brand" href="#home" (click)="$event.preventDefault(); scrollToSection('home')">Flame <em>to</em> Fable<span>WHERE EVERY FLAME WHISPERS A FABLE</span></a>
+      <img src="/favicon.png" alt="" class="nav-logo">
     </div>
     
-    <div class="nav-menu" [class.active]="isMenuOpen">
+    <div id="mobile-navigation-links" class="nav-menu" [class.active]="isMenuOpen" [attr.inert]="isMenuOpen ? null : ''">
       <a href="#" (click)="scrollToSection('home')" class="nav-link">Home</a>
       <a href="#" (click)="scrollToSection('about')" class="nav-link">About</a>
       <a href="#" (click)="scrollToSection('custom-design')" class="nav-link">Design Your Own</a>

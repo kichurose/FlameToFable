@@ -14,7 +14,7 @@
     
     <!-- Generic Candle Card -->
     @for (product of getProductsArray(); track product.id) {
-      <div class="candle-card" (click)="openModal(product.id)">
+      <a class="candle-card" [routerLink]="['/product', product.id]">
         
         <div class="card-image">
           <!-- Product Image -->
@@ -33,7 +33,7 @@
         <div class="card-content">
           <h3 class="product-name">{{ product.name }}</h3>
         </div>
-      </div>
+      </a>
     }
   </div>
 </div>

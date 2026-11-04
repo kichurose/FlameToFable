@@ -7,96 +7,28 @@
   background: #f0e6ff;
   width: 100%;
   .mobile-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    @include nav-backdrop;
-    
-    @media (min-width: 769px) {
-      display: none;
-    }
-    
-    .nav-header {
-      @include flex-between;
-      padding: 15px 20px;
-      
-      .nav-logo {
-        height: 40px;
-        width: auto;
-      }
-      
-      .hamburger-btn {
-        background: none;
-        border: none;
-        cursor: pointer;
-        padding: 5px;
-        display: flex;
-        flex-direction: column;
-        gap: 4px;
-        z-index: 1001;
-        
-        span {
-          display: block;
-          width: 25px;
-          height: 3px;
-          background: #8a6bb8;
-          border-radius: 2px;
-          transition: all 0.3s ease;
-        }
-        
-        &.active {
-          span:nth-child(1) {
-            transform: rotate(45deg) translate(6px, 6px);
-          }
-          span:nth-child(2) {
-            opacity: 0;
-          }
-          span:nth-child(3) {
-            transform: rotate(-45deg) translate(6px, -6px);
-          }
-        }
-      }
-    }
-    
-    .nav-menu {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
-      @include nav-backdrop;
-      transform: translateY(-100%);
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.3s ease;
-      padding: 20px 0;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      
-      &.active {
-        transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
-      }
-      
-      .nav-link {
-        @include nav-link-style;
-        display: block;
-        padding: 15px 30px;
-        font-size: 18px;
-        border-bottom: 1px solid rgba(138, 107, 184, 0.1);
-        
-        &:hover {
-          padding-left: 40px;
-        }
-        
-        &:last-child {
-          border-bottom: none;
-        }
-      }
-    }
+    position: fixed; inset: 0 0 auto; z-index: 1000;
+    background: #eee3f8; border-bottom: 1px solid #cdb8df;
+    &::before { content: ''; position: absolute; inset: 0 0 auto; height: 3px; background: linear-gradient(90deg, #f1b8a7, #c6a7e2 50%, #9edccb); }
+    @media(min-width:769px) { display: none; }
+    .nav-header { display: flex; align-items: center; justify-content: space-between; height: 74px; padding: 0 20px; gap: 10px; }
+    .nav-logo { height: 34px; width: 32px; object-fit: contain; }
+    .mobile-brand { display: block; color: #594169; text-align: center; text-decoration: none; font: 600 clamp(18px, 5vw, 23px)/1.1 system-ui, -apple-system, 'Segoe UI', sans-serif; letter-spacing: -.035em; padding-top: 5px; }
+    .mobile-brand em { color: #986052; font-style: normal; font-weight: inherit; }
+    .mobile-brand > span { display: block; font: 500 7px/1 system-ui, sans-serif; letter-spacing: .17em; color: #7d658d; margin-top: 7px; }
+    .hamburger-btn { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; border: 1px solid #cdb8df; border-radius: 50%; background: #dfd0ef; cursor: pointer; }
+    .hamburger-btn span { display: block; width: 18px; height: 1px; background: #674c7b; transition: transform .2s ease, opacity .2s ease; }
+    .hamburger-btn.active span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .hamburger-btn.active span:nth-child(2) { opacity: 0; }
+    .hamburger-btn.active span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+    .nav-menu { position: absolute; top: 100%; left: 0; right: 0; background: #eee3f8; padding: 12px 24px 24px; box-shadow: 0 16px 24px #59416912; border-bottom: 1px solid #cdb8df; visibility: hidden; opacity: 0; transform: translateY(-8px); transition: opacity .2s ease, transform .2s ease, visibility .2s; max-height: calc(100dvh - 74px); overflow-y: auto; }
+    .nav-menu.active { visibility: visible; opacity: 1; transform: none; }
+    .nav-menu .nav-link { display: flex; align-items: center; padding: 14px 4px; color: #674c7b; font: 500 16px system-ui, -apple-system, 'Segoe UI', sans-serif; text-decoration: none; border-bottom: 1px solid #d9c9e6; }
+    .nav-menu .nav-link:hover { color: #986052; }
+    .nav-menu .nav-link:last-child { border-bottom: none; }
+    a:focus-visible, button:focus-visible { outline: 2px solid #986052; outline-offset: 3px; }
+    @media(prefers-reduced-motion:reduce) { .nav-menu, .hamburger-btn span { transition: none; } }
   }
-  
   .hero-section {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.9) 100%);
     backdrop-filter: blur(20px);
@@ -861,5 +793,5 @@
 .polaroid-home { padding-top: 80px; scroll-margin-top: 80px; background: #f2eee5; }
 @media (max-width: 768px) {
   .polaroid-home { padding-top: 74px; }
-  .home .mobile-nav { background: #f2eee5; backdrop-filter: none; border-bottom: 1px solid #ddd7c9; }
+
 }

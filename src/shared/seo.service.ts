@@ -1,4 +1,5 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 import { Title, Meta } from '@angular/platform-browser';
 
 @Injectable({
@@ -8,7 +9,8 @@ export class SeoService {
 
   constructor(
     private title: Title,
-    private meta: Meta
+    private meta: Meta,
+    @Inject(DOCUMENT) private document: Document
   ) { }
 
   updateTitle(title: string) {
@@ -46,12 +48,23 @@ export class SeoService {
 
     if (config.url) {
       this.meta.updateTag({ property: 'og:url', content: config.url });
-      this.meta.updateTag({ rel: 'canonical', href: config.url });
+      this.updateCanonical(config.url);
     }
 
     if (config.type) {
       this.meta.updateTag({ property: 'og:type', content: config.type });
     }
+  }
+
+  private updateCanonical(url: string) {
+    const links = Array.from(this.document.head.querySelectorAll<HTMLLinkElement>('link[rel="canonical"]'));
+    const canonical = links.shift() ?? this.document.createElement('link');
+    canonical.rel = 'canonical';
+    canonical.href = url;
+    if (!canonical.isConnected) this.document.head.appendChild(canonical);
+    links.forEach(link => link.remove());
+    // Remove the invalid meta element left by the previous implementation.
+    this.meta.removeTag('rel="canonical"');
   }
 
   updateProductSEO(product: any) {
@@ -61,8 +74,8 @@ export class SeoService {
       title: `${product.name} - Premium Handmade Candles | Flame to Fable`,
       description: product.description || `${product.name}. Premium handmade candle by Flame to Fable. Best candles in Kerala for home decor, gifting, and return gifts.`,
       keywords: `${product.name}, handmade candles Kerala, ${product.specifications?.fragrance || 'scented candles'}, premium candles, candle gifts Kerala, return gift candles, function return gifts`,
-      image: `${baseUrl}/${product.image}`,
-      url: `${baseUrl}/product/${product.id}`,
+      image: new URL(product.image, baseUrl + '/').href,
+      url: `${baseUrl}/product/${product.id}/`,
       type: 'product'
     });
 
@@ -72,12 +85,14 @@ export class SeoService {
 
   updateBlogSEO(blog: any) {
     const baseUrl = 'https://flametofable.ariyo.in';
+    this.document.querySelectorAll('script[data-product]').forEach(script => script.remove());
     
     this.updateMetaTags({
       title: `${blog.title} - Flame to Fable Blog`,
       description: blog.excerpt || `Read ${blog.title} on Flame to Fable blog. Expert tips about candles, home decor, and creating perfect ambiance.`,
       keywords: `${blog.title}, candle tips, home decor blog, Kerala candles, candle care`,
-      url: `${baseUrl}/blog/${blog.id}`,
+      image: `${baseUrl}/favicon.png`,
+      url: `${baseUrl}/blog/${blog.id}/`,
       type: 'article'
     });
   }
@@ -91,15 +106,11 @@ export class SeoService {
       "@type": "Product",
       "name": product.name,
       "description": product.description,
-      "image": `https://flametofable.ariyo.in/${product.image}`,
+      "image": new URL(product.image, 'https://flametofable.ariyo.in/').href,
+      "url": `https://flametofable.ariyo.in/product/${product.id}/`,
       "brand": {
         "@type": "Brand",
         "name": "Flame to Fable"
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.8",
-        "reviewCount": "127"
       }
     };
 
@@ -116,6 +127,7 @@ export class SeoService {
   }
 
   resetToDefault() {
+    this.document.querySelectorAll('script[data-product]').forEach(script => script.remove());
     this.updateMetaTags({
       title: 'Premium Handmade Candles | Best Candles for Home, Decorations, Gift - Flame to Fable',
       description: 'Best handmade candles in Kerala. Premium scented, eco-friendly & custom designs by Flame to Fable. Top-rated candle maker in God\'s own country. Order online!',
@@ -133,7 +145,7 @@ export class SeoService {
     
     const googleBusinessData = {
       "@context": "https://schema.org",
-      "@type": ["LocalBusiness", "Store"],
+      "@type": "Organization",
       "name": "Flame to Fable",
       "url": "https://flametofable.ariyo.in/",
       "sameAs": [
@@ -143,15 +155,23 @@ export class SeoService {
       ],
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Kerala",
+        "addressLocality": "Kochi",
         "addressRegion": "Kerala",
-        "addressCountry": "India"
+        "addressCountry": "IN",
+        "postalCode": "682023"
       },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "21.0680074",
-        "longitude": "82.7525294"
-      },
+      "areaServed": [
+        {
+          "@type": "State",
+          "name": "Kerala, India",
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 10.850516,
+            "longitude": 76.271083
+          }
+        },
+        { "@type": "Country", "name": "India" }
+      ],
       "telephone": "+91-7994209092",
       "openingHours": "Mo-Su 09:00-18:00",
       "aggregateRating": {
@@ -177,8 +197,9 @@ export class SeoService {
     // Add local business specific meta tags
     this.meta.updateTag({ name: 'geo.region', content: 'IN-KL' });
     this.meta.updateTag({ name: 'geo.placename', content: 'Kerala, India' });
-    this.meta.updateTag({ name: 'geo.position', content: '21.0680074;82.7525294' });
-    this.meta.updateTag({ name: 'ICBM', content: '21.0680074, 82.7525294' });
+    // Regional coordinates selected for the Kerala service area.
+    this.meta.updateTag({ name: 'geo.position', content: '10.850516;76.271083' });
+    this.meta.updateTag({ name: 'ICBM', content: '10.850516, 76.271083' });
     
     // Add Google Business schema
     this.addGoogleBusinessSchema();

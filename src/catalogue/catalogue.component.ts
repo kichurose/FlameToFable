@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { SearchComponent } from '../search/search.component';
 
 interface CatalogueProduct {
@@ -14,7 +14,7 @@ interface CatalogueProduct {
 @Component({
   selector: 'app-catalogue',
   standalone: true,
-  imports: [CommonModule, SearchComponent],
+  imports: [CommonModule, SearchComponent, RouterLink],
   templateUrl: './catalogue.component.html',
   styleUrls: ['./catalogue.component.scss']
 })

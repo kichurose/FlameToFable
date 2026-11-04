@@ -4,8 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
-    "build:pages": "ng build --configuration production --output-path=dist/flametofable",
+    "build": "ng build && node scripts/generate-pages.mjs",
+    "build:pages": "ng build --configuration production --output-path=dist/flametofable && node scripts/generate-pages.mjs",
     "deploy:pages": "npm run build:pages && angular-cli-ghpages --dir=dist/flametofable/browser --cname=flametofable.ariyo.in",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"

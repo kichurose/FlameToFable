@@ -11,12 +11,12 @@ import { GoogleReviewsService, GoogleReview } from './google-reviews.service';
     <div class="google-business-integration">
       <!-- Google My Business Widget -->
       <div class="gmb-widget">
-        <h3>Visit Our Store</h3>
+        <h3>Our Online Candle Shop</h3>
         <div class="business-info">
           <div class="business-details">
             <div class="detail-item">
               <i class="fas fa-map-marker-alt"></i>
-              <span>Kerala, India</span>
+              <span>Kochi, Ernakulam, Kerala 682023 · Online orders only</span>
             </div>
             <div class="detail-item">
               <i class="fas fa-phone"></i>
@@ -32,18 +32,7 @@ import { GoogleReviewsService, GoogleReview } from './google-reviews.service';
             </div>
           </div>
           
-          <!-- Google Maps Embed -->
-          <div class="maps-container">
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3680.0!2d82.7525294!3d21.0680074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x20c19ef3911365fd%3A0x5ab155efba4d434!2sFlame%20to%20Fable!5e0!3m2!1sen!2sin!4v1705920000000!5m2!1sen!2sin"
-              width="100%" 
-              height="300" 
-              style="border:0;" 
-              allowfullscreen="" 
-              loading="lazy" 
-              referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-          </div>
+          <!-- Exact map embed omitted until the business pin is verified. -->
           
           <!-- Action Buttons -->
           <div class="action-buttons">
@@ -52,7 +41,7 @@ import { GoogleReviewsService, GoogleReview } from './google-reviews.service';
                class="btn btn-primary"
                rel="noopener noreferrer">
               <i class="fas fa-directions"></i>
-              Get Directions
+              View Business Profile
             </a>
             <a href="https://maps.app.goo.gl/rk5Mpm4zY6G1cxB97" 
                target="_blank" 
