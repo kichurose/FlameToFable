@@ -31,6 +31,10 @@ The build writes a real `index.html` for each product and blog route, so direct
 visits resolve as normal pages. Each has route-specific metadata and a canonical
 URL ending in `/`. GitHub Pages redirects the version without `/` to that page.
 The sitemap is regenerated from the product and blog data on every build.
+The enquiry-only catalogue uses `WebPage` metadata and `Organization` business
+data. It does not publish prices, merchant offers, or sample ratings/reviews.
+Only introduce shopping markup when genuine public pricing and the applicable
+required fields can be supplied; missing information must not be invented.
 The build output in `dist/` is ignored on `master`; the publishing tool pushes
 the compiled site to `gh-pages`. Commit and push source changes to `master` separately.
 

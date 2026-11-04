@@ -94,7 +94,8 @@ export function createPage(shell, route) {
   let content;
   if (route.product) {
     const p = route.product;
-    const data = { '@context': 'https://schema.org', '@type': 'Product', name: p.name, description: route.description, image: route.image, url, brand: { '@type': 'Brand', name: 'Flame to Fable' } };
+    // Quote-only catalogue pages do not claim Product/Offer rich-result eligibility.
+    const data = { '@context': 'https://schema.org', '@type': 'WebPage', name: p.name, description: route.description, image: route.image, url, publisher: { '@id': site + '#organization' } };
     html = html.replace('</head>', `<script type="application/ld+json" data-product="true">${JSON.stringify(data).replace(/</g, '\\u003c')}</script>\n</head>`);
     const enquiry = 'https://wa.me/917994209092?text=' + encodeURIComponent(`Hi! I'm interested in the ${p.name}. Can you provide more details about availability and delivery?`);
     content = `<h1>${escapeHtml(p.name)}</h1><img src="${escapeHtml(route.image)}" alt="${escapeHtml(p.name)}" width="360" style="max-width:100%;height:auto"><p>${escapeHtml(route.description)}</p><a href="${escapeHtml(enquiry)}">Enquire on WhatsApp</a>`;

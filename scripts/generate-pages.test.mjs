@@ -27,11 +27,29 @@ test('every route gets one matching canonical, metadata, and crawlable content',
     if (route.product) {
       const schema = JSON.parse(html.match(/<script type="application\/ld\+json" data-product="true">([\s\S]*?)<\/script>/)[1]);
       assert.equal(schema.name, route.product.name);
+      assert.equal(schema['@type'], 'WebPage');
       assert.equal(schema.image, route.image);
       assert.equal(schema.url, new URL(route.path, site).href);
       assert.ok(!schema.aggregateRating, 'Unverified ratings must not be generated');
     }
   }
+});
+
+test('homepage and generated pages have no prices or incomplete shopping/review markup', () => {
+  function check(node) {
+    if (!node || typeof node !== 'object') return;
+    assert.ok(!['Product', 'Offer', 'AggregateOffer', 'OfferCatalog', 'Review', 'AggregateRating'].includes(node['@type']));
+    for (const [key, value] of Object.entries(node)) {
+      assert.ok(!['price', 'priceRange', 'priceCurrency', 'offers', 'aggregateRating', 'review'].includes(key), `Unexpected ${key}`);
+      if (Array.isArray(value)) value.forEach(check);
+      else check(value);
+    }
+  }
+  for (const html of [shell, ...routes.map(route => createPage(shell, route))]) {
+    for (const match of html.matchAll(/<script\b[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)) check(JSON.parse(match[1]));
+  }
+  assert.ok(shell.includes('https://flametofable.ariyo.in/favicon.png'));
+  assert.ok(!shell.includes('https://flametofable.ariyo.in/logo.png'));
 });
 
 test('sitemap lists exactly the generated routes and current image filenames', () => {

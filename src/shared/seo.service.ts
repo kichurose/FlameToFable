@@ -80,7 +80,7 @@ export class SeoService {
     });
 
     // Add product-specific structured data
-    this.addProductStructuredData(product);
+    this.addProductPageStructuredData(product);
   }
 
   updateBlogSEO(blog: any) {
@@ -97,20 +97,19 @@ export class SeoService {
     });
   }
 
-  private addProductStructuredData(product: any) {
+  private addProductPageStructuredData(product: any) {
     const script = document.createElement('script');
     script.type = 'application/ld+json';
     
     const structuredData = {
       "@context": "https://schema.org",
-      "@type": "Product",
+      "@type": "WebPage",
       "name": product.name,
       "description": product.description,
       "image": new URL(product.image, 'https://flametofable.ariyo.in/').href,
       "url": `https://flametofable.ariyo.in/product/${product.id}/`,
-      "brand": {
-        "@type": "Brand",
-        "name": "Flame to Fable"
+      "publisher": {
+        "@id": "https://flametofable.ariyo.in/#organization"
       }
     };
 
@@ -140,13 +139,18 @@ export class SeoService {
 
   // Google Business Integration Methods
   addGoogleBusinessSchema() {
+    // The static business schema is already available before JavaScript loads.
+    if (this.document.querySelector('script[data-google-business]')) return;
     const script = document.createElement('script');
     script.type = 'application/ld+json';
     
     const googleBusinessData = {
       "@context": "https://schema.org",
       "@type": "Organization",
+      "@id": "https://flametofable.ariyo.in/#organization",
       "name": "Flame to Fable",
+      "logo": "https://flametofable.ariyo.in/favicon.png",
+      "image": "https://flametofable.ariyo.in/favicon.png",
       "url": "https://flametofable.ariyo.in/",
       "sameAs": [
         "https://www.instagram.com/flametofable",
@@ -172,13 +176,7 @@ export class SeoService {
         },
         { "@type": "Country", "name": "India" }
       ],
-      "telephone": "+91-7994209092",
-      "openingHours": "Mo-Su 09:00-18:00",
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.8",
-        "reviewCount": "127"
-      }
+      "telephone": "+91-7994209092"
     };
 
     script.innerHTML = JSON.stringify(googleBusinessData);
