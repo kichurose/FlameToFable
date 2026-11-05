@@ -1,27 +1,54 @@
+import { candleCategories, matchesCandleCategory } from '../shared/candle-categories';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { DestroyRef, inject } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { ProductDetails } from '../shared/interfaces';
 import { SeoService } from '../shared/seo.service';
 
 @Component({
   selector: 'app-product-detail',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './product-detail.component.html',
   styleUrls: ['./product-detail.component.scss']
 })
 export class ProductDetailComponent implements OnInit {
   product: ProductDetails | null = null;
+  private readonly destroyRef = inject(DestroyRef);
   currentImageIndex = 0;
   isSpecsExpanded = false;
 
   // Product data dictionary (shared from catalogue)
   products: { [key: string]: ProductDetails } = {
+    'mini-bouquet': {
+      "id": "mini-bouquet",
+      "name": "Mini Bouquet Candle",
+      "image": "/optimized/mini bouquet.jpg.webp",
+      "images": [
+            "/optimized/mini bouquet.jpg.webp",
+            "/optimized/mini bouquets.jpg.webp"
+      ],
+      "description": "A miniature floral candle bouquet with rose and white flower details in a ribbed pot, made for thoughtful gifting."
+},
+    'butterfly': {
+      "id": "butterfly",
+      "name": "Butterfly Candles",
+      "image": "/optimized/butterfly.jpg.webp",
+      "description": "Delicate purple butterfly-shaped candles with textured floral details, for a playful decorative touch."
+},
+    'sunflower-garden': {
+      id: 'sunflower-garden',
+      name: 'Sunflower Garden Candle',
+      image: './optimized/Sunflower Garden Candle.jpg.webp',
+      images: ['./optimized/Sunflower Garden Candle.jpg.webp', './optimized/Sunflower Gardern Candle.jpg.webp'],
+      description: 'A little garden in a glass bowl, with bright yellow sunflower details and green leaves. A cheerful touch for your space or a thoughtful gift.'
+    },
     'tulip-candle': {
       id: 'tulip-candle',
       name: 'Tulip Candle',
-      image: './TulipCandle.jpg',
+      image: './optimized/TulipCandle.jpg.webp',
       description: 'A tulip-inspired decorative candle for your home or a thoughtful gift.',
       socialLinks: {
         youtube: 'https://www.youtube.com/@FlameToFable/shorts',
@@ -31,7 +58,7 @@ export class ProductDetailComponent implements OnInit {
     'trio-jar': {
       id: 'trio-jar',
       name: 'Trio Jar Candle',
-      image: './TrioJar.jpg',
+      image: './optimized/TrioJar.jpg.webp',
       description: 'A decorative jar candle with three contrasting layers, made for gifting or adding a warm touch to your space.',
       socialLinks: {
         youtube: 'https://www.youtube.com/@FlameToFable/shorts',
@@ -41,7 +68,7 @@ export class ProductDetailComponent implements OnInit {
     'christmastree2': {
       id: 'christmastree2',
       name: 'Christmas Tree (Pack of 2)',
-      image: './christmastree2.jpg',
+      image: './optimized/christmastree2.jpg.webp',
       description: 'Beautiful pack of 2 Christmas tree candles with festive fragrance and holiday warmth.',
       specifications: {
         dimensions: '3.5" × 4.5" each',
@@ -59,7 +86,7 @@ export class ProductDetailComponent implements OnInit {
     'baby-jesus': {
       id: 'baby-jesus',
       name: 'Baby Jesus Candle',
-      image: './Baby-Jesus.jpg',
+      image: './optimized/Baby-Jesus.jpg.webp',
       description: 'Sacred and peaceful fragrance with frankincense and myrrh for Christmas worship',
       specifications: {
         dimensions: '3.5" × 4.0"',
@@ -77,8 +104,8 @@ export class ProductDetailComponent implements OnInit {
     'christmas-candle': {
       id: 'christmas-candle',
       name: 'Christmas Candle',
-      image: './christmas.jpg',
-      images: ['./christmas.jpg', './christmastree.jpg', './christmas1.1.jpg'],
+      image: './optimized/christmas.jpg.webp',
+      images: ['./optimized/christmas.jpg.webp', './optimized/christmastree.jpg.webp', './optimized/christmas1.1.jpg.webp'],
       description: 'Festive blend of cinnamon, pine, and warm spices to celebrate the season.',
       specifications: {
         dimensions: '3.5" × 4.2"',
@@ -96,8 +123,8 @@ export class ProductDetailComponent implements OnInit {
     'christmas-candle-2': {
       id: 'christmas-candle-2',
       name: 'Christmas Candle 2',
-      image: './christmas2.jpg',
-      images: ['./christmas2.jpg', './christmas2.1.jpg'],
+      image: './optimized/christmas2.jpg.webp',
+      images: ['./optimized/christmas2.jpg.webp', './optimized/christmas2.1.jpg.webp'],
       description: 'Festive holiday candle in a unique decorative shape with warm spices and pine.',
       specifications: {
         dimensions: '4.0" × 5.0"',
@@ -115,7 +142,7 @@ export class ProductDetailComponent implements OnInit {
     'christmas-collection': {
       id: 'christmas-collection',
       name: 'Christmas Collection Pack of 3',
-      image: './christmas-collection.jpg',
+      image: './optimized/christmas-collection.jpg.webp',
       description: 'Complete Christmas candle collection with three festive fragrances.',
       specifications: {
         dimensions: '3.5" × 4.0" each',
@@ -133,7 +160,7 @@ export class ProductDetailComponent implements OnInit {
     'vanilla-chocolate': {
       id: 'vanilla-chocolate',
       name: 'Vanilla Chocolate Candle',
-      image: './vanilla.jpg',
+      image: './optimized/vanilla.jpg.webp',
       description: 'Rich and indulgent blend of vanilla and chocolate for cozy evenings.',
       specifications: {
         dimensions: '4.0" × 5.0"',
@@ -151,7 +178,7 @@ export class ProductDetailComponent implements OnInit {
     'berry-candle': {
       id: 'berry-candle',
       name: 'Berry Candle',
-      image: './berry-bliss.jpg',
+      image: './optimized/berry-bliss.jpg.webp',
       description: 'Fresh berry fragrance that energizes and refreshes any space.',
       specifications: {
         dimensions: '3.5" × 4.5"',
@@ -169,7 +196,7 @@ export class ProductDetailComponent implements OnInit {
     'car-candle': {
       id: 'car-candle',
       name: 'Car Candle',
-      image: './Car.jpg',
+      image: './optimized/Car.jpg.webp',
       description: 'Compact car-shaped candle perfect for automotive enthusiasts.',
       specifications: {
         dimensions: '5.0" × 2.5"',
@@ -187,7 +214,7 @@ export class ProductDetailComponent implements OnInit {
     'reindeer': {
       id: 'reindeer',
       name: 'Reindeer Candle',
-      image: './Reindeer.jpg',
+      image: './optimized/Reindeer.jpg.webp',
       description: 'Adorable reindeer-shaped candle perfect for Christmas decorations.',
       specifications: {
         dimensions: '4.0" × 3.5"',
@@ -205,7 +232,7 @@ export class ProductDetailComponent implements OnInit {
     'reindeer-pack': {
       id: 'reindeer-pack',
       name: 'Reindeer Pack of 2',
-      image: './reindeer-pack.jpg',
+      image: './optimized/reindeer-pack.jpg.webp',
       description: 'Charming pack of 2 reindeer candles for festive home decor.',
       specifications: {
         dimensions: '4.0" × 3.5" each',
@@ -223,7 +250,7 @@ export class ProductDetailComponent implements OnInit {
     'stack-hearts': {
       id: 'stack-hearts',
       name: 'Stack Hearts Candle',
-      image: './stack-hearts.jpg',
+      image: './optimized/stack-hearts.jpg.webp',
       description: 'Romantic stacked hearts candle perfect for special occasions.',
       specifications: {
         dimensions: '3.5" × 5.0"',
@@ -241,7 +268,7 @@ export class ProductDetailComponent implements OnInit {
     'peony-bloom': {
       id: 'peony-bloom',
       name: 'Peony Bloom Candle',
-      image: './peony.jpg',
+      image: './optimized/peony.jpg.webp',
       description: 'Beautiful peony-shaped candle with delicate floral fragrance.',
       specifications: {
         dimensions: '4.5" × 4.0"',
@@ -259,7 +286,7 @@ export class ProductDetailComponent implements OnInit {
     'daisy-love': {
       id: 'daisy-love',
       name: 'Daisy Love Candle',
-      image: './daisy.jpg',
+      image: './optimized/daisy.jpg.webp',
       description: 'Sweet daisy-inspired candle with fresh spring fragrance.',
       specifications: {
         dimensions: '3.0" × 3.5"',
@@ -277,7 +304,7 @@ export class ProductDetailComponent implements OnInit {
     'sunflower': {
       id: 'sunflower',
       name: 'Sunflower Candle',
-      image: './daisy1.jpg',
+      image: './optimized/daisy1.jpg.webp',
       description: 'Bright sunflower candle that brings summer sunshine indoors.',
       specifications: {
         dimensions: '4.0" × 3.0"',
@@ -295,7 +322,7 @@ export class ProductDetailComponent implements OnInit {
     'berry-bliss': {
       id: 'berry-bliss',
       name: 'Berry Bliss Candle',
-      image: './berry-bliss.jpg',
+      image: './optimized/berry-bliss.jpg.webp',
       description: 'Luxurious berry blend candle with rich fruity fragrance.',
       specifications: {
         dimensions: '4.0" × 4.5"',
@@ -313,7 +340,7 @@ export class ProductDetailComponent implements OnInit {
     'latte-coffee': {
       id: 'latte-coffee',
       name: 'Latte Coffee Candle',
-      image: './coffee.jpg',
+      image: './optimized/coffee.jpg.webp',
       description: 'Rich latte coffee candle with creamy vanilla notes.',
       specifications: {
         dimensions: '4.0" × 4.5"',
@@ -331,7 +358,7 @@ export class ProductDetailComponent implements OnInit {
     'watermelon': {
       id: 'watermelon',
       name: 'Watermelon Candle',
-      image: './watermelon.jpg',
+      image: './optimized/watermelon.jpg.webp',
       description: 'Refreshing watermelon-shaped candle with sweet summer fragrance.',
       specifications: {
         dimensions: '4.5" × 3.5"',
@@ -349,7 +376,7 @@ export class ProductDetailComponent implements OnInit {
     'cloud': {
       id: 'cloud',
       name: 'Cloud Candle',
-      image: './cloud.jpg',
+      image: './optimized/cloud.jpg.webp',
       description: 'Dreamy cloud-shaped candle with soft, airy fragrance.',
       specifications: {
         dimensions: '5.0" × 3.0"',
@@ -367,7 +394,7 @@ export class ProductDetailComponent implements OnInit {
     'rose-candle': {
       id: 'rose-candle',
       name: 'Rose Candle',
-      image: './rose.jpg',
+      image: './optimized/rose.jpg.webp',
       description: 'Elegant rose-shaped candle with romantic fragrance for special occasions.',
       specifications: {
         dimensions: '4.0" × 4.0"',
@@ -385,7 +412,7 @@ export class ProductDetailComponent implements OnInit {
     'rose-design-2': {
       id: 'rose-design-2',
       name: 'Rose Design 2',
-      image: './rosedesign2.jpg',
+      image: './optimized/rosedesign2.jpg.webp',
       description: 'Beautiful rose design candle with delicate petals and sweet fragrance.',
       specifications: {
         dimensions: '3.5" × 4.0"',
@@ -403,7 +430,7 @@ export class ProductDetailComponent implements OnInit {
     'heart-candle': {
       id: 'heart-candle',
       name: 'Heart Candle',
-      image: './heart.jpg',
+      image: './optimized/heart.jpg.webp',
       description: 'Romantic heart-shaped candle perfect for expressing love and affection.',
       specifications: {
         dimensions: '4.0" × 3.5"',
@@ -421,7 +448,7 @@ export class ProductDetailComponent implements OnInit {
     'angel-wings': {
       id: 'angel-wings',
       name: 'Angel Wings Candle',
-      image: './angelwings.jpg',
+      image: './optimized/angelwings.jpg.webp',
       description: 'Heavenly angel wings candle with peaceful fragrance for serenity and calm.',
       specifications: {
         dimensions: '4.5" × 3.0"',
@@ -439,7 +466,7 @@ export class ProductDetailComponent implements OnInit {
     'ocean': {
       id: 'ocean',
       name: 'Ocean Candle',
-      image: './ocean.jpg',
+      image: './optimized/ocean.jpg.webp',
       description: 'Fresh ocean breeze fragrance that brings the calming essence of the sea into your space.',
       specifications: {
         dimensions: '4.0" × 5.0"',
@@ -457,7 +484,7 @@ export class ProductDetailComponent implements OnInit {
     'heartofroses': {
       id: 'heartofroses',
       name: 'Heart of Roses Candle',
-      image: './heartofroses.jpg',
+      image: './optimized/heartofroses.jpg.webp',
       description: 'Romantic rose-scented candle crafted in a beautiful heart shape, perfect for special occasions.',
       specifications: {
         dimensions: '3.5" × 3.0"',
@@ -475,7 +502,7 @@ export class ProductDetailComponent implements OnInit {
     'magic': {
       id: 'magic',
       name: 'Magic Candle',
-      image: './magic.jpg',
+      image: './optimized/magic.jpg.webp',
       description: 'Enchanting candle with mystical fragrance that creates a magical ambiance in any room.',
       specifications: {
         dimensions: '4.0" × 4.5"',
@@ -493,7 +520,7 @@ export class ProductDetailComponent implements OnInit {
     'icedmacha': {
       id: 'icedmacha',
       name: 'Iced Matcha Candle',
-      image: './icedmacha.jpg',
+      image: './optimized/icedmacha.jpg.webp',
       description: 'Refreshing iced matcha scent that brings the energizing aroma of Japanese tea ceremony.',
       specifications: {
         dimensions: '3.5" × 4.0"',
@@ -517,14 +544,21 @@ export class ProductDetailComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    const productId = this.route.snapshot.paramMap.get('id');
-    if (productId && this.products[productId]) {
-      this.product = this.products[productId];
-      // Update SEO for this specific product
-      this.seoService.updateProductSEO(this.product);
-    } else {
-      this.router.navigate(['/']);
-    }
+    this.route.paramMap.pipe(takeUntilDestroyed(this.destroyRef)).subscribe(params => {
+      const productId = params.get('id');
+      if (productId && this.products[productId]) {
+        this.product = this.products[productId];
+        this.currentImageIndex = 0; this.isSpecsExpanded = false;
+        this.seoService.updateProductSEO(this.product);
+        window.scrollTo({ top: 0, behavior: 'instant' });
+      } else { this.router.navigate(['/']); }
+    });
+  }
+  get relatedProducts(): ProductDetails[] {
+    if (!this.product) return [];
+    const currentId = this.product.id;
+    const groups = candleCategories.filter(category => category !== 'All candles' && matchesCandleCategory(currentId, category));
+    return Object.values(this.products).filter(product => product.id !== currentId).map((product, index) => ({ product, index, score: groups.filter(group => matchesCandleCategory(product.id, group)).length })).sort((a,b) => b.score - a.score || a.index - b.index).slice(0,3).map(item => item.product);
   }
 
   goBack() {

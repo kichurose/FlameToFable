@@ -1,65 +1,33 @@
-import { Component, signal, OnInit, OnDestroy, HostListener } from '@angular/core';
-import { RouterOutlet, Router } from '@angular/router';
-
-@Component({
-  selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.html',
-  styleUrl: './app.scss'
-})
-export class App implements OnInit, OnDestroy {
-  protected readonly title = signal('flametofable');
-  private lastScrollTop = 0;
-  private navbarElement?: HTMLElement;
-
-  constructor(private router: Router) {}
-
-  ngOnInit() {
-    this.navbarElement = document.querySelector('.main-nav') as HTMLElement;
-  }
-
-  ngOnDestroy() {
-    // Cleanup if needed
-  }
-
-  navigateHome() {
-    this.router.navigate(['/']);
-  }
-
-  navigateToSection(sectionId: string, event: Event) {
-    event.preventDefault();
-    
-    // Always navigate to home first, then scroll to section
-    this.router.navigate(['/']).then(() => {
-      setTimeout(() => {
-        const element = document.getElementById(sectionId);
-        if (element) {
-          element.scrollIntoView({ 
-            behavior: 'smooth', 
-            block: 'start' 
-          });
-        }
-      }, 100); // Small delay to ensure page is loaded
+import { Component, HostListener, OnDestroy } from '@angular/core';
+import { RouterOutlet, Router, NavigationEnd } from '@angular/router';
+import { Subscription } from 'rxjs';
+@Component({ selector: 'app-root', imports: [RouterOutlet], templateUrl: './app.html', styleUrl: './app.scss' })
+export class App implements OnDestroy {
+  menuOpen = false;
+  activeSection = 'home';
+  year = new Date().getFullYear();
+  readonly navItems = [{ id: 'home', label: 'Home' }, { id: 'catalogue', label: 'Collection' }, { id: 'bulk-orders', label: 'Bulk Orders' }, { id: 'custom-design', label: 'Design Your Own' }, { id: 'about', label: 'About' }, { id: 'blog', label: 'Journal' }, { id: 'contact', label: 'Let’s talk' }];
+  private navigation: Subscription;
+  constructor(private router: Router) {
+    this.navigation = router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) { this.menuOpen = false; this.onScroll(); }
     });
   }
-
+  ngOnDestroy() { this.navigation.unsubscribe(); }
+  navigateToSection(sectionId: string, event: Event) {
+    event.preventDefault(); this.menuOpen = false;
+    this.router.navigate(['/'], { fragment: sectionId }).then(() => {
+      requestAnimationFrame(() => { document.getElementById(sectionId)?.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'start' }); this.activeSection = sectionId; });
+    });
+  }
   @HostListener('window:scroll')
   onScroll() {
-    if (!this.navbarElement) return;
-
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    
-    // Show navbar when scrolling up or at very top
-    if (scrollTop < this.lastScrollTop || scrollTop <= 50) {
-      this.navbarElement.classList.remove('hidden');
-      this.navbarElement.classList.add('show');
-    } 
-    // Hide navbar when scrolling down and past threshold
-    else if (scrollTop > this.lastScrollTop && scrollTop > 50) {
-      this.navbarElement.classList.add('hidden');
-      this.navbarElement.classList.remove('show');
-    }
-
-    this.lastScrollTop = scrollTop;
+    if (this.router.url.startsWith('/product/')) { this.activeSection = 'catalogue'; return; }
+    if (this.router.url.startsWith('/blog/')) { this.activeSection = 'blog'; return; }
+    const sections = ['home', 'bulk-orders', 'custom-design', 'catalogue', 'about', 'collection', 'blog', 'contact'];
+    let current = 'home';
+    for (const id of sections) { const element = document.getElementById(id); if (element && element.getBoundingClientRect().top <= 160) current = id === 'collection' ? 'catalogue' : id; }
+    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) current = 'contact';
+    this.activeSection = current;
   }
 }

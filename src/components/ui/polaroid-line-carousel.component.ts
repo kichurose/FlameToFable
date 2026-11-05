@@ -1,3 +1,4 @@
+import { NEW_CAROUSEL_DESIGNS } from '../../shared/new-candle-designs';
 import { AfterViewInit, Component, ElementRef, NgZone, OnDestroy, ViewChild, ViewChildren, QueryList, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { BULK_CANDLE_IMAGES, BULK_CANDLE_LABELS } from '../../shared/bulk-candle-images';
@@ -23,28 +24,38 @@ export class PolaroidLineCarouselComponent implements AfterViewInit, OnDestroy {
   @ViewChild('line') line!: ElementRef<SVGPathElement>;
   @ViewChildren('card') cards!: QueryList<ElementRef<HTMLElement>>;
   readonly slides: CandleSlide[] = [
-    { image: '/rose.jpg', title: 'A little romance', caption: 'Handcrafted roses, made to last a little longer.', alt: 'Handcrafted rose candle' },
-    { image: '/daisy.jpg', title: 'Hello, sunshine', caption: 'A little bloom to brighten your everyday.', alt: 'Daisy shaped candle' },
-    { image: '/icedmacha.jpg', title: 'Slow mornings', caption: 'Your favourite café moment, reimagined in wax.', alt: 'Iced matcha drink candle' },
-    { image: '/ocean.jpg', title: 'Coastal daydreams', caption: 'A small escape, poured with love.', alt: 'Ocean inspired decorative candle' },
-    { image: '/TrioJar.jpg', title: 'Trio Jar Candle', caption: 'Three layers, one lovely glow.', alt: 'Trio Jar Candle', productId: 'trio-jar' },
-    { image: '/heartofroses.jpg', title: 'From the heart', caption: 'Thoughtful little gifts for your favourite people.', alt: 'Heart of roses candle' },
-    { image: '/peony.jpg', title: 'Petal by petal', caption: 'Beautiful details. A softer kind of glow.', alt: 'Handcrafted peony candle' },
-    { image: '/coffee.jpg', title: 'Latte Coffee Candle', caption: 'A café-inspired favourite from our best sellers.', alt: 'Latte Coffee Candle', productId: 'latte-coffee' },
-    { image: '/berry-bliss.jpg', title: 'Berry Bliss Candle', caption: 'A berry-sweet favourite from our best sellers.', alt: 'Berry Bliss Candle', productId: 'berry-bliss' },
-    { image: '/vanilla.jpg', title: 'Vanilla Chocolate Candle', caption: 'A dessert-inspired favourite from our best sellers.', alt: 'Vanilla Chocolate Candle', productId: 'vanilla-chocolate' },
-    { image: '/rose.jpg', title: 'Rose Candle', caption: 'A floral favourite from our best sellers.', alt: 'Rose Candle', productId: 'rose-candle' },
-    { image: '/rosedesign2.jpg', title: 'Rose Design 2', caption: 'A blooming favourite from our best sellers.', alt: 'Rose Design 2', productId: 'rose-design-2' },
-    { image: '/heart.jpg', title: 'Heart Candle', caption: 'A heartfelt favourite from our best sellers.', alt: 'Heart Candle', productId: 'heart-candle' },
-    { image: '/angelwings.jpg', title: 'Angel Wings Candle', caption: 'A thoughtful favourite from our best sellers.', alt: 'Angel Wings Candle', productId: 'angel-wings' },
-    // Keep one view of the blue-centred daisy in the Polaroid collection.
-    ...BULK_CANDLE_IMAGES.filter(image => image !== '/Bulk/IMG20260428230313.jpg').map((image): CandleSlide => ({
-      image,
+    { image: '/optimized/mini bouquet.jpg.webp', title: 'Mini Bouquet Candle', caption: 'A little bouquet, handcrafted with love.', alt: 'Mini Bouquet Candle', productId: 'mini-bouquet' },
+    { image: '/optimized/heart tealight.jpg.webp', title: 'Heart Tealight Candles', caption: 'Little hearts for thoughtful gifts.', alt: 'Heart Tealight Candles', corporate: true },
+    { image: '/optimized/Sunflower Garden Candle.jpg.webp', title: 'Sunflower Garden Candle', caption: 'A little garden, a little sunshine, poured with love.', alt: 'Sunflower Garden Candle with yellow flowers and green leaves in a glass bowl', productId: 'sunflower-garden' },
+    { image: '/optimized/heart tealights.jpg.webp', title: 'Pastel Heart Tealights', caption: 'A little colour, a little glow.', alt: 'Pastel Heart Tealights', corporate: true },
+    { image: '/optimized/ocean.jpg.webp', title: 'Coastal daydreams', caption: 'A small escape, poured with love.', alt: 'Ocean inspired decorative candle' },
+    { image: '/optimized/TrioJar.jpg.webp', title: 'Trio Jar Candle', caption: 'Three layers, one lovely glow.', alt: 'Trio Jar Candle', productId: 'trio-jar' },
+    { image: '/optimized/heartofroses.jpg.webp', title: 'From the heart', caption: 'Thoughtful little gifts for your favourite people.', alt: 'Heart of roses candle' },
+    { image: '/optimized/peony.jpg.webp', title: 'Petal by petal', caption: 'Beautiful details. A softer kind of glow.', alt: 'Handcrafted peony candle' },
+    { image: '/optimized/coffee.jpg.webp', title: 'Latte Coffee Candle', caption: 'A café-inspired favourite from our best sellers.', alt: 'Latte Coffee Candle', productId: 'latte-coffee' },
+    { image: '/optimized/berry-bliss.jpg.webp', title: 'Berry Bliss Candle', caption: 'A berry-sweet favourite from our best sellers.', alt: 'Berry Bliss Candle', productId: 'berry-bliss' },
+    { image: '/optimized/vanilla.jpg.webp', title: 'Vanilla Chocolate Candle', caption: 'A dessert-inspired favourite from our best sellers.', alt: 'Vanilla Chocolate Candle', productId: 'vanilla-chocolate' },
+    { image: '/optimized/rose.jpg.webp', title: 'Rose Candle', caption: 'A floral favourite from our best sellers.', alt: 'Rose Candle', productId: 'rose-candle' },
+    { image: '/optimized/rosedesign2.jpg.webp', title: 'Rose Design 2', caption: 'A blooming favourite from our best sellers.', alt: 'Rose Design 2', productId: 'rose-design-2' },
+    { image: '/optimized/heart.jpg.webp', title: 'Heart Candle', caption: 'A heartfelt favourite from our best sellers.', alt: 'Heart Candle', productId: 'heart-candle' },
+    { image: '/optimized/angelwings.jpg.webp', title: 'Angel Wings Candle', caption: 'A thoughtful favourite from our best sellers.', alt: 'Angel Wings Candle', productId: 'angel-wings' },
+    // Curate daisies to one purple slide near the end, one multicolour and one pink-ribbon pouch.
+    // Keep just one bubble candle photo.
+    ...BULK_CANDLE_IMAGES.filter(image =>
+      (!BULK_CANDLE_LABELS[image].includes('Daisy') || image === '/optimized/Bulk/color%20daisy.jpg.webp' || image === '/optimized/Bulk/daisy%201.jpg.webp') &&
+      (!BULK_CANDLE_LABELS[image].includes('Sunflower Gift Cards') || image === '/optimized/Bulk/sunflower.jpg.webp') &&
+      image !== '/optimized/Bulk/IMG20260430233751.jpg.webp' &&
+      (!BULK_CANDLE_LABELS[image].startsWith('Bubble') || image === '/optimized/Bulk/IMG20260505143330.jpg.webp')
+    ).map((image): CandleSlide => ({
+      image: BULK_CANDLE_LABELS[image] === 'Sunflower Favours' ? '/optimized/bulk sunflower.jpg.webp' : BULK_CANDLE_LABELS[image] === 'Sunflower Gift Cards' ? '/optimized/sunflower card.jpg.webp' : image,
       title: BULK_CANDLE_LABELS[image],
       caption: 'Custom candles for corporate gifts, weddings, and celebrations.',
       alt: BULK_CANDLE_LABELS[image] + ' — custom candle order',
       corporate: true
-    }))
+    })),
+    ...NEW_CAROUSEL_DESIGNS.filter(design => design.productId !== 'mini-bouquet' && !design.title.includes('Tealight')).map(design => ({ ...design, alt: design.title, caption: 'Thoughtful details, handcrafted with love.' })),
+    { image: '/optimized/Bulk/IMG20260428230012.jpg.webp', title: 'Purple Daisy Gift Cards', caption: 'A little bloom, a thoughtful thank you.', alt: 'Purple-centred daisy candles on gift cards', corporate: true },
+    { image: '/optimized/icedmacha.jpg.webp', title: 'Slow mornings', caption: 'Your favourite café moment, reimagined in wax.', alt: 'Iced matcha drink candle' }
   ];
   active = signal(1);
   paused = signal(false);

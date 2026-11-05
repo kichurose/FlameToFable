@@ -52,42 +52,24 @@ export class BlogComponent implements OnInit {
       title: 'The Story Behind Flame to Fable',
       content: `
         <h2>A Journey That Started with a Simple Inspiration</h2>
-        <br/>
-        <p>One quiet morning, while scrolling through my phone, something instantly caught my attention - a girl making a watermelon-shaped candle. It was vibrant, playful, and incredibly cute. That moment sparked a thought: Why not give this a try myself?</p>
-         <br/>
-        <p>Curious and excited, I searched online and found the perfect candle-making kit. I poured my heart into creating my first candle, unsure of how it would turn out. When I shared it on Instagram and YouTube, the response was overwhelming. The appreciation and encouragement I received gave me the confidence to keep going.</p>
-         <br/>
-        <p>Without waiting any longer, I tried making another candle-this time, a cloud candle. Soft, dreamy, and beautiful, it felt like another small success in my growing journey.</p>
+<p>One quiet morning, while scrolling through my phone, something instantly caught my attention - a girl making a watermelon-shaped candle. It was vibrant, playful, and incredibly cute. That moment sparked a thought: Why not give this a try myself?</p>
+<p>Curious and excited, I searched online and found the perfect candle-making kit. I poured my heart into creating my first candle, unsure of how it would turn out. When I shared it on Instagram and YouTube, the response was overwhelming. The appreciation and encouragement I received gave me the confidence to keep going.</p>
+<p>Without waiting any longer, I tried making another candle-this time, a cloud candle. Soft, dreamy, and beautiful, it felt like another small success in my growing journey.</p>
+<p>But my love for candles began much earlier.</p>
+<p>As a child, my father once brought home gel wax. I still remember how fascinated I was seeing it for the first time-smooth, fluffy, and crystal clear. That moment stayed with me. From then on, I found myself drawn to small, artistic candles that felt magical in their own way.</p>
+<p>As I grew older, I often browsed candle stores, admiring the designs-but the prices were always high. That's when a simple thought occurred to me:</p>
         
-       <br/>
-        <p>But my love for candles began much earlier.</p>
-        
-        <br/>
-        <p>As a child, my father once brought home gel wax. I still remember how fascinated I was seeing it for the first time-smooth, fluffy, and crystal clear. That moment stayed with me. From then on, I found myself drawn to small, artistic candles that felt magical in their own way.</p>
-         <br/>
-        <p>As I grew older, I often browsed candle stores, admiring the designs-but the prices were always high. That's when a simple thought occurred to me:</p>
-        
-        <blockquote style="border-left: 4px solid #7c3aed; padding-left: 20px; margin: 24px 0; font-style: italic; color: #4c1d95;">
+        <blockquote>
         "Why not create something beautiful, affordable, and still uncompromising on quality?"
         </blockquote>
-        
-       <br/>
-        <p>Without overthinking it, I chose to take a leap of faith and brought <b>Flame to Fable</b> to life - launching a YouTube channel, an Instagram page.</p>
-        
-        
-        
-         <br/>
-        <p>A space where every candle tells a story.<br>
+<p>Without overthinking it, I chose to take a leap of faith and brought <b>Flame to Fable</b> to life - launching a YouTube channel, an Instagram page.</p>
+<p>A space where every candle tells a story.<br>
         A place where warmth meets creativity.<br>
         Where each flame whispers a fable of light, love, and craftsmanship.</p>
+<p>Today, from our workshop in Kerala, we create handmade candles that bring joy, warmth, and beauty to homes across India. Each candle carries the same passion and wonder that started this journey.</p>
+<p>Every gel wax candle reminds me of that childhood fascination. Every custom design reflects our commitment to making beautiful, affordable candles without compromising on quality.</p>
         
-        <br/>
-       
-        <p>Today, from our workshop in Kerala, we create handmade candles that bring joy, warmth, and beauty to homes across India. Each candle carries the same passion and wonder that started this journey.</p>
-         <br/>
-        <p>Every gel wax candle reminds me of that childhood fascination. Every custom design reflects our commitment to making beautiful, affordable candles without compromising on quality.</p>
-        
-        <p style="text-align: center; font-style: italic; margin-top: 32px; color: #7c3aed; font-size: 1.1em;">
+        <p class="story-signoff">
         And so, the candle-making journey continues…<br><br>
         - Flame to Fable
         </p>

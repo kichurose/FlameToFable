@@ -1,3 +1,4 @@
+import { NEW_BULK_DESIGNS } from '../shared/new-candle-designs';
 import { BULK_CANDLE_IMAGES } from '../shared/bulk-candle-images';
 import { Component, HostListener, ViewChild, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -28,7 +29,7 @@ export class HomeComponent {
     zoomedBulkImage: string | null = null;
 
   @ViewChild('bulkDialog') bulkDialog!: ElementRef<HTMLDialogElement>;
-  readonly bulkCategories = ['All designs', 'Floral candles', 'Sculpted candles'];
+  readonly bulkCategories = ['All designs', 'Floral candles', 'Sculpted candles', 'Tealights', 'Festive candles'];
   bulkCategory = 'All designs';
   bulkVisibleCount = 6;
   private readonly bulkPhotos: BulkDesign[] = BULK_CANDLE_IMAGES.map((image, index) => {
@@ -36,18 +37,19 @@ export class HomeComponent {
     return { image, images: [image], name: names[index] ?? 'Custom Candle Favours', category: index >= 17 && index <= 23 ? 'Sculpted candles' : 'Floral candles' };
   }).sort((a, b) => this.bulkPhotoOrder(a.image) - this.bulkPhotoOrder(b.image));
   readonly bulkDesigns: BulkDesign[] = [
-    { image: '/Bulk/color%20daisy.jpg', name: 'Daisy Candles', category: 'Floral candles', images: this.bulkPhotos.filter(photo => photo.name.includes('Daisy')).map(photo => photo.image) },
-    { image: '/Bulk/IMG20260429001835.jpg', name: 'Sunflower Candles', category: 'Floral candles', images: this.bulkPhotos.filter(photo => photo.name.includes('Sunflower')).map(photo => photo.image) },
+    ...NEW_BULK_DESIGNS,
+    { image: '/optimized/Bulk/color%20daisy.jpg.webp', name: 'Daisy Candles', category: 'Floral candles', images: [...this.bulkPhotos.filter(photo => photo.name.includes('Daisy')).map(photo => photo.image), ...['daisies', 'daisies (2)', 'daisy (2)', 'daisy (3)', 'dasiy'].map(name => '/optimized/' + name + '.jpg.webp')] },
+    { image: '/optimized/Bulk/IMG20260429001835.jpg.webp', name: 'Sunflower Candles', category: 'Floral candles', images: [...this.bulkPhotos.filter(photo => photo.name.includes('Sunflower')).map(photo => photo.image), '/optimized/bulk sunflower.jpg.webp', '/optimized/sunflower card.jpg.webp'] },
     {
-      image: '/Peony1.jpg', name: 'Peony Candles', category: 'Floral candles',
-      images: ['/Peony1.jpg', '/Peony2.jpg', '/peony3.jpg', '/Peony4.jpg', '/Peony%20(2).jpg', '/Peony%20(3).jpg']
+      image: '/optimized/Peony1.jpg.webp', name: 'Peony Candles', category: 'Floral candles',
+      images: ['/optimized/Peony1.jpg.webp', '/optimized/Peony2.jpg.webp', '/optimized/peony3.jpg.webp', '/optimized/Peony4.jpg.webp', '/optimized/Peony%20(2).jpg.webp', '/optimized/Peony%20(3).jpg.webp']
     },
-    { image: '/Plumeria.jpg', name: 'Plumeria Candles', category: 'Floral candles', images: ['/Plumeria.jpg'] },
-    { image: '/Rose1.jpg', name: 'Rose Candles', category: 'Floral candles', images: ['/Rose1.jpg', '/Rose%20(2).jpg'] },
+    { image: '/optimized/Plumeria.jpg.webp', name: 'Plumeria Candles', category: 'Floral candles', images: ['/optimized/Plumeria.jpg.webp', '/optimized/plumerias.jpg.webp'] },
+    { image: '/optimized/Rose1.jpg.webp', name: 'Rose Candles', category: 'Floral candles', images: ['/optimized/Rose1.jpg.webp', '/optimized/Rose%20(2).jpg.webp'] },
     ...this.bulkPhotos
-      .filter(photo => !photo.name.includes('Daisy') && !photo.name.includes('Sunflower') && photo.image !== '/Bulk/IMG20260430233751.jpg' && photo.name !== 'Sculpted Gift Pouches' && photo.name !== 'Personalised Candle Favours' && photo.name !== 'Personalised Gift Pouches')
+      .filter(photo => !photo.name.includes('Daisy') && !photo.name.includes('Sunflower') && photo.image !== '/optimized/Bulk/IMG20260430233751.jpg.webp' && photo.name !== 'Sculpted Gift Pouches' && photo.name !== 'Personalised Candle Favours' && photo.name !== 'Personalised Gift Pouches')
       .map(photo => photo.name === 'Baby Jesus Candles'
-        ? { ...photo, images: [...photo.images, '/Bulk/IMG20260430233751.jpg'] }
+        ? { ...photo, images: [...photo.images, '/optimized/Bulk/IMG20260430233751.jpg.webp'] }
         : photo.name === 'Bubble Candles'
           ? { ...photo, images: [...photo.images, ...this.bulkPhotos.filter(item => item.name === 'Sculpted Gift Pouches' || item.name === 'Personalised Gift Pouches').map(item => item.image)] }
           : photo)
@@ -55,7 +57,7 @@ export class HomeComponent {
   selectedBulkDesign: BulkDesign | null = null;
   bulkGalleryIndex = 0;
   private bulkPhotoOrder(image: string) {
-    const featured = ['/Bulk/color%20daisy.jpg', '/Bulk/daisy.jpg', '/Bulk/IMG20260428230307.jpg', '/Bulk/IMG20260428225915.jpg', '/Bulk/IMG20260429001835.jpg', '/Bulk/IMG20260430231928.jpg', '/Bulk/IMG20260504234750.jpg'];
+    const featured = ['/optimized/Bulk/color%20daisy.jpg.webp', '/optimized/Bulk/daisy.jpg.webp', '/optimized/Bulk/IMG20260428230307.jpg.webp', '/optimized/Bulk/IMG20260428225915.jpg.webp', '/optimized/Bulk/IMG20260429001835.jpg.webp', '/optimized/Bulk/IMG20260430231928.jpg.webp', '/optimized/Bulk/IMG20260504234750.jpg.webp'];
     const rank = featured.indexOf(image);
     return rank < 0 ? featured.length : rank;
   }
@@ -81,13 +83,17 @@ export class HomeComponent {
     this.isMenuOpen = !this.isMenuOpen;
   }
   
+  @ViewChild('designDialog') designDialog!: ElementRef<HTMLDialogElement>;
+
   openDesignModal() {
     this.isDesignModalOpen = true;
+    this.designDialog.nativeElement.showModal();
     document.body.style.overflow = 'hidden'; // Prevent background scroll
   }
   
   closeDesignModal() {
     this.isDesignModalOpen = false;
+    this.designDialog.nativeElement.close();
     document.body.style.overflow = 'auto'; // Restore scroll
   }
 

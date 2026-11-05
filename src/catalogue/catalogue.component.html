@@ -1,14 +1,16 @@
 <div class="catalogue">
+  <div class="collection-filters" role="group" aria-label="Filter candle collection">@for (item of categories; track item) { <button type="button" [attr.aria-pressed]="category === item" [class.active]="category === item" (click)="category = item">{{ item }}</button> }</div>
   <!-- Search Component -->
   <app-search (searchChanged)="onSearchChanged($event)"></app-search>
   
+  <p class="collection-count" aria-live="polite">{{ getProductsArray().length }} {{ getProductsArray().length === 1 ? 'candle' : 'candles' }}{{ searchTerm.trim() ? ' found' : ' to fall in love with' }}</p>
   <div class="candles-grid">
     <!-- No Results Message -->
-    @if (getProductsArray().length === 0 && searchTerm.trim()) {
+    @if (getProductsArray().length === 0) {
       <div class="no-results">
         <i class="fas fa-search"></i>
         <h3>No candles found</h3>
-        <p>Try searching for "Christmas", "Vanilla", "Berry" or other candle names</p>
+        <p>Try another candle name or choose a different category.</p>
       </div>
     }
     
@@ -18,20 +20,12 @@
         
         <div class="card-image">
           <!-- Product Image -->
-            <img [src]="product.image" [alt]="product.name" class="candle-image">
+            <img [src]="product.image" [alt]="product.name" class="candle-image" loading="lazy">
             
-            <!-- Image Indicators for Multiple Images -->
-            @if (hasMultipleImages(product)) {
-              <div class="image-indicator">
-                @for (img of product.images; track img; let i = $index) {
-                  <span class="dot"></span>
-                }
-              </div>
-            }
         </div>
         
         <div class="card-content">
-          <h3 class="product-name">{{ product.name }}</h3>
+          <h3 class="product-name">{{ product.name }}</h3><span class="product-link">Discover this candle <span aria-hidden="true">↗</span></span>
         </div>
       </a>
     }

@@ -68,3 +68,15 @@ Google's documentation:
 - Ownership verification: https://support.google.com/webmasters/answer/9008080
 - Sitemap submission: https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap
 - Indexing requests: https://developers.google.com/search/docs/crawling-indexing/ask-google-to-recrawl
+
+## Optimised candle photographs
+
+The UI uses WebP copies under public/optimized; original JPEG photos are preserved. Generated copies are limited to 1200 pixels on the longest side. To regenerate them, make the sharp package available locally and run:
+
+```powershell
+node scripts/optimize-images.mjs
+```
+
+Alternatively, set SHARP_MODULE_PATH to the file URL of an installed sharp package entry point. Existing source references use the matching original filename plus .webp. New photos must be converted before switching their references.
+
+Product details requiring maker confirmation are recorded in PRODUCT-DATA-REVIEW.md.

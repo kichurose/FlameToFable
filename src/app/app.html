@@ -1,30 +1,19 @@
 <div class="app-container">
-  <nav class="main-nav" aria-label="Main navigation">
+  <nav class="main-nav" aria-label="Main navigation" (keydown.escape)="menuOpen = false">
     <div class="nav-content">
-      <a class="brand" href="/#home" (click)="navigateToSection('home', $event)" aria-label="Flame to Fable home">
-        <img src="/favicon.png" alt="Flame to Fable Logo" class="logo">
-        <span class="brand-wordmark"><span class="brand-name">Flame <em>to</em> Fable</span><span class="brand-caption">WHERE EVERY FLAME WHISPERS A FABLE</span></span>
-      </a>
-      <div class="nav-links">
-        <a href="#home" class="nav-link" (click)="navigateToSection('home', $event)">Home</a>
-        <a href="#about" class="nav-link" (click)="navigateToSection('about', $event)">About</a>
-        <a href="#catalogue" class="nav-link" (click)="navigateToSection('catalogue', $event)">Catalogue</a>
-        <a href="#bulk-orders" class="nav-link" (click)="navigateToSection('bulk-orders', $event)">Bulk Orders</a>
-        <a href="#contact" class="nav-link nav-contact" (click)="navigateToSection('contact', $event)">Let’s talk <span aria-hidden="true">↗</span></a>
+      <a class="brand" href="/#home" (click)="navigateToSection('home', $event)" aria-label="Flame to Fable home"><img src="/favicon.png" alt="" class="logo"><span class="brand-wordmark"><span class="brand-name">Flame <em>to</em> Fable</span><span class="brand-caption">WHERE EVERY FLAME WHISPERS A FABLE</span></span></a>
+      <button type="button" class="menu-toggle" (click)="menuOpen = !menuOpen" [attr.aria-expanded]="menuOpen" aria-controls="site-navigation" [attr.aria-label]="menuOpen ? 'Close navigation menu' : 'Open navigation menu'"><span aria-hidden="true">{{ menuOpen ? '×' : '☰' }}</span></button>
+      <div id="site-navigation" class="nav-links" [class.open]="menuOpen">
+        @for (item of navItems; track item.id) {
+          <a [href]="'/#' + item.id" class="nav-link" [class.current]="activeSection === item.id" [class.nav-contact]="item.id === 'contact'" [attr.aria-current]="activeSection === item.id ? 'location' : null" (click)="navigateToSection(item.id, $event)">{{ item.label }} @if (item.id === 'contact') { <span aria-hidden="true">↗</span> }</a>
+        }
       </div>
     </div>
   </nav>
-  
+
   <main>
     <router-outlet></router-outlet>
   </main>
   
-  <footer class="main-footer">
-    <div class="footer-bottom">
-      <div class="footer-bottom-content">
-        <p>&copy; 2025 Flame to Fable. All rights reserved.</p>
-        <p class="made-with-love">Made with <i class="fas fa-heart"></i> for candle lovers</p>
-      </div>
-    </div>
-  </footer>
+  <footer class="main-footer"><div class="footer-bottom-content"><p>© {{ year }} Flame to Fable</p><p>Hand poured in Kerala. Made with love.</p><a href="/#contact" (click)="navigateToSection('contact', $event)">Let’s talk <span aria-hidden="true">↗</span></a></div></footer>
 </div>

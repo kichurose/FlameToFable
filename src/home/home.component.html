@@ -1,26 +1,4 @@
 <div class="home">
-  <!-- Mobile Navigation -->
-  <nav class="mobile-nav" aria-label="Mobile navigation">
-    <div class="nav-header">
-      <button type="button" class="hamburger-btn" (click)="toggleMenu()" [class.active]="isMenuOpen" [attr.aria-expanded]="isMenuOpen" aria-controls="mobile-navigation-links" [attr.aria-label]="isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <a class="mobile-brand" href="#home" (click)="$event.preventDefault(); scrollToSection('home')">Flame <em>to</em> Fable<span>WHERE EVERY FLAME WHISPERS A FABLE</span></a>
-      <img src="/favicon.png" alt="" class="nav-logo">
-    </div>
-    
-    <div id="mobile-navigation-links" class="nav-menu" [class.active]="isMenuOpen" [attr.inert]="isMenuOpen ? null : ''">
-      <a href="#" (click)="scrollToSection('home')" class="nav-link">Home</a>
-      <a href="#" (click)="scrollToSection('about')" class="nav-link">About</a>
-      <a href="#" (click)="scrollToSection('custom-design')" class="nav-link">Design Your Own</a>
-      <a href="#" (click)="scrollToSection('catalogue')" class="nav-link">Catalogue</a>
-      <a href="#" (click)="scrollToSection('bulk-orders')" class="nav-link">Bulk Orders</a>
-      <a href="#" (click)="scrollToSection('contact')" class="nav-link">Contact</a>
-    </div>
-  </nav>
-
   <div class="polaroid-home" id="home">
     <app-polaroid-line-carousel></app-polaroid-line-carousel>
   </div>
@@ -94,121 +72,94 @@
     </div>
   </section>
 
-  <!-- Design Your Own Candles Call-to-Action Section -->
-  <section class="design-cta-section" id="custom-design">
+  <section class="design-cta-section" id="custom-design" aria-labelledby="custom-design-title">
     <div class="design-cta-container">
       <div class="design-cta-content">
-        <div class="design-icon">🎨</div>
-        <h2>Create Your Perfect Candle</h2>
-        <p class="design-description">
-          Design personalized candles with your choice of colors, fragrances, shapes, and special details. 
-          Perfect for weddings, birthdays, corporate gifts, or expressing your unique style!
-        </p>
-        <div class="design-features-preview">
-          <span class="feature-tag">🌈 Custom Colors</span>
-          <span class="feature-tag">🌸 Signature Scents</span>
-          <span class="feature-tag">🎭 Custom Shapes</span>
-          <span class="feature-tag">✨ Special Details</span>
-        </div>
-        <button class="design-btn" (click)="openDesignModal()">
-          <i class="fas fa-palette"></i>
-          Design Your Candle Now
-        </button>
-        <p class="design-pricing">Free consultation | Enquire for pricing</p>
+        <span class="design-eyebrow">YOUR IDEA, HAND POURED</span>
+        <h2 id="custom-design-title">A candle with<br>a little <em>you</em> in it.</h2>
+        <p class="design-description">A favourite colour, a scent you love, a shape that tells your story. Let’s make something personal, one thoughtful detail at a time.</p>
+        <div class="design-features-preview" aria-label="Personalisation options"><span>Colours</span><span>Scents</span><span>Shapes</span><span>Finishing touches</span></div>
+        <button type="button" class="design-btn" (click)="openDesignModal()">Design your candle <span aria-hidden="true">↗</span></button>
+        <p class="design-pricing">Free consultation · Enquire for pricing</p>
       </div>
       <div class="design-preview-images">
-        <div class="preview-candle candle-1">🕯️</div>
-        <div class="preview-candle candle-2">🌹</div>
-        <div class="preview-candle candle-3">❤️</div>
+        <figure class="design-photo design-photo-main"><img src="/optimized/peony.jpg.webp" alt="Handcrafted peony candle" loading="lazy"><figcaption>Petal by petal.</figcaption></figure>
+        <figure class="design-photo design-photo-detail"><img src="/optimized/heart.jpg.webp" alt="Handcrafted heart candle" loading="lazy"><figcaption>Made from the heart.</figcaption></figure>
+        <span class="design-photo-note">Dream it. We’ll pour it.</span>
       </div>
     </div>
   </section>
 
-  <!-- Design Modal Overlay -->
-  <div class="design-modal-overlay" [class.active]="isDesignModalOpen" (click)="closeDesignModal()">
+  <!-- Custom candle consultation -->
+  <dialog #designDialog class="design-modal-overlay" aria-labelledby="design-dialog-title" (click)="closeDesignModal()" (cancel)="closeDesignModal()">
     <div class="design-modal-content" (click)="$event.stopPropagation()">
-      <button class="modal-close-btn" (click)="closeDesignModal()">
-        <i class="fas fa-times"></i>
-      </button>
+      <div class="design-modal-toolbar"><span>CUSTOM CANDLE STUDIO</span><button type="button" class="modal-close-btn" aria-label="Close candle design" (click)="closeDesignModal()">Close <span aria-hidden="true">×</span></button></div>
       <app-design-your-own></app-design-your-own>
     </div>
-  </div>
+  </dialog>
 
   <section class="catalogue-section" id="catalogue">
-    <h2>Our Collection</h2>
+    <div class="collection-header"><span class="collection-eyebrow">SMALL BATCHES, LITTLE JOYS</span><h2>Our Collection</h2><p class="collection-intro">For your favourite corner, a thoughtful gift, or a moment just for you.<br>Find a little glow to call your own.</p></div>
     <app-catalogue></app-catalogue>
   </section>
 
-  <section class="about-section" id="about">
-    <h2>About Our Candle Business</h2>
-    <p>Welcome to Flame to Fable, a handcrafted candle brand based in Kerala crafted by Christina Roseline. We create the best budget-friendly premium handmade candles in Kerala that transform any space into a sanctuary of warmth and peace. Each candle is thoughtfully handcrafted using quality wax, soothing fragrances, and refined aesthetic details - perfect for homes, gifting, return gifts, and special occasions.</p>
-    <p>🎨 <strong>NEW!</strong> Now offering <strong>Design Your Own Candles</strong> service - Create personalized candles with your choice of colors, fragrances, shapes, and designs. Perfect for special events, corporate gifts, return gifts, or expressing your unique style!</p>
-    <p>Our collection features eco-friendly soy candles, gel candles, scented candles, festival-special designs, and custom-designed candles - all crafted with care in God's own country, Kerala. Whether you want perfect gifts, return gifts for functions, or beautiful décor pieces, our candles are designed to make every moment memorable.</p>
+  <section class="about-section" id="about" aria-labelledby="about-title">
+    <div class="about-inner">
+      <figure class="about-photo"><img src="/optimized/TrioJar.jpg.webp" alt="Handcrafted Trio Jar candle by Flame to Fable" loading="lazy"><figcaption>Small batches. Thoughtful details. A little joy.</figcaption></figure>
+      <div class="about-story">
+        <span class="about-eyebrow">THE HEART BEHIND THE FLAME</span>
+        <h2 id="about-title">About Our<br>Candle Business</h2>
+        <p class="about-lead">Made by hand.<br>Meant to mean something.</p>
+        <p>Flame to Fable began with Christina Roseline and a love for creating little moments of warmth. Based in Kerala, we handcraft candles for cosy homes, thoughtful gifts, and occasions worth remembering.</p>
+        <p>From soy and gel wax to floral shapes and festive favourites, every piece is made with care. Have something personal in mind? We can help bring your colours, scents, and ideas to life.</p>
+        <a class="about-design-link" href="#custom-design" (click)="$event.preventDefault(); openDesignModal()">Create something personal <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
     <div class="social-links">
-      <h3>Follow Our Journey</h3>
+      <div><span class="about-eyebrow">A PEEK BEHIND THE SCENES</span><h3>Follow Our Journey</h3></div>
       <div class="links-container">
-        <a href="https://www.youtube.com/@FlameToFable/shorts" target="_blank" class="social-link youtube">
-          <span class="icon">📺</span>
-          <span>Watch our YouTube Channel</span>
-        </a>
-        <a href="https://www.instagram.com/flametofable" target="_blank" class="social-link instagram">
-          <span class="icon">📷</span>
-          <span>Follow us on Instagram</span>
-        </a>
+        <a href="https://www.youtube.com/@FlameToFable/shorts" target="_blank" rel="noopener noreferrer" class="social-link"><span>YouTube</span><span aria-hidden="true">↗</span></a>
+        <a href="https://www.instagram.com/flametofable" target="_blank" rel="noopener noreferrer" class="social-link"><span>Instagram</span><span aria-hidden="true">↗</span></a>
       </div>
     </div>
   </section>
 
-  <section class="collection-section" id="collection">
-    <h2>Best Budget-Friendly Candle Collection in Kerala</h2>
-    <p>Flame to Fable proudly serves customers across Kerala and ships pan-India. As one of the best budget-friendly candle makers in Kerala, we ensure quality, safety, and aesthetic packaging in every order. Experience the finest handmade candles from God's own country.</p>
-    <p>We offer the finest range of affordable handmade candles in Kerala, including:</p>
-    
-    <div class="collection-grid">
-      <div class="collection-item">
-        <h3>Soy Wax Candles</h3>
-        <p>Clean burn, subtle fragrance</p>
+  <section class="collection-section" id="collection" aria-labelledby="kerala-collection-title">
+    <div class="collection-inner">
+      <div class="collection-story">
+        <span class="collection-kicker">FROM KERALA, WITH LOVE</span>
+        <h2 id="kerala-collection-title">Best Budget-Friendly Candle Collection in Kerala</h2>
+        <p>Little luxuries, thoughtfully made. Explore our handmade candles for everyday rituals, cosy corners, and gifts that feel personal.</p>
+        <p>Based in Kerala and shipping across India, we put care into every detail, from the first pour to the final wrapping.</p>
+        <a class="collection-explore" href="#catalogue" (click)="$event.preventDefault(); scrollToSection('catalogue')">Find your favourite <span aria-hidden="true">↗</span></a>
       </div>
-      
-      <div class="collection-item">
-        <h3>Gel Wax Candles</h3>
-        <p>Crystal clear, artistic designs</p>
-      </div>
-      
-      <div class="collection-item">
-        <h3>Scented Candles</h3>
-        <p>Calming, floral & festive notes</p>
-      </div>
-      
-      <div class="collection-item">
-        <h3>Decorative Candles</h3>
-        <p>Roses, hearts & festive shapes</p>
-      </div>
-      
-      <div class="collection-item">
-        <h3>Custom Candles</h3>
-        <p>Personalised for gifts & events</p>
+      <div class="collection-grid">
+        <div class="collection-item"><span class="collection-number" aria-hidden="true">01</span><div><h3>Soy Wax Candles</h3><p>Soft fragrance for slow, everyday moments.</p></div></div>
+        <div class="collection-item"><span class="collection-number" aria-hidden="true">02</span><div><h3>Gel Wax Candles</h3><p>Crystal-clear wax with a playful, artistic touch.</p></div></div>
+        <div class="collection-item"><span class="collection-number" aria-hidden="true">03</span><div><h3>Scented Candles</h3><p>Floral, comforting, and festive fragrance notes.</p></div></div>
+        <div class="collection-item"><span class="collection-number" aria-hidden="true">04</span><div><h3>Decorative Candles</h3><p>Petals, hearts, and shapes that make you smile.</p></div></div>
+        <div class="collection-item"><span class="collection-number" aria-hidden="true">05</span><div><h3>Custom Candles</h3><p>Your colours, your occasion, your little story.</p></div></div>
       </div>
     </div>
-    
-    <p class="collection-footer">Each piece is crafted to elevate your space while keeping sustainability in mind.</p>
+    <p class="collection-footer">A little warmth. A thoughtful detail. A fable of your own.</p>
   </section>
 
-  <section class="blog-section" id="blog">
-    <h2>From Our Blog</h2>
-    <p class="blog-description">Discover candle care tips, decorating ideas, and stories behind our handcrafted creations</p>
-    
-    <div class="blog-posts">
-      <div class="blog-post" (click)="navigateToBlog('/blog/our-journey')">
-        <h3>The Story Behind Flame to Fable</h3>
-        <p>Discover the personal journey that started with a watermelon candle and grew into a Kerala-based candle business.</p>
-        <span class="read-more">Read More →</span>
-      </div>
-      
-      <div class="blog-post" (click)="navigateToBlog('/blog/art-of-candle-care')">
-        <h3>The Art of Candle Care</h3>
-        <p>Learn how to make your handcrafted candles last longer and burn cleaner with our expert tips.</p>
-        <span class="read-more">Read More →</span>
+  <section class="blog-section" id="blog" aria-labelledby="blog-title">
+    <div class="blog-inner">
+      <header class="blog-header">
+        <span class="blog-eyebrow">NOTES FROM OUR STUDIO</span>
+        <h2 id="blog-title">From Our Blog</h2>
+        <p class="blog-description">A little inspiration, a little know-how, and the stories behind the glow.</p>
+      </header>
+      <div class="blog-posts">
+        <a class="blog-post" href="/blog/our-journey" (click)="$event.preventDefault(); navigateToBlog('/blog/our-journey')">
+          <div class="blog-image"><img src="/optimized/Sunflower Garden Candle.jpg.webp" alt="Handcrafted Sunflower Garden candle" loading="lazy"></div>
+          <div class="blog-copy"><span class="blog-category">OUR STORY</span><h3>The Story Behind Flame to Fable</h3><p>How a watermelon candle sparked a creative journey and a candle business in Kerala.</p><span class="read-more">Read the story <span aria-hidden="true">↗</span></span></div>
+        </a>
+        <a class="blog-post" href="/blog/art-of-candle-care" (click)="$event.preventDefault(); navigateToBlog('/blog/art-of-candle-care')">
+          <div class="blog-image"><img src="/optimized/magic.jpg.webp" alt="Layered Magic Candle in a glass jar" loading="lazy"></div>
+          <div class="blog-copy"><span class="blog-category">CANDLE CARE</span><h3>The Art of Candle Care</h3><p>Simple ways to care for your handcrafted candles and enjoy every little moment of glow.</p><span class="read-more">Explore the guide <span aria-hidden="true">↗</span></span></div>
+        </a>
       </div>
     </div>
   </section>
