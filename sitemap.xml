@@ -4,198 +4,219 @@
     <loc>https://flametofable.ariyo.in/</loc>
   </url>
   <url>
+    <loc>https://flametofable.ariyo.in/product/mini-bouquet/</loc>
+    <image:image>
+      <image:loc>https://flametofable.ariyo.in/optimized/mini%20bouquet.jpg.webp</image:loc>
+      <image:title>Mini Bouquet Candle</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://flametofable.ariyo.in/product/butterfly/</loc>
+    <image:image>
+      <image:loc>https://flametofable.ariyo.in/optimized/butterfly.jpg.webp</image:loc>
+      <image:title>Butterfly Candles</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://flametofable.ariyo.in/product/sunflower-garden/</loc>
+    <image:image>
+      <image:loc>https://flametofable.ariyo.in/optimized/Sunflower%20Garden%20Candle.jpg.webp</image:loc>
+      <image:title>Sunflower Garden Candle</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://flametofable.ariyo.in/product/tulip-candle/</loc>
     <image:image>
-      <image:loc>https://flametofable.ariyo.in/TulipCandle.jpg</image:loc>
+      <image:loc>https://flametofable.ariyo.in/optimized/TulipCandle.jpg.webp</image:loc>
       <image:title>Tulip Candle</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://flametofable.ariyo.in/product/trio-jar/</loc>
     <image:image>
-      <image:loc>https://flametofable.ariyo.in/TrioJar.jpg</image:loc>
+      <image:loc>https://flametofable.ariyo.in/optimized/TrioJar.jpg.webp</image:loc>
       <image:title>Trio Jar Candle</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://flametofable.ariyo.in/product/christmastree2/</loc>
     <image:image>
-      <image:loc>https://flametofable.ariyo.in/christmastree2.jpg</image:loc>
+      <image:loc>https://flametofable.ariyo.in/optimized/christmastree2.jpg.webp</image:loc>
       <image:title>Christmas Tree (Pack of 2)</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://flametofable.ariyo.in/product/baby-jesus/</loc>
     <image:image>
-      <image:loc>https://flametofable.ariyo.in/Baby-Jesus.jpg</image:loc>
+      <image:loc>https://flametofable.ariyo.in/optimized/Baby-Jesus.jpg.webp</image:loc>
       <image:title>Baby Jesus Candle</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://flametofable.ariyo.in/product/christmas-candle/</loc>
     <image:image>
-      <image:loc>https://flametofable.ariyo.in/christmas.jpg</image:loc>
+      <image:loc>https://flametofable.ariyo.in/optimized/christmas.jpg.webp</image:loc>
       <image:title>Christmas Candle</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://flametofable.ariyo.in/product/christmas-candle-2/</loc>
     <image:image>
-      <image:loc>https://flametofable.ariyo.in/christmas2.jpg</image:loc>
+      <image:loc>https://flametofable.ariyo.in/optimized/christmas2.jpg.webp</image:loc>
       <image:title>Christmas Candle 2</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://flametofable.ariyo.in/product/christmas-collection/</loc>
     <image:image>
-      <image:loc>https://flametofable.ariyo.in/christmas-collection.jpg</image:loc>
+      <image:loc>https://flametofable.ariyo.in/optimized/christmas-collection.jpg.webp</image:loc>
       <image:title>Christmas Collection Pack of 3</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://flametofable.ariyo.in/product/vanilla-chocolate/</loc>
     <image:image>
-      <image:loc>https://flametofable.ariyo.in/vanilla.jpg</image:loc>
+      <image:loc>https://flametofable.ariyo.in/optimized/vanilla.jpg.webp</image:loc>
       <image:title>Vanilla Chocolate Candle</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://flametofable.ariyo.in/product/berry-candle/</loc>
     <image:image>
-      <image:loc>https://flametofable.ariyo.in/berry-bliss.jpg</image:loc>
+      <image:loc>https://flametofable.ariyo.in/optimized/berry-bliss.jpg.webp</image:loc>
       <image:title>Berry Candle</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://flametofable.ariyo.in/product/car-candle/</loc>
     <image:image>
-      <image:loc>https://flametofable.ariyo.in/Car.jpg</image:loc>
+      <image:loc>https://flametofable.ariyo.in/optimized/Car.jpg.webp</image:loc>
       <image:title>Car Candle</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://flametofable.ariyo.in/product/reindeer/</loc>
     <image:image>
-      <image:loc>https://flametofable.ariyo.in/Reindeer.jpg</image:loc>
+      <image:loc>https://flametofable.ariyo.in/optimized/Reindeer.jpg.webp</image:loc>
       <image:title>Reindeer Candle</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://flametofable.ariyo.in/product/reindeer-pack/</loc>
     <image:image>
-      <image:loc>https://flametofable.ariyo.in/reindeer-pack.jpg</image:loc>
+      <image:loc>https://flametofable.ariyo.in/optimized/reindeer-pack.jpg.webp</image:loc>
       <image:title>Reindeer Pack of 2</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://flametofable.ariyo.in/product/stack-hearts/</loc>
     <image:image>
-      <image:loc>https://flametofable.ariyo.in/stack-hearts.jpg</image:loc>
+      <image:loc>https://flametofable.ariyo.in/optimized/stack-hearts.jpg.webp</image:loc>
       <image:title>Stack Hearts Candle</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://flametofable.ariyo.in/product/peony-bloom/</loc>
     <image:image>
-      <image:loc>https://flametofable.ariyo.in/peony.jpg</image:loc>
+      <image:loc>https://flametofable.ariyo.in/optimized/peony.jpg.webp</image:loc>
       <image:title>Peony Bloom Candle</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://flametofable.ariyo.in/product/daisy-love/</loc>
     <image:image>
-      <image:loc>https://flametofable.ariyo.in/daisy.jpg</image:loc>
+      <image:loc>https://flametofable.ariyo.in/optimized/daisy.jpg.webp</image:loc>
       <image:title>Daisy Love Candle</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://flametofable.ariyo.in/product/sunflower/</loc>
     <image:image>
-      <image:loc>https://flametofable.ariyo.in/daisy1.jpg</image:loc>
+      <image:loc>https://flametofable.ariyo.in/optimized/daisy1.jpg.webp</image:loc>
       <image:title>Sunflower Candle</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://flametofable.ariyo.in/product/berry-bliss/</loc>
     <image:image>
-      <image:loc>https://flametofable.ariyo.in/berry-bliss.jpg</image:loc>
+      <image:loc>https://flametofable.ariyo.in/optimized/berry-bliss.jpg.webp</image:loc>
       <image:title>Berry Bliss Candle</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://flametofable.ariyo.in/product/latte-coffee/</loc>
     <image:image>
-      <image:loc>https://flametofable.ariyo.in/coffee.jpg</image:loc>
+      <image:loc>https://flametofable.ariyo.in/optimized/coffee.jpg.webp</image:loc>
       <image:title>Latte Coffee Candle</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://flametofable.ariyo.in/product/watermelon/</loc>
     <image:image>
-      <image:loc>https://flametofable.ariyo.in/watermelon.jpg</image:loc>
+      <image:loc>https://flametofable.ariyo.in/optimized/watermelon.jpg.webp</image:loc>
       <image:title>Watermelon Candle</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://flametofable.ariyo.in/product/cloud/</loc>
     <image:image>
-      <image:loc>https://flametofable.ariyo.in/cloud.jpg</image:loc>
+      <image:loc>https://flametofable.ariyo.in/optimized/cloud.jpg.webp</image:loc>
       <image:title>Cloud Candle</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://flametofable.ariyo.in/product/rose-candle/</loc>
     <image:image>
-      <image:loc>https://flametofable.ariyo.in/rose.jpg</image:loc>
+      <image:loc>https://flametofable.ariyo.in/optimized/rose.jpg.webp</image:loc>
       <image:title>Rose Candle</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://flametofable.ariyo.in/product/rose-design-2/</loc>
     <image:image>
-      <image:loc>https://flametofable.ariyo.in/rosedesign2.jpg</image:loc>
+      <image:loc>https://flametofable.ariyo.in/optimized/rosedesign2.jpg.webp</image:loc>
       <image:title>Rose Design 2</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://flametofable.ariyo.in/product/heart-candle/</loc>
     <image:image>
-      <image:loc>https://flametofable.ariyo.in/heart.jpg</image:loc>
+      <image:loc>https://flametofable.ariyo.in/optimized/heart.jpg.webp</image:loc>
       <image:title>Heart Candle</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://flametofable.ariyo.in/product/angel-wings/</loc>
     <image:image>
-      <image:loc>https://flametofable.ariyo.in/angelwings.jpg</image:loc>
+      <image:loc>https://flametofable.ariyo.in/optimized/angelwings.jpg.webp</image:loc>
       <image:title>Angel Wings Candle</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://flametofable.ariyo.in/product/ocean/</loc>
     <image:image>
-      <image:loc>https://flametofable.ariyo.in/ocean.jpg</image:loc>
+      <image:loc>https://flametofable.ariyo.in/optimized/ocean.jpg.webp</image:loc>
       <image:title>Ocean Candle</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://flametofable.ariyo.in/product/heartofroses/</loc>
     <image:image>
-      <image:loc>https://flametofable.ariyo.in/heartofroses.jpg</image:loc>
+      <image:loc>https://flametofable.ariyo.in/optimized/heartofroses.jpg.webp</image:loc>
       <image:title>Heart of Roses Candle</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://flametofable.ariyo.in/product/magic/</loc>
     <image:image>
-      <image:loc>https://flametofable.ariyo.in/magic.jpg</image:loc>
+      <image:loc>https://flametofable.ariyo.in/optimized/magic.jpg.webp</image:loc>
       <image:title>Magic Candle</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://flametofable.ariyo.in/product/icedmacha/</loc>
     <image:image>
-      <image:loc>https://flametofable.ariyo.in/icedmacha.jpg</image:loc>
+      <image:loc>https://flametofable.ariyo.in/optimized/icedmacha.jpg.webp</image:loc>
       <image:title>Iced Matcha Candle</image:title>
     </image:image>
   </url>
